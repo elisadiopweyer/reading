@@ -14,9 +14,8 @@ Deploy on Vercel:
 
 ```text
 Framework preset: Other
-Build command: npm run build
-Output directory: .
+Build command: leave blank
+Output directory: leave blank
 ```
 
-The build command is intentionally a no-op because this is a plain static site:
-`index.html`, `styles.css`, and `app.js`.
+This is a plain static site: `index.html`, `styles.css`, and `app.js`.
