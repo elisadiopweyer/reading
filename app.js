@@ -119,32 +119,39 @@ function render() {
 
 function equationMarkup(period) {
   const suffix = period === "week" ? "iw" : "im";
-  const gamma = period === "week" ? "w" : "m";
+  const periodIndex = period === "week" ? "w" : "m";
   const periodName = period === "week" ? "relative week" : "relative month";
   return `
-    <span
-      class="hint"
-      tabindex="0"
-      data-tooltip="Student i's average score in a ${periodName}."
-    >Score<sub>${suffix}</sub></span>
-    = α +
-    <span
-      class="hint"
-      tabindex="0"
-      data-tooltip="A period indicator. This lets each ${periodName} have its own baseline level."
-    >γ<sub>${gamma}</sub></span>
-    + β
-    <span
-      class="hint"
-      tabindex="0"
-      data-tooltip="Average text difficulty faced by student i in this ${periodName}."
-    >D<sub>${suffix}</sub></span>
-    + ε<sub>${suffix}</sub>; or replace D with
-    <span
-      class="hint"
-      tabindex="0"
-      data-tooltip="Vocabulary, background knowledge, and meaning difficulty."
-    >V/BK/M</span>.
+    <div class="equation-line">
+      <span class="equation-name">Pooled</span>
+      <code>\\( Score_{${suffix}} = \\alpha + \\gamma_{${periodIndex}} + \\beta D_{${suffix}} + \\varepsilon_{${suffix}} \\)</code>
+    </div>
+    <div class="equation-line">
+      <span class="equation-name">Three-leg</span>
+      <code>\\( Score_{${suffix}} = \\alpha + \\gamma_{${periodIndex}} + \\beta_V V_{${suffix}} + \\beta_B B_{${suffix}} + \\beta_M M_{${suffix}} + \\varepsilon_{${suffix}} \\)</code>
+    </div>
+    <div class="equation-line">
+      <span class="equation-name">Adjusted D</span>
+      <code>\\( \\widetilde{Score}_{${suffix}} = Score_{${suffix}} - \\hat{\\beta}(D_{${suffix}} - \\bar{D}) \\)</code>
+    </div>
+    <div class="equation-line">
+      <span class="equation-name">Adjusted V/BK/M</span>
+      <code>\\( \\widetilde{Score}_{${suffix}} = Score_{${suffix}} - \\hat{\\beta}_V(V_{${suffix}} - \\bar{V}) - \\hat{\\beta}_B(B_{${suffix}} - \\bar{B}) - \\hat{\\beta}_M(M_{${suffix}} - \\bar{M}) \\)</code>
+    </div>
+    <div class="equation-note">
+      <span
+        class="hint"
+        tabindex="0"
+        data-tooltip="Student i's average score in a ${periodName}."
+      >Score<sub>${suffix}</sub></span>
+      is the student-period score;
+      <span
+        class="hint"
+        tabindex="0"
+        data-tooltip="A period indicator. This lets each ${periodName} have its own baseline level."
+      >γ<sub>${periodIndex}</sub></span>
+      is the period term.
+    </div>
   `;
 }
 
