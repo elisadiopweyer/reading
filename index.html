@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reading Trajectories</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="kicker">Interim Assessment Analysis</p>
+          <h1>
+            Reading Trajectories
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Scores after netting out the selected text-difficulty measure."
+            >Adjusted</span>
+            for Text Difficulty
+          </h1>
+        </div>
+        <div class="summary" id="summary"></div>
+      </header>
+
+      <section class="controls" aria-label="Chart controls">
+        <div class="segmented" role="tablist" aria-label="Period">
+          <button class="segment active" type="button" data-period="week" aria-selected="true">Week</button>
+          <button class="segment" type="button" data-period="month" aria-selected="false">Month</button>
+        </div>
+
+        <fieldset class="series-picker">
+          <legend>Series</legend>
+          <label class="check-row">
+            <input type="checkbox" data-series="unadjusted" checked />
+            <span class="line-swatch swatch-unadjusted"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Observed student-period average score before difficulty adjustment."
+            >Unadjusted</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-series="pooled_adjusted" checked />
+            <span class="line-swatch swatch-pooled"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted by holding the pooled text difficulty score D at its sample mean."
+            >Pooled D</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-series="three_leg_adjusted" checked />
+            <span class="line-swatch swatch-three"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted by holding vocabulary, background knowledge, and meaning difficulty at their sample means."
+            >V/BK/M</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-series="vocab_adjusted" />
+            <span class="line-swatch swatch-vocab"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted by holding vocabulary difficulty at its sample mean."
+            >Vocab</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-series="bk_adjusted" />
+            <span class="line-swatch swatch-bk"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted by holding background knowledge difficulty at its sample mean."
+            >BK</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" data-series="meaning_adjusted" />
+            <span class="line-swatch swatch-meaning"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted by holding meaning difficulty at its sample mean."
+            >Meaning</span>
+          </label>
+        </fieldset>
+      </section>
+
+      <section class="explain" aria-label="What is plotted">
+        <div class="explain-row">
+          <span class="explain-label">Regression</span>
+          <code id="modelEquation"></code>
+        </div>
+        <div class="explain-row">
+          <span class="explain-label">Plot</span>
+          <span>
+            Each point is the period mean of
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="The average score for student i in relative week or month t."
+            >Score<sub>it</sub></span>.
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted lines remove the part of score predicted by differences in text difficulty, then put difficulty back at the sample mean."
+            >Adjusted</span>
+            lines hold difficulty constant.
+          </span>
+        </div>
+      </section>
+
+      <section class="chart-section" aria-label="Adjusted trajectory chart">
+        <div class="chart-head">
+          <h2 id="chartTitle">Weekly Score Trajectory</h2>
+          <span class="chart-meta">Average score, 0 to 1 scale</span>
+        </div>
+        <div class="chart-wrap">
+          <svg id="chart" role="img" aria-labelledby="chartTitle"></svg>
+        </div>
+      </section>
+
+      <section class="table-section" aria-label="Trajectory data">
+        <div class="table-wrap">
+          <table>
+            <thead id="tableHead"></thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
