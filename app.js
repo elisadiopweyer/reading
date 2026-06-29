@@ -198,7 +198,7 @@ function equationMarkup(period) {
 function renderChart(rows, selected) {
   const width = Math.max(720, svg.clientWidth || 960);
   const height = svg.clientHeight || 560;
-  const margin = { top: 28, right: 34, bottom: 54, left: 58 };
+  const margin = { top: 70, right: 34, bottom: 54, left: 82 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -235,7 +235,7 @@ function renderChart(rows, selected) {
     appendText(svg, x(row.period), height - margin.bottom + 24, String(row.period), "middle", "axis");
   });
   appendText(svg, margin.left + innerWidth / 2, height - 12, state.period === "week" ? "Relative week" : "Relative month", "middle", "axis");
-  appendText(svg, 14, margin.top + innerHeight / 2, "Average score", "middle", "axis", -90);
+  appendText(svg, 16, margin.top + innerHeight / 2, "Average score", "middle", "axis", -90);
 
   selected.forEach((key, index) => {
     const def = SERIES[key];
@@ -259,7 +259,7 @@ function renderChart(rows, selected) {
     });
   });
 
-  renderLegend(selected, margin.left, margin.top - 8);
+  renderLegend(selected, margin.left, 28);
 }
 
 function renderLegend(selected, startX, startY) {
