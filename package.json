@@ -1,0 +1,10 @@
+{
+  "name": "reading-trajectories",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static reading trajectory dashboard for Vercel.",
+  "scripts": {
+    "build": "node -e \"console.log('Static site: no build step required')\"",
+    "start": "python3 -m http.server 4187"
+  }
+}

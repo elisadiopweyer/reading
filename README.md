@@ -1,17 +1,22 @@
-# Adjusted Score Trajectories
+# Reading Trajectories
 
 Static web app for the Stata trajectory outputs.
 
 Open locally:
 
-```text
-index.html
+```bash
+python3 -m http.server 4187
 ```
+
+Then open `http://localhost:4187`.
 
 Deploy on Vercel:
 
 ```text
-Set the project root to this folder.
-No build command is needed.
-The output directory is the project root.
+Framework preset: Other
+Build command: npm run build
+Output directory: .
 ```
+
+The build command is intentionally a no-op because this is a plain static site:
+`index.html`, `styles.css`, and `app.js`.
