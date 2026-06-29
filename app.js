@@ -124,19 +124,59 @@ function equationMarkup(period) {
   return `
     <div class="equation-line">
       <span class="equation-name">Pooled</span>
-      <code>\\( Score_{${suffix}} = \\alpha + \\gamma_{${periodIndex}} + \\beta D_{${suffix}} + \\varepsilon_{${suffix}} \\)</code>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sub>${suffix}</sub>
+        =
+        <span class="math-var">α</span>
+        +
+        <span class="math-var">γ</span><sub>${periodIndex}</sub>
+        +
+        <span class="math-var">β</span><span class="math-var">D</span><sub>${suffix}</sub>
+        +
+        <span class="math-var">ε</span><sub>${suffix}</sub>
+      </div>
     </div>
     <div class="equation-line">
       <span class="equation-name">Three-leg</span>
-      <code>\\( Score_{${suffix}} = \\alpha + \\gamma_{${periodIndex}} + \\beta_V V_{${suffix}} + \\beta_B B_{${suffix}} + \\beta_M M_{${suffix}} + \\varepsilon_{${suffix}} \\)</code>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sub>${suffix}</sub>
+        =
+        <span class="math-var">α</span>
+        +
+        <span class="math-var">γ</span><sub>${periodIndex}</sub>
+        +
+        <span class="math-var">β</span><sub>V</sub><span class="math-var">V</span><sub>${suffix}</sub>
+        +
+        <span class="math-var">β</span><sub>B</sub><span class="math-var">B</span><sub>${suffix}</sub>
+        +
+        <span class="math-var">β</span><sub>M</sub><span class="math-var">M</span><sub>${suffix}</sub>
+        +
+        <span class="math-var">ε</span><sub>${suffix}</sub>
+      </div>
     </div>
     <div class="equation-line">
       <span class="equation-name">Adjusted D</span>
-      <code>\\( \\widetilde{Score}_{${suffix}} = Score_{${suffix}} - \\hat{\\beta}(D_{${suffix}} - \\bar{D}) \\)</code>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sup>adj</sup><sub>${suffix}</sub>
+        =
+        <span class="math-var">Score</span><sub>${suffix}</sub>
+        -
+        <span class="math-hat">β</span>(<span class="math-var">D</span><sub>${suffix}</sub> - <span class="math-bar">D</span>)
+      </div>
     </div>
     <div class="equation-line">
       <span class="equation-name">Adjusted V/BK/M</span>
-      <code>\\( \\widetilde{Score}_{${suffix}} = Score_{${suffix}} - \\hat{\\beta}_V(V_{${suffix}} - \\bar{V}) - \\hat{\\beta}_B(B_{${suffix}} - \\bar{B}) - \\hat{\\beta}_M(M_{${suffix}} - \\bar{M}) \\)</code>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sup>adj</sup><sub>${suffix}</sub>
+        =
+        <span class="math-var">Score</span><sub>${suffix}</sub>
+        -
+        <span class="math-hat">β</span><sub>V</sub>(<span class="math-var">V</span><sub>${suffix}</sub> - <span class="math-bar">V</span>)
+        -
+        <span class="math-hat">β</span><sub>B</sub>(<span class="math-var">B</span><sub>${suffix}</sub> - <span class="math-bar">B</span>)
+        -
+        <span class="math-hat">β</span><sub>M</sub>(<span class="math-var">M</span><sub>${suffix}</sub> - <span class="math-bar">M</span>)
+      </div>
     </div>
     <div class="equation-note">
       <span

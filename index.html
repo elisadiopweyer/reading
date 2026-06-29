@@ -89,27 +89,21 @@
       </section>
 
       <section class="explain" aria-label="What is plotted">
-        <div class="explain-row">
-          <span class="explain-label">Equations</span>
-          <div class="equations" id="modelEquation"></div>
-        </div>
-        <div class="explain-row">
-          <span class="explain-label">Plot</span>
-          <span>
-            Each point is the period mean of
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="The average score for student i in relative week or month t."
-            >Score<sub>it</sub></span>.
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Adjusted lines remove the part of score predicted by differences in text difficulty, then put difficulty back at the sample mean."
-            >Adjusted</span>
-            lines hold difficulty constant.
-          </span>
-        </div>
+        <div class="equations" id="modelEquation"></div>
+        <p class="plot-copy">
+          Each point is the period mean of
+          <span
+            class="hint"
+            tabindex="0"
+            data-tooltip="The average score for student i in relative week or month t."
+          >Score<sub>it</sub></span>.
+          <span
+            class="hint"
+            tabindex="0"
+            data-tooltip="Adjusted lines remove the part of score predicted by differences in text difficulty, then put difficulty back at the sample mean."
+          >Adjusted</span>
+          lines hold difficulty constant.
+        </p>
       </section>
 
       <section class="chart-section" aria-label="Adjusted trajectory chart">

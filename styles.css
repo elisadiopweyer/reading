@@ -84,7 +84,7 @@ h2 {
 
 .explain {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   margin-top: 12px;
   padding: 14px 16px;
   border: 1px solid var(--line);
@@ -93,24 +93,9 @@ h2 {
   font-size: 13px;
 }
 
-.explain-row {
-  display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  gap: 14px;
-  align-items: baseline;
-}
-
-.explain-label {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
 .equations {
   display: grid;
-  gap: 7px;
+  gap: 8px;
   min-width: 0;
 }
 
@@ -127,21 +112,54 @@ h2 {
   font-weight: 500;
 }
 
-.equation-line code {
+.math-equation {
   display: block;
   overflow-x: auto;
-  padding: 6px 8px;
+  padding: 7px 9px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--surface);
   color: var(--text);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 12px;
-  line-height: 1.45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.5;
   white-space: nowrap;
 }
 
+.math-var {
+  font-style: italic;
+}
+
+.math-bar {
+  display: inline-block;
+  font-style: italic;
+  text-decoration: overline;
+  text-decoration-thickness: 1px;
+}
+
+.math-hat {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+}
+
+.math-hat::before {
+  position: absolute;
+  left: 50%;
+  top: -0.72em;
+  content: "^";
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78em;
+  transform: translateX(-50%);
+}
+
 .equation-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.plot-copy {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.45;
@@ -421,11 +439,6 @@ th {
   .controls {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .explain-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
   }
 
   .equation-line {
