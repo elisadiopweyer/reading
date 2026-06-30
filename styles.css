@@ -241,10 +241,29 @@ h2 {
   accent-color: #000;
 }
 
+.control-row {
+  border-color: #18181b;
+}
+
 .line-swatch {
   width: 26px;
   height: 0;
   border-top: 2px solid #111;
+}
+
+.fit-swatch {
+  position: relative;
+  width: 26px;
+  height: 12px;
+}
+
+.fit-swatch::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  content: "";
+  border-top: 1.5px dashed #111;
 }
 
 .swatch-pooled {
@@ -319,6 +338,13 @@ h2 {
 .data-line {
   fill: none;
   stroke-width: 2.4;
+}
+
+.fit-line {
+  fill: none;
+  opacity: 0.82;
+  stroke-dasharray: 3 6;
+  stroke-linecap: round;
 }
 
 .data-point {

@@ -31,6 +31,15 @@
 
         <fieldset class="series-picker">
           <legend>Series</legend>
+          <label class="check-row control-row">
+            <input type="checkbox" id="fitToggle" checked />
+            <span class="fit-swatch"></span>
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adds an ordinary least squares line for each selected score series."
+            >Best fit</span>
+          </label>
           <label class="check-row">
             <input type="checkbox" data-series="unadjusted" checked />
             <span class="line-swatch swatch-unadjusted"></span>

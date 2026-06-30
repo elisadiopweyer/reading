@@ -72,7 +72,8 @@ const SERIES = {
 
 const state = {
   period: "week",
-  selected: new Set(["unadjusted", "pooled_adjusted", "three_leg_adjusted"])
+  selected: new Set(["unadjusted", "pooled_adjusted", "three_leg_adjusted"]),
+  showFit: true
 };
 
 const svg = document.getElementById("chart");
@@ -105,6 +106,11 @@ document.querySelectorAll("[data-series]").forEach((input) => {
   });
 });
 
+document.getElementById("fitToggle").addEventListener("change", (event) => {
+  state.showFit = event.target.checked;
+  render();
+});
+
 window.addEventListener("resize", render);
 
 function render() {
@@ -113,7 +119,7 @@ function render() {
   chartTitle.textContent = state.period === "week" ? "Week" : "Month";
   summary.innerHTML = `${rows.length} periods<br>${totalStudents(rows)} observations`;
   modelEquation.innerHTML = equationMarkup(state.period);
-  renderChart(rows, selected);
+  renderChart(rows, selected, state.showFit);
   renderTable(rows, selected);
 }
 
@@ -195,7 +201,7 @@ function equationMarkup(period) {
   `;
 }
 
-function renderChart(rows, selected) {
+function renderChart(rows, selected, showFit) {
   const width = Math.max(720, svg.clientWidth || 960);
   const height = svg.clientHeight || 560;
   const margin = { top: 70, right: 34, bottom: 54, left: 82 };
@@ -210,7 +216,9 @@ function renderChart(rows, selected) {
     return;
   }
 
-  const values = rows.flatMap((row) => selected.map((key) => row[key]));
+  const fits = showFit ? Object.fromEntries(selected.map((key) => [key, linearFit(rows, key)])) : {};
+  const fitValues = Object.values(fits).flatMap((fit) => [fit.startY, fit.endY]);
+  const values = rows.flatMap((row) => selected.map((key) => row[key])).concat(fitValues);
   const rawMin = Math.min(...values);
   const rawMax = Math.max(...values);
   const spread = Math.max(0.08, rawMax - rawMin);
@@ -257,12 +265,25 @@ function renderChart(rows, selected) {
       point.setAttribute("stroke", def.stroke);
       svg.appendChild(point);
     });
+
+    if (showFit) {
+      const fit = fits[key];
+      const fitLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      fitLine.setAttribute("x1", x(fit.startX));
+      fitLine.setAttribute("y1", y(fit.startY));
+      fitLine.setAttribute("x2", x(fit.endX));
+      fitLine.setAttribute("y2", y(fit.endY));
+      fitLine.setAttribute("class", "fit-line");
+      fitLine.setAttribute("stroke", def.stroke);
+      fitLine.setAttribute("stroke-width", Math.max(1.1, def.width - 1.2));
+      svg.appendChild(fitLine);
+    }
   });
 
-  renderLegend(selected, margin.left, 28);
+  renderLegend(selected, margin.left, 28, showFit);
 }
 
-function renderLegend(selected, startX, startY) {
+function renderLegend(selected, startX, startY, showFit) {
   let xCursor = startX;
   selected.forEach((key) => {
     const def = SERIES[key];
@@ -270,6 +291,10 @@ function renderLegend(selected, startX, startY) {
     appendText(svg, xCursor + 36, startY + 4, def.label, "start", "axis");
     xCursor += Math.max(96, def.label.length * 8 + 56);
   });
+  if (showFit) {
+    appendLine(svg, xCursor, startY, xCursor + 28, startY, "fit-line", "#111", 1.3);
+    appendText(svg, xCursor + 36, startY + 4, "Best fit", "start", "axis");
+  }
 }
 
 function renderTable(rows, selected) {
@@ -309,6 +334,26 @@ function makeTicks(min, max, count) {
     ticks.push(min + step * i);
   }
   return ticks;
+}
+
+function linearFit(rows, key) {
+  const n = rows.length;
+  const sumX = rows.reduce((sum, row) => sum + row.period, 0);
+  const sumY = rows.reduce((sum, row) => sum + row[key], 0);
+  const sumXX = rows.reduce((sum, row) => sum + row.period * row.period, 0);
+  const sumXY = rows.reduce((sum, row) => sum + row.period * row[key], 0);
+  const denominator = n * sumXX - sumX * sumX;
+  const slope = denominator === 0 ? 0 : (n * sumXY - sumX * sumY) / denominator;
+  const intercept = sumY / n - slope * (sumX / n);
+  const startX = rows[0].period;
+  const endX = rows[rows.length - 1].period;
+
+  return {
+    startX,
+    endX,
+    startY: intercept + slope * startX,
+    endY: intercept + slope * endX
+  };
 }
 
 function appendLine(parent, x1, y1, x2, y2, className, stroke, width, dash) {
