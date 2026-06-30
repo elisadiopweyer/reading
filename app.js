@@ -29,44 +29,44 @@ const SERIES = {
   unadjusted: {
     label: "Unadjusted",
     tooltip: "Observed student-period average score before difficulty adjustment.",
-    stroke: "#111",
+    stroke: "#111827",
     width: 2.5,
     dash: ""
   },
   pooled_adjusted: {
     label: "Pooled D",
     tooltip: "Adjusted by holding the pooled text difficulty score D at its sample mean.",
-    stroke: "#111",
+    stroke: "#2563eb",
     width: 2.5,
-    dash: "7 5"
+    dash: ""
   },
   three_leg_adjusted: {
     label: "V/BK/M",
     tooltip: "Adjusted by holding vocabulary, background knowledge, and meaning difficulty at their sample means.",
-    stroke: "#111",
+    stroke: "#dc2626",
     width: 3.6,
     dash: ""
   },
   vocab_adjusted: {
     label: "Vocab",
     tooltip: "Adjusted by holding vocabulary difficulty at its sample mean.",
-    stroke: "#111",
+    stroke: "#7c3aed",
     width: 2.3,
-    dash: "2 5"
+    dash: ""
   },
   bk_adjusted: {
     label: "BK",
     tooltip: "Adjusted by holding background knowledge difficulty at its sample mean.",
-    stroke: "#111",
+    stroke: "#059669",
     width: 2.3,
-    dash: "12 4 2 4"
+    dash: ""
   },
   meaning_adjusted: {
     label: "Meaning",
     tooltip: "Adjusted by holding meaning difficulty at its sample mean.",
-    stroke: "#111",
+    stroke: "#d97706",
     width: 3.2,
-    dash: "5 4"
+    dash: ""
   }
 };
 
@@ -276,6 +276,7 @@ function renderChart(rows, selected, showFit) {
       fitLine.setAttribute("class", "fit-line");
       fitLine.setAttribute("stroke", def.stroke);
       fitLine.setAttribute("stroke-width", Math.max(1.1, def.width - 1.2));
+      fitLine.setAttribute("stroke-dasharray", "1 7");
       svg.appendChild(fitLine);
     }
   });
@@ -288,13 +289,12 @@ function renderLegend(selected, startX, startY, showFit) {
   selected.forEach((key) => {
     const def = SERIES[key];
     appendLine(svg, xCursor, startY, xCursor + 28, startY, "data-line", def.stroke, def.width, def.dash);
+    if (showFit) {
+      appendLine(svg, xCursor, startY + 8, xCursor + 28, startY + 8, "fit-line", def.stroke, 1.4, "1 7");
+    }
     appendText(svg, xCursor + 36, startY + 4, def.label, "start", "axis");
     xCursor += Math.max(96, def.label.length * 8 + 56);
   });
-  if (showFit) {
-    appendLine(svg, xCursor, startY, xCursor + 28, startY, "fit-line", "#111", 1.3);
-    appendText(svg, xCursor + 36, startY + 4, "Best fit", "start", "axis");
-  }
 }
 
 function renderTable(rows, selected) {

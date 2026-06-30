@@ -248,7 +248,7 @@ h2 {
 .line-swatch {
   width: 26px;
   height: 0;
-  border-top: 2px solid #111;
+  border-top: 3px solid #111827;
 }
 
 .fit-swatch {
@@ -267,24 +267,24 @@ h2 {
 }
 
 .swatch-pooled {
-  border-top-style: dashed;
+  border-top-color: #2563eb;
 }
 
 .swatch-three {
+  border-top-color: #dc2626;
   border-top-width: 3px;
 }
 
 .swatch-vocab {
-  border-top-style: dotted;
+  border-top-color: #7c3aed;
 }
 
 .swatch-bk {
-  border-top-style: double;
-  height: 4px;
+  border-top-color: #059669;
 }
 
 .swatch-meaning {
-  border-top-style: dashed;
+  border-top-color: #d97706;
   border-top-width: 3px;
 }
 
@@ -343,7 +343,7 @@ h2 {
 .fit-line {
   fill: none;
   opacity: 0.82;
-  stroke-dasharray: 3 6;
+  stroke-dasharray: 1 7;
   stroke-linecap: round;
 }
 
