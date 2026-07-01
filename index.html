@@ -29,8 +29,7 @@
           <button class="segment" type="button" data-period="month" aria-selected="false">Month</button>
         </div>
 
-        <fieldset class="series-picker">
-          <legend>Series</legend>
+        <div class="toggle-stack">
           <label class="check-row control-row">
             <input type="checkbox" id="fitToggle" checked />
             <span class="fit-swatch"></span>
@@ -40,61 +39,10 @@
               data-tooltip="Adds an ordinary least squares line for each selected score series."
             >Best fit</span>
           </label>
-          <label class="check-row">
-            <input type="checkbox" data-series="unadjusted" checked />
-            <span class="line-swatch swatch-unadjusted"></span>
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Observed student-period average score before difficulty adjustment."
-            >Unadjusted</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" data-series="pooled_adjusted" checked />
-            <span class="line-swatch swatch-pooled"></span>
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Adjusted by holding the pooled text difficulty score D at its sample mean."
-            >Pooled D</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" data-series="three_leg_adjusted" checked />
-            <span class="line-swatch swatch-three"></span>
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Adjusted by holding vocabulary, background knowledge, and meaning difficulty at their sample means."
-            >V/BK/M</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" data-series="vocab_adjusted" />
-            <span class="line-swatch swatch-vocab"></span>
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Adjusted by holding vocabulary difficulty at its sample mean."
-            >Vocab</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" data-series="bk_adjusted" />
-            <span class="line-swatch swatch-bk"></span>
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Adjusted by holding background knowledge difficulty at its sample mean."
-            >BK</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox" data-series="meaning_adjusted" />
-            <span class="line-swatch swatch-meaning"></span>
-            <span
-              class="hint"
-              tabindex="0"
-              data-tooltip="Adjusted by holding meaning difficulty at its sample mean."
-            >Meaning</span>
-          </label>
-        </fieldset>
+          <fieldset class="series-picker" id="seriesPicker">
+            <legend>Scoring methods</legend>
+          </fieldset>
+        </div>
       </section>
 
       <section class="explain" aria-label="What is plotted">

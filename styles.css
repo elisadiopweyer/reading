@@ -72,7 +72,7 @@ h2 {
 
 .controls {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 22px;
   margin-top: 18px;
@@ -80,6 +80,14 @@ h2 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--bg);
+}
+
+.toggle-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
 }
 
 .explain {
@@ -233,6 +241,12 @@ h2 {
   font-size: 13px;
   cursor: pointer;
   user-select: none;
+}
+
+.check-row.disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.58;
 }
 
 .check-row input {

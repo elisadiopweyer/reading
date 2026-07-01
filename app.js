@@ -1,4 +1,4 @@
-const DATA = {
+const FALLBACK_DATA = {
   week: [
     { period: 1, label: "Week 1", n: 29, unadjusted: 0.55441093, pooled_adjusted: 0.55800241, three_leg_adjusted: 0.55665523, vocab_adjusted: 0.55329818, bk_adjusted: 0.55060691, meaning_adjusted: 0.55162829 },
     { period: 2, label: "Week 2", n: 30, unadjusted: 0.52643305, pooled_adjusted: 0.50442761, three_leg_adjusted: 0.49553809, vocab_adjusted: 0.49068972, bk_adjusted: 0.5156424, meaning_adjusted: 0.52332658 },
@@ -31,50 +31,86 @@ const SERIES = {
     tooltip: "Observed student-period average score before difficulty adjustment.",
     stroke: "#111827",
     width: 2.5,
-    dash: ""
+    dash: "",
+    group: "observed"
   },
   pooled_adjusted: {
     label: "Pooled D",
-    tooltip: "Adjusted by holding the pooled text difficulty score D at its sample mean.",
+    tooltip: "Adjusted by holding the pooled V/BK/M text difficulty score D at its sample mean.",
     stroke: "#2563eb",
     width: 2.5,
-    dash: ""
+    dash: "",
+    group: "vbm"
   },
   three_leg_adjusted: {
     label: "V/BK/M",
     tooltip: "Adjusted by holding vocabulary, background knowledge, and meaning difficulty at their sample means.",
     stroke: "#dc2626",
     width: 3.6,
-    dash: ""
+    dash: "",
+    group: "vbm"
   },
   vocab_adjusted: {
     label: "Vocab",
     tooltip: "Adjusted by holding vocabulary difficulty at its sample mean.",
     stroke: "#7c3aed",
     width: 2.3,
-    dash: ""
+    dash: "",
+    group: "vbm"
   },
   bk_adjusted: {
     label: "BK",
     tooltip: "Adjusted by holding background knowledge difficulty at its sample mean.",
     stroke: "#059669",
     width: 2.3,
-    dash: ""
+    dash: "",
+    group: "vbm"
   },
   meaning_adjusted: {
     label: "Meaning",
     tooltip: "Adjusted by holding meaning difficulty at its sample mean.",
     stroke: "#d97706",
     width: 3.2,
-    dash: ""
+    dash: "",
+    group: "vbm"
+  },
+  textstat_adjusted: {
+    label: "Textstat",
+    tooltip: "Adjusted by holding the textstat readability complexity score at its sample mean.",
+    stroke: "#0891b2",
+    width: 2.7,
+    dash: "",
+    group: "external"
+  },
+  learning_commons_adjusted: {
+    label: "Learning Commons",
+    tooltip: "Adjusted by holding the Learning Commons evaluator score at its sample mean.",
+    stroke: "#be185d",
+    width: 2.7,
+    dash: "",
+    group: "external"
+  },
+  czi_adjusted: {
+    label: "CZI",
+    tooltip: "Adjusted by holding the CZI text complexity score at its sample mean.",
+    stroke: "#4f46e5",
+    width: 2.7,
+    dash: "",
+    group: "external"
   }
 };
 
+const DYNAMIC_COLORS = ["#0f766e", "#9333ea", "#ea580c", "#475569", "#16a34a", "#c2410c"];
+const DEFAULT_SELECTED = ["unadjusted", "pooled_adjusted", "three_leg_adjusted"];
+
 const state = {
   period: "week",
-  selected: new Set(["unadjusted", "pooled_adjusted", "three_leg_adjusted"]),
+  selected: new Set(DEFAULT_SELECTED),
   showFit: true
 };
+
+let DATA = FALLBACK_DATA;
+let dataSource = "Embedded V/B/M fallback";
 
 const svg = document.getElementById("chart");
 const summary = document.getElementById("summary");
@@ -82,6 +118,7 @@ const chartTitle = document.getElementById("chartTitle");
 const modelEquation = document.getElementById("modelEquation");
 const tableHead = document.getElementById("tableHead");
 const tableBody = document.getElementById("tableBody");
+const seriesPicker = document.getElementById("seriesPicker");
 
 document.querySelectorAll("[data-period]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -91,17 +128,7 @@ document.querySelectorAll("[data-period]").forEach((button) => {
       node.classList.toggle("active", isActive);
       node.setAttribute("aria-selected", String(isActive));
     });
-    render();
-  });
-});
-
-document.querySelectorAll("[data-series]").forEach((input) => {
-  input.addEventListener("change", () => {
-    if (input.checked) {
-      state.selected.add(input.dataset.series);
-    } else {
-      state.selected.delete(input.dataset.series);
-    }
+    renderSeriesPicker();
     render();
   });
 });
@@ -113,23 +140,108 @@ document.getElementById("fitToggle").addEventListener("change", (event) => {
 
 window.addEventListener("resize", render);
 
+async function init() {
+  await loadStataExport();
+  renderSeriesPicker();
+  render();
+}
+
+async function loadStataExport() {
+  try {
+    const response = await fetch("./data/trajectory_scores_by_method.csv", { cache: "no-store" });
+    if (!response.ok) return;
+    const text = await response.text();
+    const longRows = parseCsv(text);
+    const nextData = buildWideData(longRows);
+    if (nextData.week.length || nextData.month.length) {
+      DATA = nextData;
+      dataSource = "Stata export";
+      constrainSelected();
+    }
+  } catch (error) {
+    dataSource = "Embedded V/B/M fallback";
+  }
+}
+
+function renderSeriesPicker() {
+  const available = availableSeries(state.period);
+  constrainSelected();
+  seriesPicker.innerHTML = "";
+
+  if (!available.length) {
+    const empty = document.createElement("span");
+    empty.className = "check-row disabled";
+    empty.textContent = "No series";
+    seriesPicker.appendChild(empty);
+    return;
+  }
+
+  available.forEach((key) => {
+    const def = SERIES[key];
+    const label = document.createElement("label");
+    label.className = "check-row";
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.dataset.series = key;
+    input.checked = state.selected.has(key);
+    input.addEventListener("change", () => {
+      if (input.checked) {
+        state.selected.add(key);
+      } else {
+        state.selected.delete(key);
+      }
+      render();
+    });
+
+    const swatch = document.createElement("span");
+    swatch.className = "line-swatch";
+    swatch.style.borderTopColor = def.stroke;
+    swatch.style.borderTopWidth = `${Math.max(2, def.width)}px`;
+    if (def.dash) swatch.style.borderTopStyle = "dashed";
+
+    const text = document.createElement("span");
+    text.className = "hint";
+    text.tabIndex = 0;
+    text.dataset.tooltip = def.tooltip;
+    text.textContent = def.label;
+
+    label.append(input, swatch, text);
+    seriesPicker.appendChild(label);
+  });
+}
+
 function render() {
-  const rows = DATA[state.period];
-  const selected = [...state.selected];
+  const rows = DATA[state.period] || [];
+  const selected = [...state.selected].filter((key) => hasFiniteValue(rows, key));
   chartTitle.textContent = state.period === "week" ? "Week" : "Month";
-  summary.innerHTML = `${rows.length} periods<br>${totalStudents(rows)} observations`;
-  modelEquation.innerHTML = equationMarkup(state.period);
+  summary.innerHTML = `${rows.length} periods<br>${totalObservations(rows)} student-period rows<br>${dataSource}`;
+  modelEquation.innerHTML = equationMarkup(state.period, selected);
   renderChart(rows, selected, state.showFit);
   renderTable(rows, selected);
 }
 
-function equationMarkup(period) {
+function equationMarkup(period, selected) {
   const suffix = period === "week" ? "iw" : "im";
   const periodIndex = period === "week" ? "w" : "m";
   const periodName = period === "week" ? "relative week" : "relative month";
+  const adjusted = selected.filter((key) => key !== "unadjusted").map((key) => SERIES[key].label);
+  const adjustedCopy = adjusted.length ? adjusted.join(", ") : "selected scoring method";
+  const externalSelected = selected.some((key) => SERIES[key]?.group === "external");
+
   return `
     <div class="equation-line">
-      <span class="equation-name">Pooled</span>
+      <span class="equation-name">Adjustment</span>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sup>adj</sup><sub>${suffix}</sub>
+        =
+        <span class="math-var">Score</span><sub>${suffix}</sub>
+        -
+        <span class="math-hat">β</span><sub>X</sub>(<span class="math-var">X</span><sub>${suffix}</sub> - <span class="math-bar">X</span>)
+      </div>
+    </div>
+    <div class="equation-line">
+      <span class="equation-name">Period model</span>
       <div class="math-equation">
         <span class="math-var">Score</span><sub>${suffix}</sub>
         =
@@ -137,54 +249,13 @@ function equationMarkup(period) {
         +
         <span class="math-var">γ</span><sub>${periodIndex}</sub>
         +
-        <span class="math-var">β</span><span class="math-var">D</span><sub>${suffix}</sub>
+        <span class="math-var">β</span><sub>X</sub><span class="math-var">X</span><sub>${suffix}</sub>
         +
         <span class="math-var">ε</span><sub>${suffix}</sub>
-      </div>
-    </div>
-    <div class="equation-line">
-      <span class="equation-name">Three-leg</span>
-      <div class="math-equation">
-        <span class="math-var">Score</span><sub>${suffix}</sub>
-        =
-        <span class="math-var">α</span>
-        +
-        <span class="math-var">γ</span><sub>${periodIndex}</sub>
-        +
-        <span class="math-var">β</span><sub>V</sub><span class="math-var">V</span><sub>${suffix}</sub>
-        +
-        <span class="math-var">β</span><sub>B</sub><span class="math-var">B</span><sub>${suffix}</sub>
-        +
-        <span class="math-var">β</span><sub>M</sub><span class="math-var">M</span><sub>${suffix}</sub>
-        +
-        <span class="math-var">ε</span><sub>${suffix}</sub>
-      </div>
-    </div>
-    <div class="equation-line">
-      <span class="equation-name">Adjusted D</span>
-      <div class="math-equation">
-        <span class="math-var">Score</span><sup>adj</sup><sub>${suffix}</sub>
-        =
-        <span class="math-var">Score</span><sub>${suffix}</sub>
-        -
-        <span class="math-hat">β</span>(<span class="math-var">D</span><sub>${suffix}</sub> - <span class="math-bar">D</span>)
-      </div>
-    </div>
-    <div class="equation-line">
-      <span class="equation-name">Adjusted V/BK/M</span>
-      <div class="math-equation">
-        <span class="math-var">Score</span><sup>adj</sup><sub>${suffix}</sub>
-        =
-        <span class="math-var">Score</span><sub>${suffix}</sub>
-        -
-        <span class="math-hat">β</span><sub>V</sub>(<span class="math-var">V</span><sub>${suffix}</sub> - <span class="math-bar">V</span>)
-        -
-        <span class="math-hat">β</span><sub>B</sub>(<span class="math-var">B</span><sub>${suffix}</sub> - <span class="math-bar">B</span>)
-        -
-        <span class="math-hat">β</span><sub>M</sub>(<span class="math-var">M</span><sub>${suffix}</sub> - <span class="math-bar">M</span>)
       </div>
     </div>
     <div class="equation-note">
+      Showing ${escapeHtml(adjustedCopy)}. Each adjusted line removes the part of the student-period score predicted by that scoring method's difficulty measure and puts difficulty back at the sample mean.
       <span
         class="hint"
         tabindex="0"
@@ -197,6 +268,7 @@ function equationMarkup(period) {
         data-tooltip="A period indicator. This lets each ${periodName} have its own baseline level."
       >γ<sub>${periodIndex}</sub></span>
       is the period term.
+      ${externalSelected ? "External-score lines use the same adjustment formula as V/B/M, with their own scalar score." : ""}
     </div>
   `;
 }
@@ -216,9 +288,19 @@ function renderChart(rows, selected, showFit) {
     return;
   }
 
-  const fits = showFit ? Object.fromEntries(selected.map((key) => [key, linearFit(rows, key)])) : {};
+  const fits = showFit ? Object.fromEntries(
+    selected
+      .map((key) => [key, linearFit(rows, key)])
+      .filter(([, fit]) => fit)
+  ) : {};
   const fitValues = Object.values(fits).flatMap((fit) => [fit.startY, fit.endY]);
-  const values = rows.flatMap((row) => selected.map((key) => row[key])).concat(fitValues);
+  const values = rows.flatMap((row) => selected.map((key) => row[key]).filter(Number.isFinite)).concat(fitValues);
+
+  if (!values.length) {
+    appendText(svg, width / 2, height / 2, "No finite values for selected series", "middle", "axis");
+    return;
+  }
+
   const rawMin = Math.min(...values);
   const rawMax = Math.max(...values);
   const spread = Math.max(0.08, rawMax - rawMin);
@@ -247,7 +329,10 @@ function renderChart(rows, selected, showFit) {
 
   selected.forEach((key, index) => {
     const def = SERIES[key];
-    const path = rows.map((row, i) => `${i === 0 ? "M" : "L"} ${x(row.period)} ${y(row[key])}`).join(" ");
+    const points = rows.filter((row) => Number.isFinite(row[key]));
+    if (!points.length) return;
+
+    const path = points.map((row, i) => `${i === 0 ? "M" : "L"} ${x(row.period)} ${y(row[key])}`).join(" ");
     const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
     line.setAttribute("d", path);
     line.setAttribute("class", "data-line");
@@ -256,7 +341,7 @@ function renderChart(rows, selected, showFit) {
     if (def.dash) line.setAttribute("stroke-dasharray", def.dash);
     svg.appendChild(line);
 
-    rows.forEach((row) => {
+    points.forEach((row) => {
       const point = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       point.setAttribute("cx", x(row.period));
       point.setAttribute("cy", y(row[key]));
@@ -266,7 +351,7 @@ function renderChart(rows, selected, showFit) {
       svg.appendChild(point);
     });
 
-    if (showFit) {
+    if (showFit && fits[key]) {
       const fit = fits[key];
       const fitLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
       fitLine.setAttribute("x1", x(fit.startX));
@@ -310,7 +395,7 @@ function renderTable(rows, selected) {
       return `<tr>${columns
         .map((column) => {
           const value = row[column.key];
-          const text = typeof value === "number" && column.key !== "n" ? value.toFixed(3) : value;
+          const text = typeof value === "number" && column.key !== "n" ? value.toFixed(3) : value ?? "";
           return `<td>${text}</td>`;
         })
         .join("")}</tr>`;
@@ -320,11 +405,110 @@ function renderTable(rows, selected) {
 
 function headerLabel(column) {
   if (!column.tooltip) return column.label;
-  return `<span class="hint" tabindex="0" data-tooltip="${column.tooltip}">${column.label}</span>`;
+  return `<span class="hint" tabindex="0" data-tooltip="${escapeAttr(column.tooltip)}">${column.label}</span>`;
 }
 
-function totalStudents(rows) {
-  return rows.reduce((sum, row) => sum + row.n, 0);
+function parseCsv(text) {
+  const lines = text.trim().split(/\r?\n/).filter(Boolean);
+  if (lines.length < 2) return [];
+  const headers = parseCsvLine(lines[0]);
+  return lines.slice(1).map((line) => {
+    const cells = parseCsvLine(line);
+    return Object.fromEntries(headers.map((header, i) => [header, cells[i] ?? ""]));
+  });
+}
+
+function parseCsvLine(line) {
+  const cells = [];
+  let cell = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i += 1) {
+    const char = line[i];
+    const next = line[i + 1];
+    if (char === '"' && inQuotes && next === '"') {
+      cell += '"';
+      i += 1;
+    } else if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === "," && !inQuotes) {
+      cells.push(cell);
+      cell = "";
+    } else {
+      cell += char;
+    }
+  }
+  cells.push(cell);
+  return cells;
+}
+
+function buildWideData(longRows) {
+  const maps = { week: new Map(), month: new Map() };
+  longRows.forEach((record) => {
+    const periodType = record.period_type;
+    const period = Number(record.period);
+    const score = Number(record.score);
+    const seriesId = record.series_id;
+    if (!maps[periodType] || !Number.isFinite(period) || !Number.isFinite(score) || !seriesId) return;
+
+    ensureSeriesDefinition(seriesId, record);
+    const map = maps[periodType];
+    const row = map.get(period) || {
+      period,
+      label: record.period_label || `${periodType === "week" ? "Week" : "Month"} ${period}`,
+      n: 0
+    };
+    row[seriesId] = score;
+    row[`${seriesId}_n`] = Number(record.n_students);
+    row[`${seriesId}_mean_difficulty`] = Number(record.mean_difficulty);
+    row.n = Math.max(row.n || 0, Number(record.n_students) || 0);
+    map.set(period, row);
+  });
+
+  return {
+    week: [...maps.week.values()].sort((a, b) => a.period - b.period),
+    month: [...maps.month.values()].sort((a, b) => a.period - b.period)
+  };
+}
+
+function ensureSeriesDefinition(seriesId, record) {
+  if (SERIES[seriesId]) {
+    if (record.series_label) SERIES[seriesId].label = record.series_label;
+    return;
+  }
+  const dynamicIndex = Object.keys(SERIES).length % DYNAMIC_COLORS.length;
+  const label = record.series_label || seriesId.replace(/_/g, " ");
+  SERIES[seriesId] = {
+    label,
+    tooltip: `Adjusted by holding ${label} difficulty at its sample mean.`,
+    stroke: DYNAMIC_COLORS[dynamicIndex],
+    width: 2.7,
+    dash: "",
+    group: record.series_group || "external"
+  };
+}
+
+function availableSeries(period) {
+  const rows = DATA[period] || [];
+  return Object.keys(SERIES).filter((key) => hasFiniteValue(rows, key));
+}
+
+function hasFiniteValue(rows, key) {
+  return rows.some((row) => Number.isFinite(row[key]));
+}
+
+function constrainSelected() {
+  const available = new Set(availableSeries(state.period));
+  [...state.selected].forEach((key) => {
+    if (!available.has(key)) state.selected.delete(key);
+  });
+  if (!state.selected.size && available.size) {
+    DEFAULT_SELECTED.filter((key) => available.has(key)).forEach((key) => state.selected.add(key));
+    if (!state.selected.size) state.selected.add([...available][0]);
+  }
+}
+
+function totalObservations(rows) {
+  return rows.reduce((sum, row) => sum + (Number(row.n) || 0), 0);
 }
 
 function makeTicks(min, max, count) {
@@ -337,16 +521,18 @@ function makeTicks(min, max, count) {
 }
 
 function linearFit(rows, key) {
-  const n = rows.length;
-  const sumX = rows.reduce((sum, row) => sum + row.period, 0);
-  const sumY = rows.reduce((sum, row) => sum + row[key], 0);
-  const sumXX = rows.reduce((sum, row) => sum + row.period * row.period, 0);
-  const sumXY = rows.reduce((sum, row) => sum + row.period * row[key], 0);
+  const points = rows.filter((row) => Number.isFinite(row[key]));
+  const n = points.length;
+  if (n < 2) return null;
+  const sumX = points.reduce((sum, row) => sum + row.period, 0);
+  const sumY = points.reduce((sum, row) => sum + row[key], 0);
+  const sumXX = points.reduce((sum, row) => sum + row.period * row.period, 0);
+  const sumXY = points.reduce((sum, row) => sum + row.period * row[key], 0);
   const denominator = n * sumXX - sumX * sumX;
   const slope = denominator === 0 ? 0 : (n * sumXY - sumX * sumY) / denominator;
   const intercept = sumY / n - slope * (sumX / n);
-  const startX = rows[0].period;
-  const endX = rows[rows.length - 1].period;
+  const startX = points[0].period;
+  const endX = points[points.length - 1].period;
 
   return {
     startX,
@@ -382,4 +568,15 @@ function appendText(parent, x, y, text, anchor, className, rotate) {
   return node;
 }
 
-render();
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function escapeAttr(text) {
+  return escapeHtml(text).replace(/"/g, "&quot;");
+}
+
+init();
