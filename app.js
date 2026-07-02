@@ -74,6 +74,14 @@ const SERIES = {
     dash: "",
     group: "vbm"
   },
+  genre_adjusted: {
+    label: "Genre-adjusted",
+    tooltip: "Adjusted by holding V/BK/M difficulty plus literary and fiction shares at their sample means.",
+    stroke: "#0f766e",
+    width: 3,
+    dash: "",
+    group: "controls"
+  },
   textstat_adjusted: {
     label: "Textstat",
     tooltip: "Adjusted by holding the textstat readability complexity score at its sample mean.",
@@ -228,6 +236,7 @@ function equationMarkup(period, selected) {
   const adjusted = selected.filter((key) => key !== "unadjusted").map((key) => SERIES[key].label);
   const adjustedCopy = adjusted.length ? adjusted.join(", ") : "selected scoring method";
   const externalSelected = selected.some((key) => SERIES[key]?.group === "external");
+  const controlsSelected = selected.some((key) => SERIES[key]?.group === "controls");
 
   return `
     <div class="equation-line">
@@ -269,6 +278,7 @@ function equationMarkup(period, selected) {
       >γ<sub>${periodIndex}</sub></span>
       is the period term.
       ${externalSelected ? "External-score lines use the same adjustment formula as V/B/M, with their own scalar score." : ""}
+      ${controlsSelected ? "Genre-adjusted holds V/BK/M difficulty, literary share, and fiction share at their sample means." : ""}
     </div>
   `;
 }
