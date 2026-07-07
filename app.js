@@ -102,6 +102,7 @@ const state = {
 };
 
 let DATA = EMPTY_DATA;
+let BETAS = {};
 let dataSource = "No data loaded — run the Stata exporter";
 
 const svg = document.getElementById("chart");
@@ -152,6 +153,18 @@ async function loadStataExport() {
     }
   } catch (error) {
     dataSource = "No data loaded — run the Stata exporter";
+  }
+
+  try {
+    const betaResponse = await fetch("./data/trajectory_betas.csv", { cache: "no-store" });
+    if (betaResponse.ok) {
+      BETAS = {};
+      parseCsv(await betaResponse.text()).forEach((row) => {
+        (BETAS[row.series_id] = BETAS[row.series_id] || []).push(row);
+      });
+    }
+  } catch (error) {
+    /* coefficient table is optional */
   }
 }
 
@@ -264,7 +277,67 @@ function equationMarkup(period, selected) {
       ${externalSelected ? "External-score lines use the same adjustment formula as V/B/M, with their own scalar score." : ""}
       ${controlsSelected ? "Genre-adjusted holds V/BK/M difficulty, literary share, and fiction share at their sample means." : ""}
     </div>
+    ${betaTableMarkup(selected)}
   `;
+}
+
+function betaTableMarkup(selected) {
+  const withBetas = selected.filter((key) => Array.isArray(BETAS[key]) && BETAS[key].length);
+  if (!withBetas.length) return "";
+
+  const fmt = (value, digits) => {
+    const num = Number.parseFloat(value);
+    return Number.isFinite(num) ? num.toFixed(digits) : "—";
+  };
+  const fmtP = (value) => {
+    const num = Number.parseFloat(value);
+    if (!Number.isFinite(num)) return "—";
+    return num < 0.001 ? "&lt;0.001" : num.toFixed(3);
+  };
+
+  const bodyRows = withBetas
+    .map((key) => {
+      const def = SERIES[key];
+      const terms = BETAS[key];
+      return terms
+        .map((term, index) => `
+          <tr>
+            ${index === 0
+              ? `<td class="beta-series" rowspan="${terms.length}" style="box-shadow: inset 3px 0 0 ${def.stroke}">${escapeHtml(def.label)}</td>`
+              : ""}
+            <td>${escapeHtml(term.param_label)}</td>
+            <td class="num">${fmt(term.coef, 4)}</td>
+            <td class="num">${fmt(term.se, 4)}</td>
+            <td class="num">${fmtP(term.pvalue)}</td>
+            <td class="num">${fmt(term.xbar, 2)}</td>
+          </tr>`)
+        .join("");
+    })
+    .join("");
+
+  return `
+    <div class="beta-block">
+      <div class="beta-title">How the selected adjusted lines are built</div>
+      <table class="beta-table">
+        <thead>
+          <tr>
+            <th>Series</th>
+            <th>Difficulty term X</th>
+            <th>β̂</th>
+            <th>SE</th>
+            <th>p</th>
+            <th>X̄ (mean)</th>
+          </tr>
+        </thead>
+        <tbody>${bodyRows}</tbody>
+      </table>
+      <div class="beta-note">
+        Each adjusted line subtracts β̂·(X<sub>iw</sub> − X̄) for every term shown, where β̂ comes from the
+        weekly regression of student-week scores on week indicators plus that series' difficulty term(s)
+        (standard errors clustered by student). A negative β̂ means harder texts predict lower scores, so
+        weeks with harder-than-average texts are adjusted upward.
+      </div>
+    </div>`;
 }
 
 function renderChart(rows, selected, showFit) {

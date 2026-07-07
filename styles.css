@@ -629,3 +629,53 @@ th {
   max-width: 420px;
   white-space: normal;
 }
+
+/* Coefficient table under the equations */
+.beta-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.beta-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.beta-table {
+  border-collapse: collapse;
+  font-size: 12px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.beta-table th,
+.beta-table td {
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.beta-table th {
+  font-weight: 600;
+  background: #fafafa;
+}
+
+.beta-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.beta-table td.beta-series {
+  font-weight: 600;
+}
+
+.beta-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  margin-top: 8px;
+  max-width: 640px;
+}
