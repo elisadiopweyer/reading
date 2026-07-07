@@ -1,29 +1,7 @@
-const FALLBACK_DATA = {
-  week: [
-    { period: 1, label: "Week 1", n: 29, unadjusted: 0.55441093, pooled_adjusted: 0.55800241, three_leg_adjusted: 0.55665523, vocab_adjusted: 0.55329818, bk_adjusted: 0.55060691, meaning_adjusted: 0.55162829 },
-    { period: 2, label: "Week 2", n: 30, unadjusted: 0.52643305, pooled_adjusted: 0.50442761, three_leg_adjusted: 0.49553809, vocab_adjusted: 0.49068972, bk_adjusted: 0.5156424, meaning_adjusted: 0.52332658 },
-    { period: 3, label: "Week 3", n: 28, unadjusted: 0.54248166, pooled_adjusted: 0.52131706, three_leg_adjusted: 0.51070881, vocab_adjusted: 0.50481677, bk_adjusted: 0.53499025, meaning_adjusted: 0.54025847 },
-    { period: 4, label: "Week 4", n: 27, unadjusted: 0.5922612, pooled_adjusted: 0.57125705, three_leg_adjusted: 0.56628036, vocab_adjusted: 0.5655356, bk_adjusted: 0.58388996, meaning_adjusted: 0.59111732 },
-    { period: 5, label: "Week 5", n: 30, unadjusted: 0.55032998, pooled_adjusted: 0.55312449, three_leg_adjusted: 0.56135082, vocab_adjusted: 0.57022297, bk_adjusted: 0.55713773, meaning_adjusted: 0.55510962 },
-    { period: 6, label: "Week 6", n: 24, unadjusted: 0.51591492, pooled_adjusted: 0.49340886, three_leg_adjusted: 0.48213679, vocab_adjusted: 0.47569719, bk_adjusted: 0.50725013, meaning_adjusted: 0.5132345 },
-    { period: 7, label: "Week 7", n: 29, unadjusted: 0.5203895, pooled_adjusted: 0.49413753, three_leg_adjusted: 0.4834992, vocab_adjusted: 0.47950825, bk_adjusted: 0.51450622, meaning_adjusted: 0.51986331 },
-    { period: 8, label: "Week 8", n: 28, unadjusted: 0.59353578, pooled_adjusted: 0.54946297, three_leg_adjusted: 0.54172641, vocab_adjusted: 0.55129862, bk_adjusted: 0.60863173, meaning_adjusted: 0.60676146 },
-    { period: 9, label: "Week 9", n: 27, unadjusted: 0.52919549, pooled_adjusted: 0.49998268, three_leg_adjusted: 0.49062037, vocab_adjusted: 0.48637372, bk_adjusted: 0.51425976, meaning_adjusted: 0.52544737 },
-    { period: 10, label: "Week 10", n: 25, unadjusted: 0.66854775, pooled_adjusted: 0.66188246, three_leg_adjusted: 0.65875095, vocab_adjusted: 0.65532029, bk_adjusted: 0.65938401, meaning_adjusted: 0.66479963 },
-    { period: 11, label: "Week 11", n: 28, unadjusted: 0.53236055, pooled_adjusted: 0.65394258, three_leg_adjusted: 0.68642461, vocab_adjusted: 0.6879186, bk_adjusted: 0.55647302, meaning_adjusted: 0.52886242 },
-    { period: 12, label: "Week 12", n: 17, unadjusted: 0.61147636, pooled_adjusted: 0.71256286, three_leg_adjusted: 0.75418651, vocab_adjusted: 0.77316242, bk_adjusted: 0.64551651, meaning_adjusted: 0.61887372 }
-  ],
-  month: [
-    { period: 1, label: "Month 1", n: 34, unadjusted: 0.55205268, pooled_adjusted: 0.53764743, three_leg_adjusted: 0.53378683, vocab_adjusted: 0.52977693, bk_adjusted: 0.54124242, meaning_adjusted: 0.55188185 },
-    { period: 2, label: "Month 2", n: 31, unadjusted: 0.54675144, pooled_adjusted: 0.53219521, three_leg_adjusted: 0.52834678, vocab_adjusted: 0.52124965, bk_adjusted: 0.54213977, meaning_adjusted: 0.5467487 },
-    { period: 3, label: "Month 3", n: 28, unadjusted: 0.55204159, pooled_adjusted: 0.57467979, three_leg_adjusted: 0.57704753, vocab_adjusted: 0.58424628, bk_adjusted: 0.55526233, meaning_adjusted: 0.55178916 },
-    { period: 4, label: "Month 4", n: 27, unadjusted: 0.67509884, pooled_adjusted: 0.7043457, three_leg_adjusted: 0.70825195, vocab_adjusted: 0.71569514, bk_adjusted: 0.68574423, meaning_adjusted: 0.67498046 },
-    { period: 5, label: "Month 5", n: 27, unadjusted: 0.66009128, pooled_adjusted: 0.662117, three_leg_adjusted: 0.6631555, vocab_adjusted: 0.66459322, bk_adjusted: 0.66145116, meaning_adjusted: 0.66013181 },
-    { period: 6, label: "Month 6", n: 27, unadjusted: 0.66976887, pooled_adjusted: 0.63147497, three_leg_adjusted: 0.63366824, vocab_adjusted: 0.63673592, bk_adjusted: 0.6536113, meaning_adjusted: 0.67017138 },
-    { period: 7, label: "Month 7", n: 23, unadjusted: 0.53076386, pooled_adjusted: 0.49244422, three_leg_adjusted: 0.49464959, vocab_adjusted: 0.49773091, bk_adjusted: 0.5146063, meaning_adjusted: 0.53116739 },
-    { period: 8, label: "Month 8", n: 27, unadjusted: 0.67345399, pooled_adjusted: 0.72449392, three_leg_adjusted: 0.7223019, vocab_adjusted: 0.71346116, bk_adjusted: 0.70693779, meaning_adjusted: 0.67326558 }
-  ]
-};
+/* Data comes from ./data/trajectory_scores_by_method.csv (Stata export).
+   There is intentionally no embedded fallback: stale embedded numbers drift
+   from the pipeline, so a missing CSV shows an explicit error instead. */
+const EMPTY_DATA = { week: [], month: [] };
 
 const SERIES = {
   unadjusted: {
@@ -117,8 +95,8 @@ const state = {
   showFit: true
 };
 
-let DATA = FALLBACK_DATA;
-let dataSource = "Embedded V/B/M fallback";
+let DATA = EMPTY_DATA;
+let dataSource = "No data loaded — run the Stata exporter";
 
 const svg = document.getElementById("chart");
 const summary = document.getElementById("summary");
@@ -167,7 +145,7 @@ async function loadStataExport() {
       constrainSelected();
     }
   } catch (error) {
-    dataSource = "Embedded V/B/M fallback";
+    dataSource = "No data loaded — run the Stata exporter";
   }
 }
 
@@ -222,7 +200,7 @@ function renderSeriesPicker() {
 function render() {
   const rows = DATA[state.period] || [];
   const selected = [...state.selected].filter((key) => hasFiniteValue(rows, key));
-  chartTitle.textContent = state.period === "week" ? "Week" : "Month";
+  chartTitle.textContent = "Weekly Score Trajectory";
   summary.innerHTML = `${rows.length} periods<br>${totalObservations(rows)} student-period rows<br>${dataSource}`;
   modelEquation.innerHTML = equationMarkup(state.period, selected);
   renderChart(rows, selected, state.showFit);

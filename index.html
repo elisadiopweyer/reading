@@ -19,70 +19,139 @@
             >Adjusted</span>
             for Text Difficulty
           </h1>
+          <div class="segmented view-switch" role="tablist" aria-label="View">
+            <button class="segment active" type="button" data-view="research" aria-selected="true">Research</button>
+            <button class="segment" type="button" data-view="teacher" aria-selected="false">Teacher-facing</button>
+          </div>
         </div>
         <div class="summary" id="summary"></div>
       </header>
 
-      <section class="controls" aria-label="Chart controls">
-        <div class="segmented" role="tablist" aria-label="Period">
-          <button class="segment active" type="button" data-period="week" aria-selected="true">Week</button>
-          <button class="segment" type="button" data-period="month" aria-selected="false">Month</button>
-        </div>
+      <div id="researchView">
+        <section class="controls" aria-label="Chart controls">
+          <div class="chart-meta">Weekly view · full year of class activity</div>
 
-        <div class="toggle-stack">
-          <label class="check-row control-row">
-            <input type="checkbox" id="fitToggle" checked />
-            <span class="fit-swatch"></span>
+          <div class="toggle-stack">
+            <label class="check-row control-row">
+              <input type="checkbox" id="fitToggle" checked />
+              <span class="fit-swatch"></span>
+              <span
+                class="hint"
+                tabindex="0"
+                data-tooltip="Adds an ordinary least squares line for each selected score series."
+              >Best fit</span>
+            </label>
+            <fieldset class="series-picker" id="seriesPicker">
+              <legend>Scoring methods</legend>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="explain" aria-label="What is plotted">
+          <div class="equations" id="modelEquation"></div>
+          <p class="plot-copy">
+            Each point is the period mean of
             <span
               class="hint"
               tabindex="0"
-              data-tooltip="Adds an ordinary least squares line for each selected score series."
-            >Best fit</span>
-          </label>
-          <fieldset class="series-picker" id="seriesPicker">
-            <legend>Scoring methods</legend>
-          </fieldset>
-        </div>
-      </section>
+              data-tooltip="The average score for student i in relative week t."
+            >Score<sub>it</sub></span>.
+            <span
+              class="hint"
+              tabindex="0"
+              data-tooltip="Adjusted lines remove the part of score predicted by differences in text difficulty, then put difficulty back at the sample mean."
+            >Adjusted</span>
+            lines hold difficulty constant.
+          </p>
+        </section>
 
-      <section class="explain" aria-label="What is plotted">
-        <div class="equations" id="modelEquation"></div>
-        <p class="plot-copy">
-          Each point is the period mean of
-          <span
-            class="hint"
-            tabindex="0"
-            data-tooltip="The average score for student i in relative week or month t."
-          >Score<sub>it</sub></span>.
-          <span
-            class="hint"
-            tabindex="0"
-            data-tooltip="Adjusted lines remove the part of score predicted by differences in text difficulty, then put difficulty back at the sample mean."
-          >Adjusted</span>
-          lines hold difficulty constant.
-        </p>
-      </section>
+        <section class="chart-section" aria-label="Adjusted trajectory chart">
+          <div class="chart-head">
+            <h2 id="chartTitle">Weekly Score Trajectory</h2>
+            <span class="chart-meta">Average score, 0 to 1 scale</span>
+          </div>
+          <div class="chart-wrap">
+            <svg id="chart" role="img" aria-labelledby="chartTitle"></svg>
+          </div>
+        </section>
 
-      <section class="chart-section" aria-label="Adjusted trajectory chart">
-        <div class="chart-head">
-          <h2 id="chartTitle">Weekly Score Trajectory</h2>
-          <span class="chart-meta">Average score, 0 to 1 scale</span>
-        </div>
-        <div class="chart-wrap">
-          <svg id="chart" role="img" aria-labelledby="chartTitle"></svg>
-        </div>
-      </section>
+        <section class="table-section" aria-label="Trajectory data">
+          <div class="table-wrap">
+            <table>
+              <thead id="tableHead"></thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
 
-      <section class="table-section" aria-label="Trajectory data">
-        <div class="table-wrap">
-          <table>
-            <thead id="tableHead"></thead>
-            <tbody id="tableBody"></tbody>
-          </table>
-        </div>
-      </section>
+      <div id="teacherView" hidden>
+        <section class="explain" aria-label="How to read this view">
+          <p class="teacher-lede">
+            <strong>Is this class growing as readers?</strong> The gray line is the class's
+            actual weekly score. The blue line asks a fairer question: what would that score
+            have been if every week's reading had been at the year's average difficulty?
+            Shaded bands show the range we can't statistically rule out (95%). The amber strip
+            marks how hard each week's texts were — darker means harder. Hover any week for
+            the texts the class read.
+          </p>
+          <div class="teacher-legend" aria-label="Legend">
+            <span class="legend-item"><span class="legend-line" style="background:#6b7280"></span>Actual score</span>
+            <span class="legend-item"><span class="legend-line" style="background:#2563eb"></span>Adjusted for text difficulty</span>
+            <span class="legend-item"><span class="legend-band"></span>95% confidence band</span>
+            <span class="legend-item"><span class="legend-ramp"></span>Text difficulty (easier → harder)</span>
+          </div>
+          <p class="plot-copy" id="teacherBetaNote"></p>
+        </section>
+
+        <section class="chart-section" aria-label="Teacher trajectory chart">
+          <div class="chart-head">
+            <h2>Weekly Reading Scores, Actual vs Difficulty-Adjusted</h2>
+            <span class="chart-meta" id="teacherSummary"></span>
+          </div>
+          <div class="chart-wrap teacher-chart-wrap">
+            <svg id="teacherChart" role="img" aria-label="Weekly reading scores with confidence bands"></svg>
+            <div id="teacherTooltip" class="teacher-tooltip" hidden></div>
+          </div>
+          <p class="plot-copy">
+            Faded points are weeks when fewer students were active, so their estimates are
+            less reliable. Weeks with fewer than 5 active students are shown as unconnected
+            faded dots with a vertical uncertainty whisker. Gaps in the line are stretches
+            with no class activity.
+          </p>
+        </section>
+
+        <section class="table-section" aria-label="Teacher trajectory data">
+          <div class="table-wrap">
+            <table>
+              <thead id="teacherTableHead"></thead>
+              <tbody id="teacherTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script src="./app.js"></script>
+    <script src="./teacher.js"></script>
+    <script>
+      function setView(view) {
+        document.querySelectorAll("[data-view]").forEach((node) => {
+          const active = node.dataset.view === view;
+          node.classList.toggle("active", active);
+          node.setAttribute("aria-selected", String(active));
+        });
+        document.getElementById("researchView").hidden = view !== "research";
+        document.getElementById("teacherView").hidden = view !== "teacher";
+        document.getElementById("summary").hidden = view === "teacher";
+        if (view === "teacher") renderTeacherView();
+      }
+      document.querySelectorAll("[data-view]").forEach((button) => {
+        button.addEventListener("click", () => setView(button.dataset.view));
+      });
+      if (new URLSearchParams(location.search).get("view") === "teacher") {
+        setView("teacher");
+      }
+    </script>
   </body>
 </html>

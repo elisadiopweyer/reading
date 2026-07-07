@@ -498,3 +498,134 @@ th {
     height: 460px;
   }
 }
+
+/* --- Teacher-facing view ------------------------------------------------ */
+
+.view-switch {
+  display: inline-grid;
+  margin-top: 12px;
+  max-width: 320px;
+}
+
+.teacher-lede {
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 72ch;
+}
+
+.teacher-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-line {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.legend-band {
+  display: inline-block;
+  width: 22px;
+  height: 12px;
+  border-radius: 3px;
+  background: rgb(37 99 235 / 0.14);
+}
+
+.legend-ramp {
+  display: inline-block;
+  width: 46px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #fef3c7, #fcd34d, #f59e0b, #b45309, #78350f);
+}
+
+.teacher-chart-wrap {
+  position: relative;
+}
+
+#teacherChart {
+  display: block;
+  width: 100%;
+  height: 560px;
+}
+
+.axis-sub {
+  fill: #a1a1aa;
+  font-size: 10.5px;
+}
+
+.teacher-tooltip {
+  position: absolute;
+  z-index: 30;
+  max-width: 320px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.14);
+  font-size: 12.5px;
+  line-height: 1.45;
+  pointer-events: none;
+}
+
+.tt-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.tt-meta {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.tt-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tt-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.tt-texts {
+  margin: 6px 0 0;
+  padding: 6px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.tt-texts li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 1px 0;
+}
+
+.tt-dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  transform: translateY(1px);
+}
+
+.tt-textcell {
+  max-width: 420px;
+  white-space: normal;
+}
