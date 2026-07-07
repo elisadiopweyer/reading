@@ -87,7 +87,13 @@ const SERIES = {
 };
 
 const DYNAMIC_COLORS = ["#0f766e", "#9333ea", "#ea580c", "#475569", "#16a34a", "#c2410c"];
-const DEFAULT_SELECTED = ["unadjusted", "pooled_adjusted", "three_leg_adjusted"];
+const DEFAULT_SELECTED = [
+  "unadjusted",
+  "pooled_adjusted",
+  "three_leg_adjusted",
+  "czi_adjusted",
+  "textstat_adjusted"
+];
 
 const state = {
   period: "week",
