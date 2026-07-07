@@ -11,5 +11,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/edit",
+      "destination": "/index.html"
+    }
   ]
 }
