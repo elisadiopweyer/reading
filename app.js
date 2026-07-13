@@ -68,17 +68,6 @@ const SERIES = {
     dash: "",
     group: "external"
   },
-  czi_adjusted: {
-    label: "CZI via Claude",
-    tooltip:
-      "Adjusted by holding a Claude-generated Lexile-style complexity estimate at its sample " +
-      "mean. This is not a Learning Commons (CZI) instrument — for the real CZI evaluators see " +
-      "the Sentence Structure and Vocabulary lanes.",
-    stroke: "#4f46e5",
-    width: 2.7,
-    dash: "",
-    group: "external"
-  },
   lc_sentstr_adjusted: {
     label: "CZI Sentence Structure (Claude-run)",
     tooltip:
@@ -131,7 +120,6 @@ const DEFAULT_SELECTED = [
   "unadjusted",
   "pooled_adjusted",
   "three_leg_adjusted",
-  "czi_adjusted",
   "textstat_adjusted",
   "lc_sentstr_adjusted",
   "lc_vocab_adjusted"
