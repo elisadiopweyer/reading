@@ -1,0 +1,450 @@
+{
+ "class": "Persaud602",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.02031,
+   "ci": [
+    -0.06203,
+    0.08667
+   ]
+  },
+  "vocab": {
+   "est": -0.72927,
+   "ci": [
+    -1.53044,
+    0.68218
+   ]
+  },
+  "background": {
+   "est": 0.06382,
+   "ci": [
+    -0.02697,
+    0.64685
+   ]
+  },
+  "meaning": {
+   "est": 0.55832,
+   "ci": [
+    -1.03003,
+    1.26676
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 17,
+   "n_responses": 123,
+   "median_date": "2025-12-15",
+   "raw": 0.55696,
+   "raw_ci": [
+    0.4378,
+    0.6712
+   ],
+   "pooled_adj": 0.55441,
+   "pooled_ci": [
+    0.43468,
+    0.67051
+   ],
+   "vbm_adj": 0.61926,
+   "vbm_ci": [
+    0.52473,
+    1.54462
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.683,
+     "n": 84
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.244,
+     "n": 30
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.073,
+     "n": 9
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 11,
+   "n_responses": 65,
+   "median_date": "2025-12-22",
+   "raw": 0.52576,
+   "raw_ci": [
+    0.42271,
+    0.635
+   ],
+   "pooled_adj": 0.52037,
+   "pooled_ci": [
+    0.4165,
+    0.63724
+   ],
+   "vbm_adj": 0.60882,
+   "vbm_ci": [
+    0.50791,
+    1.58402
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 65
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 4,
+   "n_responses": 59,
+   "median_date": "2026-01-08",
+   "raw": 0.75,
+   "raw_ci": [
+    0.71053,
+    0.78947
+   ],
+   "pooled_adj": 0.74613,
+   "pooled_ci": [
+    0.70535,
+    0.79374
+   ],
+   "vbm_adj": 0.82828,
+   "vbm_ci": [
+    0.77761,
+    1.75718
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.763,
+     "n": 45
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.237,
+     "n": 14
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 18,
+   "n_responses": 189,
+   "median_date": "2026-01-06",
+   "raw": 0.77112,
+   "raw_ci": [
+    0.7163,
+    0.82372
+   ],
+   "pooled_adj": 0.76641,
+   "pooled_ci": [
+    0.70706,
+    0.82766
+   ],
+   "vbm_adj": 0.85206,
+   "vbm_ci": [
+    0.79777,
+    1.79253
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.894,
+     "n": 169
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.106,
+     "n": 20
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 9,
+   "n_responses": 71,
+   "median_date": "2026-01-15",
+   "raw": 0.67883,
+   "raw_ci": [
+    0.55138,
+    0.80736
+   ],
+   "pooled_adj": 0.67691,
+   "pooled_ci": [
+    0.55545,
+    0.80769
+   ],
+   "vbm_adj": 0.75099,
+   "vbm_ci": [
+    0.63745,
+    1.6113
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.549,
+     "n": 39
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.451,
+     "n": 32
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 9,
+   "n_responses": 86,
+   "median_date": "2026-01-24",
+   "raw": 0.70277,
+   "raw_ci": [
+    0.56244,
+    0.83041
+   ],
+   "pooled_adj": 0.6991,
+   "pooled_ci": [
+    0.56157,
+    0.8285
+   ],
+   "vbm_adj": 0.75038,
+   "vbm_ci": [
+    0.622,
+    1.54467
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.907,
+     "n": 78
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.047,
+     "n": 4
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.035,
+     "n": 3
+    },
+    {
+     "title": "Connecting the Rural Last Mile: Avery Bang and Bridges to Prosperity (model problem-solution essay)",
+     "d": 8.0,
+     "share": 0.012,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 15,
+   "n_responses": 193,
+   "median_date": "2026-01-23",
+   "raw": 0.80685,
+   "raw_ci": [
+    0.7533,
+    0.8588
+   ],
+   "pooled_adj": 0.79605,
+   "pooled_ci": [
+    0.74256,
+    0.85208
+   ],
+   "vbm_adj": 0.81894,
+   "vbm_ci": [
+    0.76158,
+    1.59088
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.845,
+     "n": 163
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.067,
+     "n": 13
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.062,
+     "n": 12
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.026,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 6,
+   "n_responses": 68,
+   "median_date": "2026-01-30",
+   "raw": 0.60704,
+   "raw_ci": [
+    0.46007,
+    0.78472
+   ],
+   "pooled_adj": 0.58873,
+   "pooled_ci": [
+    0.42974,
+    0.79068
+   ],
+   "vbm_adj": 0.60888,
+   "vbm_ci": [
+    0.46377,
+    1.29674
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.397,
+     "n": 27
+    },
+    {
+     "title": "Connecting the Rural Last Mile: Avery Bang and Bridges to Prosperity (model problem-solution essay)",
+     "d": 8.0,
+     "share": 0.221,
+     "n": 15
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.191,
+     "n": 13
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.118,
+     "n": 8
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.074,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 22,
+   "n_students": 1,
+   "n_responses": 10,
+   "median_date": "2026-06-08",
+   "raw": 0.25,
+   "raw_ci": [
+    0.25,
+    0.25
+   ],
+   "pooled_adj": 0.27101,
+   "pooled_ci": [
+    0.16822,
+    0.3147
+   ],
+   "vbm_adj": 0.04947,
+   "vbm_ci": [
+    -2.94886,
+    0.16873
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 5,
+   "n_responses": 49,
+   "median_date": "2026-06-08",
+   "raw": 0.42222,
+   "raw_ci": [
+    0.16667,
+    0.71021
+   ],
+   "pooled_adj": 0.44323,
+   "pooled_ci": [
+    0.14851,
+    0.72795
+   ],
+   "vbm_adj": 0.22169,
+   "vbm_ci": [
+    -2.85652,
+    0.51765
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 49
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 19,
+   "n_responses": 180,
+   "median_date": "2026-06-08",
+   "raw": 0.4462,
+   "raw_ci": [
+    0.34845,
+    0.55111
+   ],
+   "pooled_adj": 0.4672,
+   "pooled_ci": [
+    0.34235,
+    0.57992
+   ],
+   "vbm_adj": 0.24567,
+   "vbm_ci": [
+    -2.77184,
+    0.39525
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 180
+    }
+   ]
+  }
+ ]
+}

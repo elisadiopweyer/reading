@@ -1,0 +1,1606 @@
+{
+ "class": "DZIUMA603",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.01772,
+   "ci": [
+    -0.03172,
+    0.00128
+   ]
+  },
+  "vocab": {
+   "est": -0.00877,
+   "ci": [
+    -0.06161,
+    0.03878
+   ]
+  },
+  "background": {
+   "est": -0.03366,
+   "ci": [
+    -0.0665,
+    -0.00236
+   ]
+  },
+  "meaning": {
+   "est": 0.00331,
+   "ci": [
+    -0.03965,
+    0.05786
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 29,
+   "n_responses": 413,
+   "median_date": "2025-09-12",
+   "raw": 0.55441,
+   "raw_ci": [
+    0.47607,
+    0.63076
+   ],
+   "pooled_adj": 0.54437,
+   "pooled_ci": [
+    0.46913,
+    0.616
+   ],
+   "vbm_adj": 0.52875,
+   "vbm_ci": [
+    0.44839,
+    0.60227
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.763,
+     "n": 315
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 9.5,
+     "share": 0.194,
+     "n": 80
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.029,
+     "n": 12
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.015,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 30,
+   "n_responses": 618,
+   "median_date": "2025-09-18",
+   "raw": 0.52643,
+   "raw_ci": [
+    0.45868,
+    0.5908
+   ],
+   "pooled_adj": 0.50709,
+   "pooled_ci": [
+    0.43677,
+    0.57451
+   ],
+   "vbm_adj": 0.49066,
+   "vbm_ci": [
+    0.41036,
+    0.56099
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.968,
+     "n": 598
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.013,
+     "n": 8
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 9.5,
+     "share": 0.011,
+     "n": 7
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 23; paired with NASA's 'July 20, 1969: One Giant Leap for Mankind'",
+     "d": 9.4,
+     "share": 0.008,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 28,
+   "n_responses": 293,
+   "median_date": "2025-09-29",
+   "raw": 0.54248,
+   "raw_ci": [
+    0.48548,
+    0.59315
+   ],
+   "pooled_adj": 0.52344,
+   "pooled_ci": [
+    0.46275,
+    0.57655
+   ],
+   "vbm_adj": 0.51009,
+   "vbm_ci": [
+    0.43636,
+    0.57117
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.911,
+     "n": 267
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.044,
+     "n": 13
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 6.0,
+     "share": 0.017,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 8.0,
+     "share": 0.014,
+     "n": 4
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.014,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 27,
+   "n_responses": 235,
+   "median_date": "2025-09-30",
+   "raw": 0.59226,
+   "raw_ci": [
+    0.51646,
+    0.66444
+   ],
+   "pooled_adj": 0.57328,
+   "pooled_ci": [
+    0.49108,
+    0.65422
+   ],
+   "vbm_adj": 0.56018,
+   "vbm_ci": [
+    0.47375,
+    0.64463
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.74,
+     "n": 174
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.102,
+     "n": 24
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 6.0,
+     "share": 0.077,
+     "n": 18
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.055,
+     "n": 13
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 8.0,
+     "share": 0.017,
+     "n": 4
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.009,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 30,
+   "n_responses": 461,
+   "median_date": "2025-10-10",
+   "raw": 0.55033,
+   "raw_ci": [
+    0.48478,
+    0.61046
+   ],
+   "pooled_adj": 0.54,
+   "pooled_ci": [
+    0.47493,
+    0.59872
+   ],
+   "vbm_adj": 0.53899,
+   "vbm_ci": [
+    0.47371,
+    0.59691
+   ],
+   "texts": [
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.408,
+     "n": 188
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.338,
+     "n": 156
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 6.0,
+     "share": 0.226,
+     "n": 104
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.015,
+     "n": 7
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 23; paired with NASA's 'July 20, 1969: One Giant Leap for Mankind'",
+     "d": 9.4,
+     "share": 0.013,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 24,
+   "n_responses": 240,
+   "median_date": "2025-10-17",
+   "raw": 0.51591,
+   "raw_ci": [
+    0.42284,
+    0.60607
+   ],
+   "pooled_adj": 0.49639,
+   "pooled_ci": [
+    0.4054,
+    0.58077
+   ],
+   "vbm_adj": 0.48201,
+   "vbm_ci": [
+    0.38872,
+    0.56638
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.929,
+     "n": 223
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.037,
+     "n": 9
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.021,
+     "n": 5
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.013,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 29,
+   "n_responses": 671,
+   "median_date": "2025-10-24",
+   "raw": 0.52039,
+   "raw_ci": [
+    0.46119,
+    0.57647
+   ],
+   "pooled_adj": 0.4995,
+   "pooled_ci": [
+    0.4403,
+    0.55429
+   ],
+   "vbm_adj": 0.48975,
+   "vbm_ci": [
+    0.41968,
+    0.55437
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.931,
+     "n": 625
+    },
+    {
+     "title": "Hestia",
+     "d": 5.5,
+     "share": 0.037,
+     "n": 25
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.015,
+     "n": 10
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 23; paired with NASA's 'July 20, 1969: One Giant Leap for Mankind'",
+     "d": 9.4,
+     "share": 0.009,
+     "n": 6
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.007,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 28,
+   "n_responses": 296,
+   "median_date": "2025-10-30",
+   "raw": 0.59354,
+   "raw_ci": [
+    0.51897,
+    0.66153
+   ],
+   "pooled_adj": 0.56617,
+   "pooled_ci": [
+    0.49117,
+    0.63717
+   ],
+   "vbm_adj": 0.58725,
+   "vbm_ci": [
+    0.49962,
+    0.67286
+   ],
+   "texts": [
+    {
+     "title": "Hestia",
+     "d": 5.5,
+     "share": 0.503,
+     "n": 149
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.456,
+     "n": 135
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.02,
+     "n": 6
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.02,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "n_students": 27,
+   "n_responses": 310,
+   "median_date": "2025-11-10",
+   "raw": 0.5292,
+   "raw_ci": [
+    0.47419,
+    0.58201
+   ],
+   "pooled_adj": 0.50723,
+   "pooled_ci": [
+    0.45104,
+    0.563
+   ],
+   "vbm_adj": 0.48848,
+   "vbm_ci": [
+    0.41362,
+    0.55738
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.997,
+     "n": 309
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.003,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "n_students": 25,
+   "n_responses": 198,
+   "median_date": "2025-11-12",
+   "raw": 0.66855,
+   "raw_ci": [
+    0.60177,
+    0.72753
+   ],
+   "pooled_adj": 0.65478,
+   "pooled_ci": [
+    0.59168,
+    0.71585
+   ],
+   "vbm_adj": 0.6362,
+   "vbm_ci": [
+    0.5776,
+    0.69562
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.722,
+     "n": 143
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.278,
+     "n": 55
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "n_students": 28,
+   "n_responses": 500,
+   "median_date": "2025-11-21",
+   "raw": 0.53236,
+   "raw_ci": [
+    0.47549,
+    0.58511
+   ],
+   "pooled_adj": 0.5652,
+   "pooled_ci": [
+    0.49865,
+    0.62681
+   ],
+   "vbm_adj": 0.54818,
+   "vbm_ci": [
+    0.47794,
+    0.62079
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.936,
+     "n": 468
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.04,
+     "n": 20
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.012,
+     "n": 6
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 8.5,
+     "share": 0.012,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "n_students": 17,
+   "n_responses": 111,
+   "median_date": "2025-12-01",
+   "raw": 0.61148,
+   "raw_ci": [
+    0.49933,
+    0.71992
+   ],
+   "pooled_adj": 0.63687,
+   "pooled_ci": [
+    0.51361,
+    0.75672
+   ],
+   "vbm_adj": 0.64043,
+   "vbm_ci": [
+    0.49394,
+    0.8045
+   ],
+   "texts": [
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 8.5,
+     "share": 0.694,
+     "n": 77
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.171,
+     "n": 19
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.135,
+     "n": 15
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "n_students": 25,
+   "n_responses": 375,
+   "median_date": "2025-12-04",
+   "raw": 0.53651,
+   "raw_ci": [
+    0.46244,
+    0.60254
+   ],
+   "pooled_adj": 0.57163,
+   "pooled_ci": [
+    0.49294,
+    0.63903
+   ],
+   "vbm_adj": 0.55688,
+   "vbm_ci": [
+    0.47632,
+    0.62615
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.576,
+     "n": 216
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.373,
+     "n": 140
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.019,
+     "n": 7
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.013,
+     "n": 5
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.011,
+     "n": 4
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 8.5,
+     "share": 0.008,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 19,
+   "n_responses": 396,
+   "median_date": "2025-12-09",
+   "raw": 0.64721,
+   "raw_ci": [
+    0.60058,
+    0.69202
+   ],
+   "pooled_adj": 0.67986,
+   "pooled_ci": [
+    0.61795,
+    0.73748
+   ],
+   "vbm_adj": 0.66589,
+   "vbm_ci": [
+    0.59373,
+    0.73375
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.664,
+     "n": 263
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.28,
+     "n": 111
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.03,
+     "n": 12
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.023,
+     "n": 9
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.003,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "n_students": 19,
+   "n_responses": 181,
+   "median_date": "2025-12-16",
+   "raw": 0.64276,
+   "raw_ci": [
+    0.56203,
+    0.72278
+   ],
+   "pooled_adj": 0.62694,
+   "pooled_ci": [
+    0.54731,
+    0.70755
+   ],
+   "vbm_adj": 0.64253,
+   "vbm_ci": [
+    0.55834,
+    0.72784
+   ],
+   "texts": [
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.58,
+     "n": 105
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.381,
+     "n": 69
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.022,
+     "n": 4
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.017,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 2,
+   "n_responses": 19,
+   "median_date": "2026-01-05",
+   "raw": 0.94643,
+   "raw_ci": [
+    0.89286,
+    1.0
+   ],
+   "pooled_adj": 0.98641,
+   "pooled_ci": [
+    0.91781,
+    1.04774
+   ],
+   "vbm_adj": 0.97365,
+   "vbm_ci": [
+    0.90334,
+    1.03906
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 19
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 24,
+   "n_responses": 172,
+   "median_date": "2026-01-05",
+   "raw": 0.70327,
+   "raw_ci": [
+    0.63835,
+    0.76703
+   ],
+   "pooled_adj": 0.74326,
+   "pooled_ci": [
+    0.66525,
+    0.81934
+   ],
+   "vbm_adj": 0.7305,
+   "vbm_ci": [
+    0.64965,
+    0.81382
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 172
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 17,
+   "n_responses": 119,
+   "median_date": "2026-01-06",
+   "raw": 0.65126,
+   "raw_ci": [
+    0.55638,
+    0.75
+   ],
+   "pooled_adj": 0.69124,
+   "pooled_ci": [
+    0.5833,
+    0.80328
+   ],
+   "vbm_adj": 0.67849,
+   "vbm_ci": [
+    0.56392,
+    0.79756
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 119
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 2,
+   "n_responses": 16,
+   "median_date": "2026-01-27",
+   "raw": 0.58333,
+   "raw_ci": [
+    0.5,
+    0.66667
+   ],
+   "pooled_adj": 0.61197,
+   "pooled_ci": [
+    0.55066,
+    0.67165
+   ],
+   "vbm_adj": 0.60885,
+   "vbm_ci": [
+    0.54116,
+    0.67286
+   ],
+   "texts": [
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration) with Carlisle Indian School photographs by Frances Benjamin Johnston",
+     "d": 13.6,
+     "share": 0.375,
+     "n": 6
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.375,
+     "n": 6
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.25,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 20,
+   "n_students": 22,
+   "n_responses": 247,
+   "median_date": "2026-01-26",
+   "raw": 0.61879,
+   "raw_ci": [
+    0.5352,
+    0.69676
+   ],
+   "pooled_adj": 0.64338,
+   "pooled_ci": [
+    0.55423,
+    0.72667
+   ],
+   "vbm_adj": 0.63122,
+   "vbm_ci": [
+    0.54591,
+    0.70894
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.433,
+     "n": 107
+    },
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.377,
+     "n": 93
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration) with Carlisle Indian School photographs by Frances Benjamin Johnston",
+     "d": 13.6,
+     "share": 0.073,
+     "n": 18
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.069,
+     "n": 17
+    },
+    {
+     "title": "Captain Pratt Speech Excerpt ('Kill the Indian in him, and save the man')",
+     "d": 15.6,
+     "share": 0.045,
+     "n": 11
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.004,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 21,
+   "n_students": 27,
+   "n_responses": 523,
+   "median_date": "2026-01-30",
+   "raw": 0.66095,
+   "raw_ci": [
+    0.60646,
+    0.71772
+   ],
+   "pooled_adj": 0.67783,
+   "pooled_ci": [
+    0.61477,
+    0.73586
+   ],
+   "vbm_adj": 0.6756,
+   "vbm_ci": [
+    0.60952,
+    0.73937
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.583,
+     "n": 305
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration) with Carlisle Indian School photographs by Frances Benjamin Johnston",
+     "d": 13.6,
+     "share": 0.22,
+     "n": 115
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.197,
+     "n": 103
+    }
+   ]
+  },
+  {
+   "week": 22,
+   "n_students": 26,
+   "n_responses": 650,
+   "median_date": "2026-02-05",
+   "raw": 0.69426,
+   "raw_ci": [
+    0.65669,
+    0.72962
+   ],
+   "pooled_adj": 0.65448,
+   "pooled_ci": [
+    0.61209,
+    0.70005
+   ],
+   "vbm_adj": 0.65676,
+   "vbm_ci": [
+    0.61087,
+    0.703
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 650
+    }
+   ]
+  },
+  {
+   "week": 23,
+   "n_students": 24,
+   "n_responses": 245,
+   "median_date": "2026-02-12",
+   "raw": 0.6817,
+   "raw_ci": [
+    0.62899,
+    0.72861
+   ],
+   "pooled_adj": 0.64202,
+   "pooled_ci": [
+    0.57805,
+    0.70754
+   ],
+   "vbm_adj": 0.64418,
+   "vbm_ci": [
+    0.57736,
+    0.71105
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.992,
+     "n": 243
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.008,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 24,
+   "n_students": 4,
+   "n_responses": 46,
+   "median_date": "2026-02-25",
+   "raw": 0.72009,
+   "raw_ci": [
+    0.61111,
+    0.83333
+   ],
+   "pooled_adj": 0.68031,
+   "pooled_ci": [
+    0.57904,
+    0.80405
+   ],
+   "vbm_adj": 0.68259,
+   "vbm_ci": [
+    0.58287,
+    0.80626
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 46
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 26,
+   "n_responses": 466,
+   "median_date": "2026-02-26",
+   "raw": 0.6534,
+   "raw_ci": [
+    0.59513,
+    0.7101
+   ],
+   "pooled_adj": 0.61362,
+   "pooled_ci": [
+    0.54934,
+    0.68074
+   ],
+   "vbm_adj": 0.6159,
+   "vbm_ci": [
+    0.55167,
+    0.68351
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 466
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 17,
+   "n_responses": 210,
+   "median_date": "2026-03-05",
+   "raw": 0.71419,
+   "raw_ci": [
+    0.65611,
+    0.77526
+   ],
+   "pooled_adj": 0.67441,
+   "pooled_ci": [
+    0.61061,
+    0.74238
+   ],
+   "vbm_adj": 0.67669,
+   "vbm_ci": [
+    0.61195,
+    0.74968
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 210
+    }
+   ]
+  },
+  {
+   "week": 27,
+   "n_students": 22,
+   "n_responses": 324,
+   "median_date": "2026-03-11",
+   "raw": 0.53216,
+   "raw_ci": [
+    0.48538,
+    0.57771
+   ],
+   "pooled_adj": 0.49238,
+   "pooled_ci": [
+    0.43336,
+    0.55315
+   ],
+   "vbm_adj": 0.49467,
+   "vbm_ci": [
+    0.43607,
+    0.55991
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.66,
+     "n": 214
+    },
+    {
+     "title": "Model Literary Argument Essay: Should Cal go to Washington with Pop?",
+     "d": 5.0,
+     "share": 0.34,
+     "n": 110
+    }
+   ]
+  },
+  {
+   "week": 31,
+   "n_students": 2,
+   "n_responses": 12,
+   "median_date": "2026-04-21",
+   "raw": 0.62143,
+   "raw_ci": [
+    0.6,
+    0.64286
+   ],
+   "pooled_adj": 0.70395,
+   "pooled_ci": [
+    0.61026,
+    0.78456
+   ],
+   "vbm_adj": 0.69211,
+   "vbm_ci": [
+    0.55783,
+    0.81895
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 1.0,
+     "n": 12
+    }
+   ]
+  },
+  {
+   "week": 32,
+   "n_students": 5,
+   "n_responses": 50,
+   "median_date": "2026-04-23",
+   "raw": 0.72106,
+   "raw_ci": [
+    0.66045,
+    0.77885
+   ],
+   "pooled_adj": 0.79713,
+   "pooled_ci": [
+    0.72419,
+    0.8605
+   ],
+   "vbm_adj": 0.79765,
+   "vbm_ci": [
+    0.69558,
+    0.86203
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.44,
+     "n": 22
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 0.3,
+     "n": 15
+    },
+    {
+     "title": "The Space Shuttle Decision",
+     "d": 13.5,
+     "share": 0.24,
+     "n": 12
+    },
+    {
+     "title": "This Is How the Space Race Changed the Great Power Rivalry Forever",
+     "d": 12.5,
+     "share": 0.02,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 33,
+   "n_students": 26,
+   "n_responses": 366,
+   "median_date": "2026-04-23",
+   "raw": 0.7015,
+   "raw_ci": [
+    0.65725,
+    0.74477
+   ],
+   "pooled_adj": 0.76659,
+   "pooled_ci": [
+    0.69306,
+    0.82785
+   ],
+   "vbm_adj": 0.78262,
+   "vbm_ci": [
+    0.69783,
+    0.87062
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.393,
+     "n": 144
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 0.314,
+     "n": 115
+    },
+    {
+     "title": "This Is How the Space Race Changed the Great Power Rivalry Forever",
+     "d": 12.5,
+     "share": 0.202,
+     "n": 74
+    },
+    {
+     "title": "The Space Shuttle Decision",
+     "d": 13.5,
+     "share": 0.052,
+     "n": 19
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.038,
+     "n": 14
+    }
+   ]
+  },
+  {
+   "week": 34,
+   "n_students": 27,
+   "n_responses": 484,
+   "median_date": "2026-05-01",
+   "raw": 0.64394,
+   "raw_ci": [
+    0.5879,
+    0.69756
+   ],
+   "pooled_adj": 0.67888,
+   "pooled_ci": [
+    0.61076,
+    0.74082
+   ],
+   "vbm_adj": 0.67998,
+   "vbm_ci": [
+    0.61456,
+    0.74009
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.62,
+     "n": 300
+    },
+    {
+     "title": "The Space Shuttle Decision",
+     "d": 13.5,
+     "share": 0.25,
+     "n": 121
+    },
+    {
+     "title": "This Is How the Space Race Changed the Great Power Rivalry Forever",
+     "d": 12.5,
+     "share": 0.087,
+     "n": 42
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.043,
+     "n": 21
+    }
+   ]
+  },
+  {
+   "week": 35,
+   "n_students": 27,
+   "n_responses": 513,
+   "median_date": "2026-05-08",
+   "raw": 0.72669,
+   "raw_ci": [
+    0.67418,
+    0.776
+   ],
+   "pooled_adj": 0.74872,
+   "pooled_ci": [
+    0.69148,
+    0.80336
+   ],
+   "vbm_adj": 0.75195,
+   "vbm_ci": [
+    0.69133,
+    0.80855
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.684,
+     "n": 351
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.259,
+     "n": 133
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.033,
+     "n": 17
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 8.0,
+     "share": 0.023,
+     "n": 12
+    }
+   ]
+  },
+  {
+   "week": 36,
+   "n_students": 27,
+   "n_responses": 634,
+   "median_date": "2026-05-15",
+   "raw": 0.71681,
+   "raw_ci": [
+    0.67824,
+    0.75254
+   ],
+   "pooled_adj": 0.7133,
+   "pooled_ci": [
+    0.6763,
+    0.74768
+   ],
+   "vbm_adj": 0.72797,
+   "vbm_ci": [
+    0.68414,
+    0.76973
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.524,
+     "n": 332
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.254,
+     "n": 161
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 8.0,
+     "share": 0.222,
+     "n": 141
+    }
+   ]
+  },
+  {
+   "week": 37,
+   "n_students": 25,
+   "n_responses": 248,
+   "median_date": "2026-05-21",
+   "raw": 0.73114,
+   "raw_ci": [
+    0.68078,
+    0.77814
+   ],
+   "pooled_adj": 0.72548,
+   "pooled_ci": [
+    0.67676,
+    0.77115
+   ],
+   "vbm_adj": 0.74244,
+   "vbm_ci": [
+    0.68264,
+    0.80232
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.915,
+     "n": 227
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 23; paired with NASA's 'July 20, 1969: One Giant Leap for Mankind'",
+     "d": 9.4,
+     "share": 0.048,
+     "n": 12
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 0.02,
+     "n": 5
+    },
+    {
+     "title": "This Is How the Space Race Changed the Great Power Rivalry Forever",
+     "d": 12.5,
+     "share": 0.016,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 38,
+   "n_students": 25,
+   "n_responses": 284,
+   "median_date": "2026-05-29",
+   "raw": 0.65639,
+   "raw_ci": [
+    0.60206,
+    0.71211
+   ],
+   "pooled_adj": 0.6507,
+   "pooled_ci": [
+    0.59804,
+    0.70602
+   ],
+   "vbm_adj": 0.66994,
+   "vbm_ci": [
+    0.61041,
+    0.73566
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.923,
+     "n": 262
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 23; paired with NASA's 'July 20, 1969: One Giant Leap for Mankind'",
+     "d": 9.4,
+     "share": 0.042,
+     "n": 12
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.035,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 39,
+   "n_students": 26,
+   "n_responses": 358,
+   "median_date": "2026-06-08",
+   "raw": 0.41901,
+   "raw_ci": [
+    0.36813,
+    0.46985
+   ],
+   "pooled_adj": 0.46582,
+   "pooled_ci": [
+    0.39095,
+    0.53731
+   ],
+   "vbm_adj": 0.53804,
+   "vbm_ci": [
+    0.42062,
+    0.67435
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.603,
+     "n": 216
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 23; paired with NASA's 'July 20, 1969: One Giant Leap for Mankind'",
+     "d": 9.4,
+     "share": 0.332,
+     "n": 119
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.064,
+     "n": 23
+    }
+   ]
+  },
+  {
+   "week": 40,
+   "n_students": 22,
+   "n_responses": 170,
+   "median_date": "2026-06-10",
+   "raw": 0.52973,
+   "raw_ci": [
+    0.48988,
+    0.56771
+   ],
+   "pooled_adj": 0.5206,
+   "pooled_ci": [
+    0.48028,
+    0.55995
+   ],
+   "vbm_adj": 0.53826,
+   "vbm_ci": [
+    0.48938,
+    0.58746
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.994,
+     "n": 169
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.006,
+     "n": 1
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,623 @@
+{
+ "class": "buon",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.02579,
+   "ci": [
+    -0.06335,
+    0.05261
+   ]
+  },
+  "vocab": {
+   "est": -0.05747,
+   "ci": [
+    -0.62243,
+    0.60276
+   ]
+  },
+  "background": {
+   "est": 0.11299,
+   "ci": [
+    -0.71896,
+    0.71733
+   ]
+  },
+  "meaning": {
+   "est": -0.33312,
+   "ci": [
+    -0.98766,
+    0.94557
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 7,
+   "n_responses": 52,
+   "median_date": "2025-11-20",
+   "raw": 0.46593,
+   "raw_ci": [
+    0.33571,
+    0.58335
+   ],
+   "pooled_adj": 0.41251,
+   "pooled_ci": [
+    0.213,
+    0.58921
+   ],
+   "vbm_adj": 0.84529,
+   "vbm_ci": [
+    -0.78554,
+    1.8917
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.538,
+     "n": 28
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.327,
+     "n": 17
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.135,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2025-12-19",
+   "raw": 0.5,
+   "raw_ci": [
+    0.5,
+    0.5
+   ],
+   "pooled_adj": 0.50215,
+   "pooled_ci": [
+    0.489,
+    0.51199
+   ],
+   "vbm_adj": 0.87248,
+   "vbm_ci": [
+    -0.84348,
+    1.91539
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2025-12-04",
+   "raw": 0.41667,
+   "raw_ci": [
+    0.41667,
+    0.41667
+   ],
+   "pooled_adj": 0.41881,
+   "pooled_ci": [
+    0.40888,
+    0.43183
+   ],
+   "vbm_adj": 0.78914,
+   "vbm_ci": [
+    -0.20718,
+    1.31362
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 11,
+   "n_responses": 104,
+   "median_date": "2025-12-11",
+   "raw": 0.55813,
+   "raw_ci": [
+    0.45378,
+    0.66291
+   ],
+   "pooled_adj": 0.56378,
+   "pooled_ci": [
+    0.45934,
+    0.66573
+   ],
+   "vbm_adj": 0.91527,
+   "vbm_ci": [
+    -0.75506,
+    1.90801
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.587,
+     "n": 61
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.413,
+     "n": 43
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 3,
+   "n_responses": 33,
+   "median_date": "2025-12-19",
+   "raw": 0.48901,
+   "raw_ci": [
+    0.42308,
+    0.61538
+   ],
+   "pooled_adj": 0.49116,
+   "pooled_ci": [
+    0.41374,
+    0.61902
+   ],
+   "vbm_adj": 0.86149,
+   "vbm_ci": [
+    -0.61591,
+    1.76488
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 33
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-01-15",
+   "raw": 0.78571,
+   "raw_ci": [
+    0.78571,
+    0.78571
+   ],
+   "pooled_adj": 0.7956,
+   "pooled_ci": [
+    0.769,
+    0.81057
+   ],
+   "vbm_adj": 1.12429,
+   "vbm_ci": [
+    -0.31312,
+    1.99788
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-01-23",
+   "raw": 0.8,
+   "raw_ci": [
+    0.8,
+    0.8
+   ],
+   "pooled_adj": 0.80989,
+   "pooled_ci": [
+    0.78329,
+    0.82485
+   ],
+   "vbm_adj": 1.13858,
+   "vbm_ci": [
+    -0.29883,
+    2.01216
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-01-08",
+   "raw": 0.8,
+   "raw_ci": [
+    0.8,
+    0.8
+   ],
+   "pooled_adj": 0.80989,
+   "pooled_ci": [
+    0.78712,
+    0.82958
+   ],
+   "vbm_adj": 1.13858,
+   "vbm_ci": [
+    0.28786,
+    1.58049
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "n_students": 8,
+   "n_responses": 66,
+   "median_date": "2026-01-15",
+   "raw": 0.75714,
+   "raw_ci": [
+    0.64505,
+    0.86418
+   ],
+   "pooled_adj": 0.76703,
+   "pooled_ci": [
+    0.64477,
+    0.87421
+   ],
+   "vbm_adj": 1.09572,
+   "vbm_ci": [
+    -0.41738,
+    1.95845
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 66
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "n_students": 6,
+   "n_responses": 68,
+   "median_date": "2026-01-23",
+   "raw": 0.52815,
+   "raw_ci": [
+    0.42101,
+    0.67857
+   ],
+   "pooled_adj": 0.53804,
+   "pooled_ci": [
+    0.42765,
+    0.68152
+   ],
+   "vbm_adj": 0.86673,
+   "vbm_ci": [
+    -0.59265,
+    1.75706
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 68
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-03-27",
+   "raw": 0.1,
+   "raw_ci": [
+    0.1,
+    0.1
+   ],
+   "pooled_adj": -0.00619,
+   "pooled_ci": [
+    -0.16775,
+    0.30702
+   ],
+   "vbm_adj": 0.16,
+   "vbm_ci": [
+    -1.23651,
+    1.14423
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-05-04",
+   "raw": 0.57143,
+   "raw_ci": [
+    0.57143,
+    0.57143
+   ],
+   "pooled_adj": 0.64322,
+   "pooled_ci": [
+    0.41701,
+    0.75138
+   ],
+   "vbm_adj": 0.89452,
+   "vbm_ci": [
+    -0.78257,
+    2.12005
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 1.0,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 5,
+   "n_responses": 76,
+   "median_date": "2026-03-27",
+   "raw": 0.50714,
+   "raw_ci": [
+    0.32925,
+    0.65385
+   ],
+   "pooled_adj": 0.41227,
+   "pooled_ci": [
+    0.16554,
+    0.75743
+   ],
+   "vbm_adj": 0.60118,
+   "vbm_ci": [
+    -0.70877,
+    1.47622
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.921,
+     "n": 70
+    },
+    {
+     "title": "Captain Pratt Speech Excerpt ('Kill the Indian in him, and save the man')",
+     "d": 15.6,
+     "share": 0.079,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 23,
+   "n_students": 3,
+   "n_responses": 36,
+   "median_date": "2026-04-29",
+   "raw": 0.59491,
+   "raw_ci": [
+    0.5,
+    0.72222
+   ],
+   "pooled_adj": 0.64499,
+   "pooled_ci": [
+    0.44847,
+    0.86563
+   ],
+   "vbm_adj": 0.6671,
+   "vbm_ci": [
+    0.07831,
+    1.25389
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.417,
+     "n": 15
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 0.278,
+     "n": 10
+    },
+    {
+     "title": "This Is How the Space Race Changed the Great Power Rivalry Forever",
+     "d": 12.5,
+     "share": 0.25,
+     "n": 9
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.056,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 24,
+   "n_students": 4,
+   "n_responses": 30,
+   "median_date": "2026-05-01",
+   "raw": 0.66315,
+   "raw_ci": [
+    0.41667,
+    0.85714
+   ],
+   "pooled_adj": 0.6344,
+   "pooled_ci": [
+    0.43327,
+    0.97348
+   ],
+   "vbm_adj": 0.76503,
+   "vbm_ci": [
+    -0.27099,
+    1.54061
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.4,
+     "n": 12
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.233,
+     "n": 7
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.2,
+     "n": 6
+    },
+    {
+     "title": "This Is How the Space Race Changed the Great Power Rivalry Forever",
+     "d": 12.5,
+     "share": 0.167,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 1,
+   "n_responses": 10,
+   "median_date": "2026-06-08",
+   "raw": 0.45,
+   "raw_ci": [
+    0.45,
+    0.45
+   ],
+   "pooled_adj": 0.48568,
+   "pooled_ci": [
+    0.37768,
+    0.54371
+   ],
+   "vbm_adj": -0.47233,
+   "vbm_ci": [
+    -3.05576,
+    3.40546
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 1,
+   "n_responses": 10,
+   "median_date": "2026-06-08",
+   "raw": 0.55,
+   "raw_ci": [
+    0.55,
+    0.55
+   ],
+   "pooled_adj": 0.58568,
+   "pooled_ci": [
+    0.4737,
+    0.64259
+   ],
+   "vbm_adj": -0.37233,
+   "vbm_ci": [
+    -3.04349,
+    3.52091
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 29,
+   "n_students": 15,
+   "n_responses": 147,
+   "median_date": "2026-06-08",
+   "raw": 0.29519,
+   "raw_ci": [
+    0.24167,
+    0.35688
+   ],
+   "pooled_adj": 0.33086,
+   "pooled_ci": [
+    0.22078,
+    0.41717
+   ],
+   "vbm_adj": -0.62714,
+   "vbm_ci": [
+    -2.96386,
+    3.25549
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 147
+    }
+   ]
+  }
+ ]
+}

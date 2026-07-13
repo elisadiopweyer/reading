@@ -744,3 +744,15 @@ th {
 @media (prefers-reduced-motion: reduce) {
   .shake { animation: none; }
 }
+
+/* class scope picker */
+.scope-picker {
+  font: inherit;
+  font-size: 13px;
+  color: inherit;
+  padding: 7px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #fff;
+  margin-left: 10px;
+}

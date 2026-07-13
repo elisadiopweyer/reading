@@ -1,0 +1,392 @@
+{
+ "class": "persaud601",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.01036,
+   "ci": [
+    -0.05278,
+    0.04504
+   ]
+  },
+  "vocab": {
+   "est": 0.26056,
+   "ci": [
+    0.00718,
+    0.51627
+   ]
+  },
+  "background": {
+   "est": -0.06834,
+   "ci": [
+    -0.12371,
+    0.2336
+   ]
+  },
+  "meaning": {
+   "est": -0.18974,
+   "ci": [
+    -0.40039,
+    -0.02578
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 25,
+   "n_responses": 377,
+   "median_date": "2025-12-12",
+   "raw": 0.50126,
+   "raw_ci": [
+    0.44958,
+    0.55228
+   ],
+   "pooled_adj": 0.5017,
+   "pooled_ci": [
+    0.45066,
+    0.55381
+   ],
+   "vbm_adj": 0.45418,
+   "vbm_ci": [
+    0.38159,
+    0.80419
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.777,
+     "n": 293
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.196,
+     "n": 74
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.027,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 10,
+   "n_responses": 55,
+   "median_date": "2025-12-22",
+   "raw": 0.645,
+   "raw_ci": [
+    0.55475,
+    0.74104
+   ],
+   "pooled_adj": 0.64442,
+   "pooled_ci": [
+    0.55433,
+    0.74148
+   ],
+   "vbm_adj": 0.58114,
+   "vbm_ci": [
+    0.47842,
+    0.95173
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 55
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 20,
+   "n_responses": 205,
+   "median_date": "2026-01-06",
+   "raw": 0.70388,
+   "raw_ci": [
+    0.64898,
+    0.75969
+   ],
+   "pooled_adj": 0.7033,
+   "pooled_ci": [
+    0.64743,
+    0.75913
+   ],
+   "vbm_adj": 0.64002,
+   "vbm_ci": [
+    0.56769,
+    0.98717
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 205
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 13,
+   "n_responses": 117,
+   "median_date": "2026-01-14",
+   "raw": 0.76111,
+   "raw_ci": [
+    0.72416,
+    0.80124
+   ],
+   "pooled_adj": 0.76222,
+   "pooled_ci": [
+    0.72346,
+    0.80347
+   ],
+   "vbm_adj": 0.70843,
+   "vbm_ci": [
+    0.64201,
+    1.01475
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.547,
+     "n": 64
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.453,
+     "n": 53
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 17,
+   "n_responses": 336,
+   "median_date": "2026-01-21",
+   "raw": 0.73362,
+   "raw_ci": [
+    0.67702,
+    0.78943
+   ],
+   "pooled_adj": 0.73549,
+   "pooled_ci": [
+    0.68039,
+    0.79089
+   ],
+   "vbm_adj": 0.71116,
+   "vbm_ci": [
+    0.64746,
+    0.92553
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.83,
+     "n": 279
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.128,
+     "n": 43
+    },
+    {
+     "title": "Connecting the Rural Last Mile: Avery Bang and Bridges to Prosperity (model problem-solution essay)",
+     "d": 8.0,
+     "share": 0.021,
+     "n": 7
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.015,
+     "n": 5
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.006,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 15,
+   "n_responses": 194,
+   "median_date": "2026-01-23",
+   "raw": 0.76763,
+   "raw_ci": [
+    0.70544,
+    0.82583
+   ],
+   "pooled_adj": 0.74728,
+   "pooled_ci": [
+    0.62781,
+    0.8533
+   ],
+   "vbm_adj": 0.71841,
+   "vbm_ci": [
+    0.62676,
+    0.92561
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.335,
+     "n": 65
+    },
+    {
+     "title": "Connecting the Rural Last Mile: Avery Bang and Bridges to Prosperity (model problem-solution essay)",
+     "d": 8.0,
+     "share": 0.325,
+     "n": 63
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 4.0,
+     "share": 0.304,
+     "n": 59
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.021,
+     "n": 4
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.015,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 12,
+   "n_responses": 137,
+   "median_date": "2026-02-02",
+   "raw": 0.56677,
+   "raw_ci": [
+    0.47212,
+    0.6534
+   ],
+   "pooled_adj": 0.56524,
+   "pooled_ci": [
+    0.4705,
+    0.65967
+   ],
+   "vbm_adj": 0.46972,
+   "vbm_ci": [
+    0.36843,
+    0.72865
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.372,
+     "n": 51
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.336,
+     "n": 46
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 8.5,
+     "share": 0.255,
+     "n": 35
+    },
+    {
+     "title": "Building Bridges and Connecting Communities (TED Talk)",
+     "d": 9.9,
+     "share": 0.029,
+     "n": 4
+    },
+    {
+     "title": "Connecting the Rural Last Mile: Avery Bang and Bridges to Prosperity (model problem-solution essay)",
+     "d": 8.0,
+     "share": 0.007,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 1,
+   "n_responses": 9,
+   "median_date": "2026-06-08",
+   "raw": 0.33333,
+   "raw_ci": [
+    0.33333,
+    0.33333
+   ],
+   "pooled_adj": 0.34622,
+   "pooled_ci": [
+    0.27697,
+    0.3931
+   ],
+   "vbm_adj": 0.60889,
+   "vbm_ci": [
+    -0.6034,
+    0.95038
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 9
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 21,
+   "n_responses": 207,
+   "median_date": "2026-06-08",
+   "raw": 0.38228,
+   "raw_ci": [
+    0.28491,
+    0.47435
+   ],
+   "pooled_adj": 0.39517,
+   "pooled_ci": [
+    0.28507,
+    0.50618
+   ],
+   "vbm_adj": 0.65783,
+   "vbm_ci": [
+    -0.85753,
+    0.93213
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 207
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,565 @@
+{
+ "class": "Hughes604",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.04134,
+   "ci": [
+    -0.0823,
+    0.00705
+   ]
+  },
+  "vocab": {
+   "est": 0.00929,
+   "ci": [
+    -0.21559,
+    0.95117
+   ]
+  },
+  "background": {
+   "est": -0.06795,
+   "ci": [
+    -0.22485,
+    0.05889
+   ]
+  },
+  "meaning": {
+   "est": -0.01417,
+   "ci": [
+    -0.85093,
+    0.24355
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 15,
+   "n_responses": 105,
+   "median_date": "2025-12-18",
+   "raw": 0.69887,
+   "raw_ci": [
+    0.59194,
+    0.79349
+   ],
+   "pooled_adj": 0.73288,
+   "pooled_ci": [
+    0.61717,
+    0.84563
+   ],
+   "vbm_adj": 0.66773,
+   "vbm_ci": [
+    0.05507,
+    0.84961
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.943,
+     "n": 99
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.057,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 11,
+   "n_responses": 55,
+   "median_date": "2026-01-12",
+   "raw": 0.71818,
+   "raw_ci": [
+    0.59089,
+    0.83
+   ],
+   "pooled_adj": 0.76377,
+   "pooled_ci": [
+    0.62304,
+    0.8909
+   ],
+   "vbm_adj": 0.69218,
+   "vbm_ci": [
+    0.04811,
+    0.88634
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 55
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 4,
+   "n_responses": 20,
+   "median_date": "2026-01-12",
+   "raw": 0.6,
+   "raw_ci": [
+    0.45,
+    0.8
+   ],
+   "pooled_adj": 0.64559,
+   "pooled_ci": [
+    0.45297,
+    0.837
+   ],
+   "vbm_adj": 0.574,
+   "vbm_ci": [
+    -0.05895,
+    0.76746
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 20
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 3,
+   "n_responses": 15,
+   "median_date": "2026-01-28",
+   "raw": 0.8,
+   "raw_ci": [
+    0.6,
+    0.9
+   ],
+   "pooled_adj": 0.85799,
+   "pooled_ci": [
+    0.64847,
+    1.00115
+   ],
+   "vbm_adj": 0.79438,
+   "vbm_ci": [
+    0.14253,
+    0.96946
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 15
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-01-28",
+   "raw": 0.4,
+   "raw_ci": [
+    0.4,
+    0.4
+   ],
+   "pooled_adj": 0.45799,
+   "pooled_ci": [
+    0.38891,
+    0.49946
+   ],
+   "vbm_adj": 0.39438,
+   "vbm_ci": [
+    -0.15109,
+    0.53241
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 1,
+   "n_responses": 17,
+   "median_date": "2026-06-08",
+   "raw": 0.5,
+   "raw_ci": [
+    0.5,
+    0.5
+   ],
+   "pooled_adj": 0.6504,
+   "pooled_ci": [
+    0.49646,
+    0.7642
+   ],
+   "vbm_adj": 0.71749,
+   "vbm_ci": [
+    0.32144,
+    0.94199
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.588,
+     "n": 10
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.412,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "n_students": 1,
+   "n_responses": 13,
+   "median_date": "2026-04-15",
+   "raw": 0.80769,
+   "raw_ci": [
+    0.80769,
+    0.80769
+   ],
+   "pooled_adj": 0.67965,
+   "pooled_ci": [
+    0.57927,
+    0.85004
+   ],
+   "vbm_adj": 0.70456,
+   "vbm_ci": [
+    0.63068,
+    1.28556
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 13
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 1,
+   "n_responses": 13,
+   "median_date": "2026-04-15",
+   "raw": 0.57692,
+   "raw_ci": [
+    0.57692,
+    0.57692
+   ],
+   "pooled_adj": 0.44888,
+   "pooled_ci": [
+    0.32661,
+    0.60041
+   ],
+   "vbm_adj": 0.47379,
+   "vbm_ci": [
+    0.38064,
+    1.05237
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 13
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 11,
+   "n_responses": 100,
+   "median_date": "2026-04-15",
+   "raw": 0.69711,
+   "raw_ci": [
+    0.60769,
+    0.79277
+   ],
+   "pooled_adj": 0.56906,
+   "pooled_ci": [
+    0.41009,
+    0.75036
+   ],
+   "vbm_adj": 0.59397,
+   "vbm_ci": [
+    0.4541,
+    1.17096
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 100
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 7,
+   "n_responses": 56,
+   "median_date": "2026-04-15",
+   "raw": 0.55661,
+   "raw_ci": [
+    0.47222,
+    0.64675
+   ],
+   "pooled_adj": 0.4386,
+   "pooled_ci": [
+    0.29055,
+    0.59177
+   ],
+   "vbm_adj": 0.46446,
+   "vbm_ci": [
+    0.32898,
+    0.94825
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.875,
+     "n": 49
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.125,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 1,
+   "n_responses": 17,
+   "median_date": "2026-06-08",
+   "raw": 0.70588,
+   "raw_ci": [
+    0.70588,
+    0.70588
+   ],
+   "pooled_adj": 0.85628,
+   "pooled_ci": [
+    0.65639,
+    0.985
+   ],
+   "vbm_adj": 0.92338,
+   "vbm_ci": [
+    0.49806,
+    1.30508
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.588,
+     "n": 10
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.412,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 20,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-06-10",
+   "raw": 0.64286,
+   "raw_ci": [
+    0.64286,
+    0.64286
+   ],
+   "pooled_adj": 0.58509,
+   "pooled_ci": [
+    0.54163,
+    0.66275
+   ],
+   "vbm_adj": 0.61662,
+   "vbm_ci": [
+    0.45262,
+    0.88682
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 1.0,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 22,
+   "n_students": 1,
+   "n_responses": 24,
+   "median_date": "2026-06-09",
+   "raw": 0.66667,
+   "raw_ci": [
+    0.66667,
+    0.66667
+   ],
+   "pooled_adj": 0.75635,
+   "pooled_ci": [
+    0.64978,
+    0.8502
+   ],
+   "vbm_adj": 0.81307,
+   "vbm_ci": [
+    0.52977,
+    1.15074
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.417,
+     "n": 10
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.292,
+     "n": 7
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.292,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 24,
+   "n_students": 10,
+   "n_responses": 70,
+   "median_date": "2026-05-29",
+   "raw": 0.66429,
+   "raw_ci": [
+    0.57143,
+    0.76531
+   ],
+   "pooled_adj": 0.60652,
+   "pooled_ci": [
+    0.48911,
+    0.72866
+   ],
+   "vbm_adj": 0.63804,
+   "vbm_ci": [
+    0.47038,
+    0.92815
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 1.0,
+     "n": 70
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 17,
+   "n_responses": 310,
+   "median_date": "2026-06-08",
+   "raw": 0.63557,
+   "raw_ci": [
+    0.5666,
+    0.71035
+   ],
+   "pooled_adj": 0.69076,
+   "pooled_ci": [
+    0.56854,
+    0.78827
+   ],
+   "vbm_adj": 0.75158,
+   "vbm_ci": [
+    0.47445,
+    1.09192
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.416,
+     "n": 129
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.335,
+     "n": 104
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.248,
+     "n": 77
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 4,
+   "n_responses": 94,
+   "median_date": "2026-06-09",
+   "raw": 0.71218,
+   "raw_ci": [
+    0.52083,
+    0.93793
+   ],
+   "pooled_adj": 0.80507,
+   "pooled_ci": [
+    0.58489,
+    1.05487
+   ],
+   "vbm_adj": 0.86234,
+   "vbm_ci": [
+    0.54616,
+    1.25525
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.426,
+     "n": 40
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.298,
+     "n": 28
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.277,
+     "n": 26
+    }
+   ]
+  }
+ ]
+}

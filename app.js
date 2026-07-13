@@ -132,6 +132,7 @@ const state = {
   showFit: true
 };
 
+let SCOPE = "all";
 let DATA = EMPTY_DATA;
 let BETAS = {};
 let dataSource = "No data loaded — run the Stata exporter";
@@ -165,6 +166,23 @@ document.getElementById("fitToggle").addEventListener("change", (event) => {
 window.addEventListener("resize", render);
 
 async function init() {
+  const picker = document.getElementById("scopePicker");
+  const urlScope = new URLSearchParams(location.search).get("scope");
+  if (urlScope && picker && [...picker.options].some((o) => o.value === urlScope)) {
+    SCOPE = urlScope;
+    picker.value = urlScope;
+  }
+  if (picker) {
+    picker.addEventListener("change", async () => {
+      SCOPE = picker.value;
+      DATA = EMPTY_DATA;
+      BETAS = {};
+      await loadStataExport();
+      renderSeriesPicker();
+      render();
+      if (typeof window.reloadTeacherView === "function") window.reloadTeacherView(SCOPE);
+    });
+  }
   await loadStataExport();
   renderSeriesPicker();
   render();
@@ -172,14 +190,19 @@ async function init() {
 
 async function loadStataExport() {
   try {
-    const response = await fetch("./data/trajectory_scores_by_method.csv", { cache: "no-store" });
+    let response = await fetch(`./data/scopes/trajectory_scores_by_method__${SCOPE}.csv`, { cache: "no-store" });
+    if (!response.ok && SCOPE === "all") {
+      response = await fetch("./data/trajectory_scores_by_method.csv", { cache: "no-store" });
+    }
     if (!response.ok) return;
     const text = await response.text();
     const longRows = parseCsv(text);
     const nextData = buildWideData(longRows);
     if (nextData.week.length || nextData.month.length) {
       DATA = nextData;
-      dataSource = "Stata export";
+      const picker = document.getElementById("scopePicker");
+      const scopeLabel = picker ? picker.selectedOptions[0].textContent : SCOPE;
+      dataSource = `Stata export · ${scopeLabel}`;
       constrainSelected();
     }
   } catch (error) {
@@ -187,7 +210,10 @@ async function loadStataExport() {
   }
 
   try {
-    const betaResponse = await fetch("./data/trajectory_betas.csv", { cache: "no-store" });
+    let betaResponse = await fetch(`./data/scopes/trajectory_betas__${SCOPE}.csv`, { cache: "no-store" });
+    if (!betaResponse.ok && SCOPE === "all") {
+      betaResponse = await fetch("./data/trajectory_betas.csv", { cache: "no-store" });
+    }
     if (betaResponse.ok) {
       BETAS = {};
       parseCsv(await betaResponse.text()).forEach((row) => {

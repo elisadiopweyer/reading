@@ -1,0 +1,941 @@
+{
+ "class": "Gallo603",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.01252,
+   "ci": [
+    -0.02418,
+    0.00992
+   ]
+  },
+  "vocab": {
+   "est": -0.01764,
+   "ci": [
+    -0.09313,
+    0.06498
+   ]
+  },
+  "background": {
+   "est": -0.04837,
+   "ci": [
+    -0.10135,
+    0.01189
+   ]
+  },
+  "meaning": {
+   "est": 0.05223,
+   "ci": [
+    -0.02082,
+    0.13474
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 18,
+   "n_responses": 174,
+   "median_date": "2025-09-25",
+   "raw": 0.50485,
+   "raw_ci": [
+    0.42883,
+    0.57688
+   ],
+   "pooled_adj": 0.48954,
+   "pooled_ci": [
+    0.41004,
+    0.56759
+   ],
+   "vbm_adj": 0.43905,
+   "vbm_ci": [
+    0.34338,
+    0.53009
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.609,
+     "n": 106
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 9.5,
+     "share": 0.27,
+     "n": 47
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.063,
+     "n": 11
+    },
+    {
+     "title": "Captain Pratt Speech Excerpt ('Kill the Indian in him, and save the man')",
+     "d": 15.6,
+     "share": 0.029,
+     "n": 5
+    },
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.029,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 16,
+   "n_responses": 181,
+   "median_date": "2025-09-30",
+   "raw": 0.4323,
+   "raw_ci": [
+    0.36517,
+    0.50259
+   ],
+   "pooled_adj": 0.40634,
+   "pooled_ci": [
+    0.35213,
+    0.47963
+   ],
+   "vbm_adj": 0.33762,
+   "vbm_ci": [
+    0.25131,
+    0.41316
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.961,
+     "n": 174
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.022,
+     "n": 4
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 9.5,
+     "share": 0.011,
+     "n": 2
+    },
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.006,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 5,
+   "n_responses": 30,
+   "median_date": "2025-10-02",
+   "raw": 0.45111,
+   "raw_ci": [
+    0.3,
+    0.63881
+   ],
+   "pooled_adj": 0.41787,
+   "pooled_ci": [
+    0.26815,
+    0.60047
+   ],
+   "vbm_adj": 0.35591,
+   "vbm_ci": [
+    0.21856,
+    0.50898
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.833,
+     "n": 25
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.167,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 9,
+   "n_responses": 59,
+   "median_date": "2025-10-14",
+   "raw": 0.42748,
+   "raw_ci": [
+    0.29472,
+    0.55186
+   ],
+   "pooled_adj": 0.39675,
+   "pooled_ci": [
+    0.27391,
+    0.52834
+   ],
+   "vbm_adj": 0.33112,
+   "vbm_ci": [
+    0.20379,
+    0.45869
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.831,
+     "n": 49
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 6.0,
+     "share": 0.169,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 2,
+   "n_responses": 14,
+   "median_date": "2025-10-16",
+   "raw": 0.35417,
+   "raw_ci": [
+    0.33333,
+    0.375
+   ],
+   "pooled_adj": 0.32343,
+   "pooled_ci": [
+    0.27998,
+    0.38504
+   ],
+   "vbm_adj": 0.29365,
+   "vbm_ci": [
+    0.23041,
+    0.38313
+   ],
+   "texts": [
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 6.0,
+     "share": 0.643,
+     "n": 9
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.357,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2026-04-15",
+   "raw": 0.58333,
+   "raw_ci": [
+    0.58333,
+    0.58333
+   ],
+   "pooled_adj": 0.54008,
+   "pooled_ci": [
+    0.50508,
+    0.6012
+   ],
+   "vbm_adj": 0.52992,
+   "vbm_ci": [
+    0.48813,
+    0.59674
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "n_students": 2,
+   "n_responses": 15,
+   "median_date": "2026-05-21",
+   "raw": 0.72222,
+   "raw_ci": [
+    0.66667,
+    0.77778
+   ],
+   "pooled_adj": 0.72303,
+   "pooled_ci": [
+    0.6482,
+    0.80468
+   ],
+   "vbm_adj": 0.74696,
+   "vbm_ci": [
+    0.66061,
+    0.88855
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.533,
+     "n": 8
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.4,
+     "n": 6
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.067,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "n_students": 4,
+   "n_responses": 25,
+   "median_date": "2025-12-12",
+   "raw": 0.41369,
+   "raw_ci": [
+    0.16667,
+    0.66667
+   ],
+   "pooled_adj": 0.42302,
+   "pooled_ci": [
+    0.18322,
+    0.67013
+   ],
+   "vbm_adj": 0.40136,
+   "vbm_ci": [
+    0.15293,
+    0.65519
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 25
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "n_students": 14,
+   "n_responses": 130,
+   "median_date": "2025-12-16",
+   "raw": 0.45889,
+   "raw_ci": [
+    0.40889,
+    0.51208
+   ],
+   "pooled_adj": 0.46599,
+   "pooled_ci": [
+    0.41412,
+    0.51754
+   ],
+   "vbm_adj": 0.44841,
+   "vbm_ci": [
+    0.38753,
+    0.50743
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.946,
+     "n": 123
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.054,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 4,
+   "n_responses": 40,
+   "median_date": "2026-06-08",
+   "raw": 0.37728,
+   "raw_ci": [
+    0.23574,
+    0.66667
+   ],
+   "pooled_adj": 0.39718,
+   "pooled_ci": [
+    0.23524,
+    0.66918
+   ],
+   "vbm_adj": 0.48639,
+   "vbm_ci": [
+    0.26541,
+    0.66868
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.5,
+     "n": 20
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.3,
+     "n": 12
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.175,
+     "n": 7
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 6.0,
+     "share": 0.025,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 15,
+   "n_responses": 202,
+   "median_date": "2026-01-08",
+   "raw": 0.48996,
+   "raw_ci": [
+    0.43296,
+    0.55334
+   ],
+   "pooled_adj": 0.49831,
+   "pooled_ci": [
+    0.43911,
+    0.56089
+   ],
+   "vbm_adj": 0.50026,
+   "vbm_ci": [
+    0.40214,
+    0.59054
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.396,
+     "n": 80
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.337,
+     "n": 68
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 8.5,
+     "share": 0.262,
+     "n": 53
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.005,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 12,
+   "n_responses": 92,
+   "median_date": "2026-01-09",
+   "raw": 0.47617,
+   "raw_ci": [
+    0.34456,
+    0.5926
+   ],
+   "pooled_adj": 0.48523,
+   "pooled_ci": [
+    0.35224,
+    0.6029
+   ],
+   "vbm_adj": 0.47118,
+   "vbm_ci": [
+    0.32505,
+    0.59629
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.728,
+     "n": 67
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.163,
+     "n": 15
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 8.5,
+     "share": 0.109,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 3,
+   "n_responses": 16,
+   "median_date": "2026-01-16",
+   "raw": 0.53333,
+   "raw_ci": [
+    0.5,
+    0.6
+   ],
+   "pooled_adj": 0.54266,
+   "pooled_ci": [
+    0.49886,
+    0.61061
+   ],
+   "vbm_adj": 0.52101,
+   "vbm_ci": [
+    0.44247,
+    0.59095
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 1.0,
+     "n": 16
+    }
+   ]
+  },
+  {
+   "week": 24,
+   "n_students": 8,
+   "n_responses": 50,
+   "median_date": "2026-03-06",
+   "raw": 0.77589,
+   "raw_ci": [
+    0.71189,
+    0.81905
+   ],
+   "pooled_adj": 0.73263,
+   "pooled_ci": [
+    0.65601,
+    0.82
+   ],
+   "vbm_adj": 0.72248,
+   "vbm_ci": [
+    0.6387,
+    0.8125
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 50
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 14,
+   "n_responses": 134,
+   "median_date": "2026-03-12",
+   "raw": 0.59824,
+   "raw_ci": [
+    0.56185,
+    0.64249
+   ],
+   "pooled_adj": 0.62185,
+   "pooled_ci": [
+    0.55249,
+    0.66976
+   ],
+   "vbm_adj": 0.61648,
+   "vbm_ci": [
+    0.54003,
+    0.6618
+   ],
+   "texts": [
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.41,
+     "n": 55
+    },
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.216,
+     "n": 29
+    },
+    {
+     "title": "Captain Pratt Speech Excerpt ('Kill the Indian in him, and save the man')",
+     "d": 15.6,
+     "share": 0.194,
+     "n": 26
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.179,
+     "n": 24
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 9,
+   "n_responses": 91,
+   "median_date": "2026-03-16",
+   "raw": 0.53894,
+   "raw_ci": [
+    0.44665,
+    0.63396
+   ],
+   "pooled_adj": 0.59473,
+   "pooled_ci": [
+    0.4443,
+    0.71005
+   ],
+   "vbm_adj": 0.58737,
+   "vbm_ci": [
+    0.44915,
+    0.70422
+   ],
+   "texts": [
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration) with Carlisle Indian School photographs by Frances Benjamin Johnston",
+     "d": 13.6,
+     "share": 0.363,
+     "n": 33
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.264,
+     "n": 24
+    },
+    {
+     "title": "Captain Pratt Speech Excerpt ('Kill the Indian in him, and save the man')",
+     "d": 15.6,
+     "share": 0.198,
+     "n": 18
+    },
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.165,
+     "n": 15
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.011,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 27,
+   "n_students": 3,
+   "n_responses": 15,
+   "median_date": "2026-03-25",
+   "raw": 0.53333,
+   "raw_ci": [
+    0.3,
+    0.8
+   ],
+   "pooled_adj": 0.49008,
+   "pooled_ci": [
+    0.23656,
+    0.76577
+   ],
+   "vbm_adj": 0.47992,
+   "vbm_ci": [
+    0.22728,
+    0.75979
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 15
+    }
+   ]
+  },
+  {
+   "week": 28,
+   "n_students": 2,
+   "n_responses": 10,
+   "median_date": "2026-03-25",
+   "raw": 0.75,
+   "raw_ci": [
+    0.6,
+    0.9
+   ],
+   "pooled_adj": 0.70674,
+   "pooled_ci": [
+    0.52588,
+    0.92209
+   ],
+   "vbm_adj": 0.69659,
+   "vbm_ci": [
+    0.50788,
+    0.91066
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 30,
+   "n_students": 3,
+   "n_responses": 15,
+   "median_date": "2026-04-15",
+   "raw": 0.76667,
+   "raw_ci": [
+    0.4,
+    1.0
+   ],
+   "pooled_adj": 0.72341,
+   "pooled_ci": [
+    0.34077,
+    0.98239
+   ],
+   "vbm_adj": 0.71326,
+   "vbm_ci": [
+    0.32861,
+    0.98034
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 15
+    }
+   ]
+  },
+  {
+   "week": 34,
+   "n_students": 2,
+   "n_responses": 14,
+   "median_date": "2026-05-14",
+   "raw": 0.60714,
+   "raw_ci": [
+    0.57143,
+    0.64286
+   ],
+   "pooled_adj": 0.65028,
+   "pooled_ci": [
+    0.5574,
+    0.71615
+   ],
+   "vbm_adj": 0.67932,
+   "vbm_ci": [
+    0.52076,
+    0.82323
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 1.0,
+     "n": 14
+    }
+   ]
+  },
+  {
+   "week": 35,
+   "n_students": 12,
+   "n_responses": 110,
+   "median_date": "2026-05-21",
+   "raw": 0.72885,
+   "raw_ci": [
+    0.66146,
+    0.79437
+   ],
+   "pooled_adj": 0.71828,
+   "pooled_ci": [
+    0.65631,
+    0.7917
+   ],
+   "vbm_adj": 0.76906,
+   "vbm_ci": [
+    0.69818,
+    0.85345
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.691,
+     "n": 76
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 0.236,
+     "n": 26
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.073,
+     "n": 8
+    }
+   ]
+  },
+  {
+   "week": 36,
+   "n_students": 3,
+   "n_responses": 27,
+   "median_date": "2026-05-22",
+   "raw": 0.73521,
+   "raw_ci": [
+    0.66667,
+    0.85714
+   ],
+   "pooled_adj": 0.71911,
+   "pooled_ci": [
+    0.6571,
+    0.82994
+   ],
+   "vbm_adj": 0.77133,
+   "vbm_ci": [
+    0.68032,
+    0.87584
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.778,
+     "n": 21
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 0.222,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 37,
+   "n_students": 2,
+   "n_responses": 16,
+   "median_date": "2026-06-03",
+   "raw": 0.45,
+   "raw_ci": [
+    0.4,
+    0.5
+   ],
+   "pooled_adj": 0.48918,
+   "pooled_ci": [
+    0.38536,
+    0.55633
+   ],
+   "vbm_adj": 0.43877,
+   "vbm_ci": [
+    0.28398,
+    0.54958
+   ],
+   "texts": [
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.688,
+     "n": 11
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.312,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 38,
+   "n_students": 17,
+   "n_responses": 243,
+   "median_date": "2026-06-08",
+   "raw": 0.37814,
+   "raw_ci": [
+    0.31074,
+    0.43912
+   ],
+   "pooled_adj": 0.41512,
+   "pooled_ci": [
+    0.3096,
+    0.50099
+   ],
+   "vbm_adj": 0.57344,
+   "vbm_ci": [
+    0.36058,
+    0.75958
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.642,
+     "n": 156
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.346,
+     "n": 84
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.012,
+     "n": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+ "class": "Hughes657",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.02502,
+   "ci": [
+    -0.07341,
+    0.12593
+   ]
+  },
+  "vocab": {
+   "est": -0.05936,
+   "ci": [
+    -0.65404,
+    0.668
+   ]
+  },
+  "background": {
+   "est": -0.05398,
+   "ci": [
+    -0.27845,
+    0.11715
+   ]
+  },
+  "meaning": {
+   "est": 0.07895,
+   "ci": [
+    -0.40767,
+    0.48849
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 12,
+   "n_responses": 86,
+   "median_date": "2025-12-13",
+   "raw": 0.49495,
+   "raw_ci": [
+    0.40553,
+    0.58159
+   ],
+   "pooled_adj": 0.4864,
+   "pooled_ci": [
+    0.37191,
+    0.59066
+   ],
+   "vbm_adj": 0.48301,
+   "vbm_ci": [
+    0.04559,
+    0.80847
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.814,
+     "n": 70
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.116,
+     "n": 10
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.058,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.012,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2026-04-17",
+   "raw": 0.75,
+   "raw_ci": [
+    0.75,
+    0.75
+   ],
+   "pooled_adj": 0.8531,
+   "pooled_ci": [
+    0.45834,
+    1.15099
+   ],
+   "vbm_adj": 0.59839,
+   "vbm_ci": [
+    0.31699,
+    0.86834
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "n_students": 1,
+   "n_responses": 24,
+   "median_date": "2026-06-09",
+   "raw": 0.58333,
+   "raw_ci": [
+    0.58333,
+    0.58333
+   ],
+   "pooled_adj": 0.55468,
+   "pooled_ci": [
+    0.45717,
+    0.66477
+   ],
+   "vbm_adj": 0.66093,
+   "vbm_ci": [
+    0.35907,
+    0.97942
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.417,
+     "n": 10
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.292,
+     "n": 7
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.292,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 3,
+   "n_responses": 17,
+   "median_date": "2026-03-30",
+   "raw": 0.46667,
+   "raw_ci": [
+    0.4,
+    0.5
+   ],
+   "pooled_adj": 0.40966,
+   "pooled_ci": [
+    0.1507,
+    0.66516
+   ],
+   "vbm_adj": 0.54375,
+   "vbm_ci": [
+    -0.43056,
+    1.39732
+   ],
+   "texts": [
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 1.0,
+     "n": 17
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 8,
+   "n_responses": 49,
+   "median_date": "2026-04-17",
+   "raw": 0.73065,
+   "raw_ci": [
+    0.56531,
+    0.8551
+   ],
+   "pooled_adj": 0.83376,
+   "pooled_ci": [
+    0.3778,
+    1.27114
+   ],
+   "vbm_adj": 0.57905,
+   "vbm_ci": [
+    -0.07545,
+    1.35311
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 49
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 16,
+   "n_responses": 307,
+   "median_date": "2026-06-09",
+   "raw": 0.49363,
+   "raw_ci": [
+    0.41938,
+    0.57143
+   ],
+   "pooled_adj": 0.45452,
+   "pooled_ci": [
+    0.30725,
+    0.62273
+   ],
+   "vbm_adj": 0.56856,
+   "vbm_ci": [
+    0.24969,
+    0.96445
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.44,
+     "n": 135
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.306,
+     "n": 94
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.254,
+     "n": 78
+    }
+   ]
+  }
+ ]
+}

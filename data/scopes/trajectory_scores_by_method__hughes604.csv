@@ -1,0 +1,187 @@
+period_type,period,period_label,n_students,series_id,series_label,series_group,score,mean_difficulty,terms
+week,1,Week 1,15,genre_adjusted,Genre-adjusted,controls,.8083583116531372,1,V+B+M+literary+fiction
+week,4,Week 4,11,genre_adjusted,Genre-adjusted,controls,.8372740745544434,1,V+B+M+literary+fiction
+week,5,Week 5,4,genre_adjusted,Genre-adjusted,controls,.7190922498703003,1,V+B+M+literary+fiction
+week,6,Week 6,3,genre_adjusted,Genre-adjusted,controls,.9394291043281555,1,V+B+M+literary+fiction
+week,7,Week 7,1,genre_adjusted,Genre-adjusted,controls,.5394291281700134,1,V+B+M+literary+fiction
+week,8,Week 8,1,genre_adjusted,Genre-adjusted,controls,.5438414812088013,0,V+B+M+literary+fiction
+week,12,Week 12,1,genre_adjusted,Genre-adjusted,controls,.7827173471450806,1,V+B+M+literary+fiction
+week,14,Week 14,1,genre_adjusted,Genre-adjusted,controls,.5519481301307678,1,V+B+M+literary+fiction
+week,17,Week 17,11,genre_adjusted,Genre-adjusted,controls,.6721310019493103,1,V+B+M+literary+fiction
+week,18,Week 18,7,genre_adjusted,Genre-adjusted,controls,.5053521394729614,.8571428656578064,V+B+M+literary+fiction
+week,19,Week 19,1,genre_adjusted,Genre-adjusted,controls,.7497238516807556,0,V+B+M+literary+fiction
+week,20,Week 20,1,genre_adjusted,Genre-adjusted,controls,.4339235126972198,0,V+B+M+literary+fiction
+week,22,Week 22,1,genre_adjusted,Genre-adjusted,controls,.6367821097373962,0,V+B+M+literary+fiction
+week,24,Week 24,10,genre_adjusted,Genre-adjusted,controls,.4553521275520325,0,V+B+M+literary+fiction
+week,25,Week 25,17,genre_adjusted,Genre-adjusted,controls,.579190731048584,0,V+B+M+literary+fiction
+week,26,Week 26,4,genre_adjusted,Genre-adjusted,controls,.6861907243728638,0,V+B+M+literary+fiction
+week,1,Week 1,15,atos_adjusted,ATOS (published),external,.7315700563376761,-.8352267333333333,atos_published_z
+week,4,Week 4,11,atos_adjusted,ATOS (published),external,.7485067988891413,-.7942340000000001,atos_published_z
+week,5,Week 5,4,atos_adjusted,ATOS (published),external,.630324999266042,-.794234,atos_published_z
+week,12,Week 12,1,atos_adjusted,ATOS (published),external,.8736348321576832,-1.409125,atos_published_z
+week,14,Week 14,1,atos_adjusted,ATOS (published),external,.6428656151433705,-1.409125,atos_published_z
+week,17,Week 17,11,atos_adjusted,ATOS (published),external,.7630484707061007,-1.409125,atos_published_z
+week,18,Week 18,7,atos_adjusted,ATOS (published),external,.603892621485678,-1.087039285714285,atos_published_z
+week,20,Week 20,1,atos_adjusted,ATOS (published),external,.57820197671062,.8454750000000002,atos_published_z
+week,22,Week 22,1,atos_adjusted,ATOS (published),external,.602011528903308,.8454750000000002,atos_published_z
+week,24,Week 24,10,atos_adjusted,ATOS (published),external,.5996305677235747,.8454750000000002,atos_published_z
+week,25,Week 25,17,atos_adjusted,ATOS (published),external,.570918985090949,.8454750000000003,atos_published_z
+week,26,Week 26,4,atos_adjusted,ATOS (published),external,.6475277963221694,.8454750000000002,atos_published_z
+week,1,Week 1,15,clear_adjusted,CLEAR,external,.6303527823764631,-1.731404066666667,clear_complexity_z
+week,4,Week 4,11,clear_adjusted,CLEAR,external,.6488968853942965,-1.737912,clear_complexity_z
+week,5,Week 5,4,clear_adjusted,CLEAR,external,.5307150857711974,-1.737912,clear_complexity_z
+week,6,Week 6,3,clear_adjusted,CLEAR,external,.8070989624184852,-1.089922,clear_complexity_z
+week,7,Week 7,1,clear_adjusted,CLEAR,external,.4070989763262356,-1.089922,clear_complexity_z
+week,8,Week 8,1,clear_adjusted,CLEAR,external,.6596400509364952,.2041346470588235,clear_complexity_z
+week,12,Week 12,1,clear_adjusted,CLEAR,external,.7499145116673173,-1.640293,clear_complexity_z
+week,14,Week 14,1,clear_adjusted,CLEAR,external,.5191452946530045,-1.640293,clear_complexity_z
+week,17,Week 17,11,clear_adjusted,CLEAR,external,.6393281502157346,-1.640293,clear_complexity_z
+week,18,Week 18,7,clear_adjusted,CLEAR,external,.5124863163007959,-1.524434428571429,clear_complexity_z
+week,19,Week 19,1,clear_adjusted,CLEAR,external,.8655224214084496,.2041346470588235,clear_complexity_z
+week,20,Week 20,1,clear_adjusted,CLEAR,external,.6806797633586402,-.8292830000000001,clear_complexity_z
+week,22,Week 22,1,clear_adjusted,CLEAR,external,.7907766560780294,-.0972788333333334,clear_complexity_z
+week,24,Week 24,10,clear_adjusted,CLEAR,external,.7021083543715949,-.829283,clear_complexity_z
+week,25,Week 25,17,clear_adjusted,CLEAR,external,.7376457848068059,-.2842372843387995,clear_complexity_z
+week,26,Week 26,4,clear_adjusted,CLEAR,external,.8381687352474712,-.0813656992753623,clear_complexity_z
+week,1,Week 1,15,czi_adjusted,CZI,external,.734790903856066,-1.17388095271901,czi_score
+week,4,Week 4,11,czi_adjusted,CZI,external,.7482970384564709,-1.10884099227594,czi_score
+week,5,Week 5,4,czi_adjusted,CZI,external,.6301152388333715,-1.10884099227594,czi_score
+week,6,Week 6,3,czi_adjusted,CZI,external,.7974614597961546,-.7429912147836749,czi_score
+week,7,Week 7,1,czi_adjusted,CZI,external,.3974614737039049,-.7429912147836749,czi_score
+week,8,Week 8,1,czi_adjusted,CZI,external,.4526425887452883,-.2408444613629184,czi_score
+week,12,Week 12,1,czi_adjusted,CZI,external,.9248841909909211,-2.084440398921981,czi_score
+week,14,Week 14,1,czi_adjusted,CZI,external,.6941149739766084,-2.084440398921981,czi_score
+week,17,Week 17,11,czi_adjusted,CZI,external,.8142978295393387,-2.084440398921981,czi_score
+week,18,Week 18,7,czi_adjusted,CZI,external,.6395900992684462,-1.701169203453893,czi_score
+week,19,Week 19,1,czi_adjusted,CZI,external,.6585249592172426,-.2408444613629184,czi_score
+week,20,Week 20,1,czi_adjusted,CZI,external,.5205881681905703,.5984579693546318,czi_score
+week,22,Week 22,1,czi_adjusted,CZI,external,.5974600717685706,.0039520809297004,czi_score
+week,24,Week 24,10,czi_adjusted,CZI,external,.542016759203525,.5984579693546318,czi_score
+week,25,Week 25,17,czi_adjusted,CZI,external,.5588880261392352,.0877517572838141,czi_score
+week,26,Week 26,4,czi_adjusted,CZI,external,.6441298685653736,-.0089719601230155,czi_score
+week,1,Week 1,15,lexile_adjusted,Lexile (published),external,.7265101676300126,-.8430131333333332,lexile_published_z
+week,4,Week 4,11,lexile_adjusted,Lexile (published),external,.7432687164647557,-.7912239999999998,lexile_published_z
+week,5,Week 5,4,lexile_adjusted,Lexile (published),external,.6250869168416564,-.791224,lexile_published_z
+week,6,Week 6,3,lexile_adjusted,Lexile (published),external,.7931781300267978,-.143859,lexile_published_z
+week,7,Week 7,1,lexile_adjusted,Lexile (published),external,.3931781439345481,-.143859,lexile_published_z
+week,12,Week 12,1,lexile_adjusted,Lexile (published),external,.8710696554841317,-1.568061,lexile_published_z
+week,14,Week 14,1,lexile_adjusted,Lexile (published),external,.640300438469819,-1.568061,lexile_published_z
+week,17,Week 17,11,lexile_adjusted,Lexile (published),external,.7604832940325491,-1.568061,lexile_published_z
+week,18,Week 18,7,lexile_adjusted,Lexile (published),external,.6026623665717175,-1.216634428571429,lexile_published_z
+week,20,Week 20,1,lexile_adjusted,Lexile (published),external,.5849812523542046,.8919249999999999,lexile_published_z
+week,22,Week 22,1,lexile_adjusted,Lexile (published),external,.6087908045468926,.8919249999999999,lexile_published_z
+week,24,Week 24,10,lexile_adjusted,Lexile (published),external,.6064098433671594,.8919249999999999,lexile_published_z
+week,25,Week 25,17,lexile_adjusted,Lexile (published),external,.5776982607345333,.8919250000000001,lexile_published_z
+week,26,Week 26,4,lexile_adjusted,Lexile (published),external,.654307071965754,.8919249999999999,lexile_published_z
+week,1,Week 1,15,textstat_adjusted,Textstat,external,.7529189524653587,-1.520651675975918,textstat_complexity_z
+week,4,Week 4,11,textstat_adjusted,Textstat,external,.7679291591291123,-1.469977614882314,textstat_complexity_z
+week,5,Week 5,4,textstat_adjusted,Textstat,external,.6497473595060133,-1.469977614882315,textstat_complexity_z
+week,6,Week 6,3,textstat_adjusted,Textstat,external,.814789001626286,-1.05810495669906,textstat_complexity_z
+week,7,Week 7,1,textstat_adjusted,Textstat,external,.4147890155340363,-1.05810495669906,textstat_complexity_z
+week,8,Week 8,1,textstat_adjusted,Textstat,external,.4282496832159967,-.0385145250695844,textstat_complexity_z
+week,12,Week 12,1,textstat_adjusted,Textstat,external,.9219552307133227,-2.23008853128637,textstat_complexity_z
+week,14,Week 14,1,textstat_adjusted,Textstat,external,.69118601369901,-2.23008853128637,textstat_complexity_z
+week,17,Week 17,11,textstat_adjusted,Textstat,external,.8113688692617402,-2.23008853128637,textstat_complexity_z
+week,18,Week 18,7,textstat_adjusted,Textstat,external,.6357791845928452,-1.816656947309931,textstat_complexity_z
+week,19,Week 19,1,textstat_adjusted,Textstat,external,.634132053687951,-.0385145250695844,textstat_complexity_z
+week,20,Week 20,1,textstat_adjusted,Textstat,external,.5114855271269532,.6639325565487039,textstat_complexity_z
+week,22,Week 22,1,textstat_adjusted,Textstat,external,.5775268267084341,.1663658737357497,textstat_complexity_z
+week,24,Week 24,10,textstat_adjusted,Textstat,external,.5329141181399079,.6639325565487039,textstat_complexity_z
+week,25,Week 25,17,textstat_adjusted,Textstat,external,.5399799708156688,.242409391947821,textstat_complexity_z
+week,26,Week 26,4,textstat_adjusted,Textstat,external,.6239611755922693,.1555492067180768,textstat_complexity_z
+week,1,Week 1,15,unadjusted,Unadjusted,observed,.6988705396652222,,observed
+week,4,Week 4,11,unadjusted,Unadjusted,observed,.7181817889213562,,observed
+week,5,Week 5,4,unadjusted,Unadjusted,observed,.6000000238418579,,observed
+week,6,Week 6,3,unadjusted,Unadjusted,observed,.800000011920929,,observed
+week,7,Week 7,1,unadjusted,Unadjusted,observed,.4000000059604645,,observed
+week,8,Week 8,1,unadjusted,Unadjusted,observed,.5,,observed
+week,12,Week 12,1,unadjusted,Unadjusted,observed,.807692289352417,,observed
+week,14,Week 14,1,unadjusted,Unadjusted,observed,.5769230723381042,,observed
+week,17,Week 17,11,unadjusted,Unadjusted,observed,.6971059441566467,,observed
+week,18,Week 18,7,unadjusted,Unadjusted,observed,.5566068887710571,,observed
+week,19,Week 19,1,unadjusted,Unadjusted,observed,.7058823704719543,,observed
+week,20,Week 20,1,unadjusted,Unadjusted,observed,.6428571343421936,,observed
+week,22,Week 22,1,unadjusted,Unadjusted,observed,.6666666865348816,,observed
+week,24,Week 24,10,unadjusted,Unadjusted,observed,.6642857193946838,,observed
+week,25,Week 25,17,unadjusted,Unadjusted,observed,.6355741620063782,,observed
+week,26,Week 26,4,unadjusted,Unadjusted,observed,.7121829390525818,,observed
+week,1,Week 1,15,bk_adjusted,BK,vbm,.668857753276825,1.12,B
+week,4,Week 4,11,bk_adjusted,BK,vbm,.693514347076416,1.2,B
+week,5,Week 5,4,bk_adjusted,BK,vbm,.5753325819969177,1.2,B
+week,6,Week 6,3,bk_adjusted,BK,vbm,.7953776717185974,1.5,B
+week,7,Week 7,1,bk_adjusted,BK,vbm,.3953776955604553,1.5,B
+week,8,Week 8,1,bk_adjusted,BK,vbm,.7135158777236938,4.764705882352941,B
+week,12,Week 12,1,bk_adjusted,BK,vbm,.7028443217277527,0,B
+week,14,Week 14,1,bk_adjusted,BK,vbm,.4720751047134399,0,B
+week,17,Week 17,11,bk_adjusted,BK,vbm,.5922579765319824,0,B
+week,18,Week 18,7,bk_adjusted,BK,vbm,.4632132947444916,.1714285714285714,B
+week,19,Week 19,1,bk_adjusted,BK,vbm,.9193982481956482,4.764705882352941,B
+week,20,Week 20,1,bk_adjusted,BK,vbm,.6181896924972534,1.2,B
+week,22,Week 22,1,bk_adjusted,BK,vbm,.8107123970985413,3.725,B
+week,24,Week 24,10,bk_adjusted,BK,vbm,.6396182775497437,1.2,B
+week,25,Week 25,17,bk_adjusted,BK,vbm,.7511554956436157,3.298995787573342,B
+week,26,Week 26,4,bk_adjusted,BK,vbm,.8598963618278503,3.779891304347827,B
+week,1,Week 1,15,meaning_adjusted,Meaning,vbm,.722103476524353,3.933333396911621,M
+week,4,Week 4,11,meaning_adjusted,Meaning,vbm,.7446621060371399,4,M
+week,5,Week 5,4,meaning_adjusted,Meaning,vbm,.6264803409576416,4,M
+week,6,Week 6,3,meaning_adjusted,Meaning,vbm,.8264803290367126,4,M
+week,7,Week 7,1,meaning_adjusted,Meaning,vbm,.4264803230762482,4,M
+week,8,Week 8,1,meaning_adjusted,Meaning,vbm,.5092880129814148,3.647058725357056,M
+week,12,Week 12,1,meaning_adjusted,Meaning,vbm,.7854610681533813,3,M
+week,14,Week 14,1,meaning_adjusted,Meaning,vbm,.5546918511390686,3,M
+week,17,Week 17,11,meaning_adjusted,Meaning,vbm,.6748747229576111,3,M
+week,18,Week 18,7,meaning_adjusted,Meaning,vbm,.5343756675720215,3,M
+week,19,Week 19,1,meaning_adjusted,Meaning,vbm,.7151703834533691,3.647058725357056,M
+week,20,Week 20,1,meaning_adjusted,Meaning,vbm,.620625913143158,3,M
+week,22,Week 22,1,meaning_adjusted,Meaning,vbm,.666761577129364,3.458333253860474,M
+week,24,Week 24,10,meaning_adjusted,Meaning,vbm,.6420544981956482,3,M
+week,25,Week 25,17,meaning_adjusted,Meaning,vbm,.6247833967208862,3.234861612319946,M
+week,26,Week 26,4,meaning_adjusted,Meaning,vbm,.7127631902694702,3.468297004699707,M
+week,1,Week 1,15,pooled_adjusted,Pooled D,vbm,.7328808307647705,8.92,D
+week,4,Week 4,11,pooled_adjusted,Pooled D,vbm,.7637673616409302,9.200000000000001,D
+week,5,Week 5,4,pooled_adjusted,Pooled D,vbm,.6455855965614319,9.199999999999999,D
+week,6,Week 6,3,pooled_adjusted,Pooled D,vbm,.8579877018928528,9.5,D
+week,7,Week 7,1,pooled_adjusted,Pooled D,vbm,.4579876959323883,9.5,D
+week,8,Week 8,1,pooled_adjusted,Pooled D,vbm,.6503958106040955,11.73529411764706,D
+week,12,Week 12,1,pooled_adjusted,Pooled D,vbm,.6796478629112244,5,D
+week,14,Week 14,1,pooled_adjusted,Pooled D,vbm,.4488786458969116,5,D
+week,17,Week 17,11,pooled_adjusted,Pooled D,vbm,.5690615177154541,5,D
+week,18,Week 18,7,pooled_adjusted,Pooled D,vbm,.4386022984981537,5.242857142857143,D
+week,19,Week 19,1,pooled_adjusted,Pooled D,vbm,.8562781810760498,11.73529411764706,D
+week,20,Week 20,1,pooled_adjusted,Pooled D,vbm,.5850915312767029,6.700000000000001,D
+week,22,Week 22,1,pooled_adjusted,Pooled D,vbm,.756348729133606,10.26666666666666,D
+week,24,Week 24,10,pooled_adjusted,Pooled D,vbm,.6065201163291931,6.700000000000001,D
+week,25,Week 25,17,pooled_adjusted,Pooled D,vbm,.690757691860199,9.432169901208564,D
+week,26,Week 26,4,pooled_adjusted,Pooled D,vbm,.8050704002380371,10.34420289855072,D
+week,1,Week 1,15,three_leg_adjusted,V/BK/M,vbm,.6677250266075134,8.92,V+B+M
+week,4,Week 4,11,three_leg_adjusted,V/BK/M,vbm,.6921784281730652,9.200000000000001,V+B+M
+week,5,Week 5,4,three_leg_adjusted,V/BK/M,vbm,.5739966034889221,9.199999999999999,V+B+M
+week,6,Week 6,3,three_leg_adjusted,V/BK/M,vbm,.7943810224533081,9.5,V+B+M
+week,7,Week 7,1,three_leg_adjusted,V/BK/M,vbm,.394381046295166,9.5,V+B+M
+week,8,Week 8,1,three_leg_adjusted,V/BK/M,vbm,.7174932956695557,11.73529411764706,V+B+M
+week,12,Week 12,1,three_leg_adjusted,V/BK/M,vbm,.7045570611953735,5,V+B+M
+week,14,Week 14,1,three_leg_adjusted,V/BK/M,vbm,.4737878143787384,5,V+B+M
+week,17,Week 17,11,three_leg_adjusted,V/BK/M,vbm,.5939706563949585,5,V+B+M
+week,18,Week 18,7,three_leg_adjusted,V/BK/M,vbm,.4644564390182495,5.242857142857143,V+B+M
+week,19,Week 19,1,three_leg_adjusted,V/BK/M,vbm,.92337566614151,11.73529411764706,V+B+M
+week,20,Week 20,1,three_leg_adjusted,V/BK/M,vbm,.6166154146194458,6.700000000000001,V+B+M
+week,22,Week 22,1,three_leg_adjusted,V/BK/M,vbm,.8130705952644348,10.26666666666666,V+B+M
+week,24,Week 24,10,three_leg_adjusted,V/BK/M,vbm,.638043999671936,6.700000000000001,V+B+M
+week,25,Week 25,17,three_leg_adjusted,V/BK/M,vbm,.7515836358070374,9.432169901208564,V+B+M
+week,26,Week 26,4,three_leg_adjusted,V/BK/M,vbm,.8623400926589966,10.34420289855072,V+B+M
+week,1,Week 1,15,vocab_adjusted,Vocab,vbm,.7650492787361145,3.866666666666667,V
+week,4,Week 4,11,vocab_adjusted,Vocab,vbm,.7954608201980591,4,V
+week,5,Week 5,4,vocab_adjusted,Vocab,vbm,.6772790551185608,4,V
+week,6,Week 6,3,vocab_adjusted,Vocab,vbm,.8772790431976318,4,V
+week,7,Week 7,1,vocab_adjusted,Vocab,vbm,.4772790372371674,4,V
+week,8,Week 8,1,vocab_adjusted,Vocab,vbm,.5209612250328064,3.323529411764706,V
+week,12,Week 12,1,vocab_adjusted,Vocab,vbm,.7184665203094482,2,V
+week,14,Week 14,1,vocab_adjusted,Vocab,vbm,.4876973032951355,2,V
+week,17,Week 17,11,vocab_adjusted,Vocab,vbm,.607880175113678,2,V
+week,18,Week 18,7,vocab_adjusted,Vocab,vbm,.4733277261257172,2.071428571428572,V
+week,19,Week 19,1,vocab_adjusted,Vocab,vbm,.7268435955047607,3.323529411764706,V
+week,20,Week 20,1,vocab_adjusted,Vocab,vbm,.595257580280304,2.5,V
+week,22,Week 22,1,vocab_adjusted,Vocab,vbm,.6676310300827026,3.083333333333333,V
+week,24,Week 24,10,vocab_adjusted,Vocab,vbm,.6166861653327942,2.5,V
+week,25,Week 25,17,vocab_adjusted,Vocab,vbm,.6211350560188293,2.898312521939723,V
+week,26,Week 26,4,vocab_adjusted,Vocab,vbm,.7142030000686646,3.096014492753623,V

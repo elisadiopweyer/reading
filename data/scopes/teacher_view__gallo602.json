@@ -1,0 +1,466 @@
+{
+ "class": "Gallo602",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.00386,
+   "ci": [
+    -0.0532,
+    0.03301
+   ]
+  },
+  "vocab": {
+   "est": -0.03323,
+   "ci": [
+    -0.22122,
+    0.18722
+   ]
+  },
+  "background": {
+   "est": -0.02928,
+   "ci": [
+    -0.41005,
+    0.067
+   ]
+  },
+  "meaning": {
+   "est": 0.08596,
+   "ci": [
+    -0.29298,
+    0.27145
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 17,
+   "n_responses": 121,
+   "median_date": "2025-09-17",
+   "raw": 0.65244,
+   "raw_ci": [
+    0.58523,
+    0.72337
+   ],
+   "pooled_adj": 0.65691,
+   "pooled_ci": [
+    0.55032,
+    0.74534
+   ],
+   "vbm_adj": 0.57435,
+   "vbm_ci": [
+    0.26358,
+    0.71585
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 0.636,
+     "n": 77
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.132,
+     "n": 16
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 9.5,
+     "share": 0.091,
+     "n": 11
+    },
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.083,
+     "n": 10
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.058,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 3,
+   "n_responses": 18,
+   "median_date": "2025-09-26",
+   "raw": 0.29683,
+   "raw_ci": [
+    0.2,
+    0.35714
+   ],
+   "pooled_adj": 0.30568,
+   "pooled_ci": [
+    0.15288,
+    0.40744
+   ],
+   "vbm_adj": 0.18087,
+   "vbm_ci": [
+    -0.12224,
+    0.36954
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 6.0,
+     "share": 1.0,
+     "n": 18
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 3,
+   "n_responses": 17,
+   "median_date": "2026-01-08",
+   "raw": 0.62222,
+   "raw_ci": [
+    0.41667,
+    0.75
+   ],
+   "pooled_adj": 0.61756,
+   "pooled_ci": [
+    0.38413,
+    0.79632
+   ],
+   "vbm_adj": 0.61665,
+   "vbm_ci": [
+    0.25592,
+    0.85602
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 17
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "n_students": 11,
+   "n_responses": 55,
+   "median_date": "2025-12-12",
+   "raw": 0.55455,
+   "raw_ci": [
+    0.40769,
+    0.71429
+   ],
+   "pooled_adj": 0.55252,
+   "pooled_ci": [
+    0.39965,
+    0.71272
+   ],
+   "vbm_adj": 0.53876,
+   "vbm_ci": [
+    0.20615,
+    0.76017
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 9.2,
+     "share": 0.909,
+     "n": 50
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.091,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 2,
+   "n_responses": 10,
+   "median_date": "2026-03-19",
+   "raw": 0.55,
+   "raw_ci": [
+    0.2,
+    0.9
+   ],
+   "pooled_adj": 0.56272,
+   "pooled_ci": [
+    0.1602,
+    0.92274
+   ],
+   "vbm_adj": 0.52,
+   "vbm_ci": [
+    0.06615,
+    0.97287
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 14,
+   "n_responses": 84,
+   "median_date": "2026-01-08",
+   "raw": 0.71718,
+   "raw_ci": [
+    0.64205,
+    0.78762
+   ],
+   "pooled_adj": 0.71251,
+   "pooled_ci": [
+    0.6395,
+    0.80487
+   ],
+   "vbm_adj": 0.7116,
+   "vbm_ci": [
+    0.54764,
+    0.88469
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 84
+    }
+   ]
+  },
+  {
+   "week": 25,
+   "n_students": 10,
+   "n_responses": 61,
+   "median_date": "2026-03-06",
+   "raw": 0.67952,
+   "raw_ci": [
+    0.56528,
+    0.79048
+   ],
+   "pooled_adj": 0.68896,
+   "pooled_ci": [
+    0.48792,
+    0.79373
+   ],
+   "vbm_adj": 0.64083,
+   "vbm_ci": [
+    -0.01978,
+    0.81243
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.885,
+     "n": 54
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.115,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 4,
+   "n_responses": 35,
+   "median_date": "2026-06-08",
+   "raw": 0.45,
+   "raw_ci": [
+    0.1125,
+    0.8
+   ],
+   "pooled_adj": 0.43655,
+   "pooled_ci": [
+    0.09923,
+    0.75858
+   ],
+   "vbm_adj": 0.62381,
+   "vbm_ci": [
+    0.22137,
+    1.83298
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.857,
+     "n": 30
+    },
+    {
+     "title": "Captain Pratt Speech Excerpt ('Kill the Indian in him, and save the man')",
+     "d": 15.6,
+     "share": 0.143,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 27,
+   "n_students": 10,
+   "n_responses": 50,
+   "median_date": "2026-03-19",
+   "raw": 0.5,
+   "raw_ci": [
+    0.42222,
+    0.57273
+   ],
+   "pooled_adj": 0.51272,
+   "pooled_ci": [
+    0.30792,
+    0.63302
+   ],
+   "vbm_adj": 0.47,
+   "vbm_ci": [
+    -0.18814,
+    0.61265
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 50
+    }
+   ]
+  },
+  {
+   "week": 35,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-05-14",
+   "raw": 0.6,
+   "raw_ci": [
+    0.6,
+    0.6
+   ],
+   "pooled_adj": 0.59688,
+   "pooled_ci": [
+    0.57527,
+    0.65182
+   ],
+   "vbm_adj": 0.69203,
+   "vbm_ci": [
+    0.49781,
+    1.30813
+   ],
+   "texts": [
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 9.1,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 37,
+   "n_students": 2,
+   "n_responses": 14,
+   "median_date": "2026-05-30",
+   "raw": 0.60714,
+   "raw_ci": [
+    0.57143,
+    0.64286
+   ],
+   "pooled_adj": 0.6133,
+   "pooled_ci": [
+    0.51972,
+    0.68251
+   ],
+   "vbm_adj": 0.6289,
+   "vbm_ci": [
+    0.34497,
+    0.72522
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 1.0,
+     "n": 14
+    }
+   ]
+  },
+  {
+   "week": 38,
+   "n_students": 15,
+   "n_responses": 219,
+   "median_date": "2026-06-08",
+   "raw": 0.48754,
+   "raw_ci": [
+    0.4199,
+    0.55357
+   ],
+   "pooled_adj": 0.47455,
+   "pooled_ci": [
+    0.36006,
+    0.68644
+   ],
+   "vbm_adj": 0.59499,
+   "vbm_ci": [
+    0.33463,
+    1.76114
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 0.598,
+     "n": 131
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 13.5,
+     "share": 0.402,
+     "n": 88
+    }
+   ]
+  },
+  {
+   "week": 39,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-06-10",
+   "raw": 0.21429,
+   "raw_ci": [
+    0.21429,
+    0.21429
+   ],
+   "pooled_adj": 0.20576,
+   "pooled_ci": [
+    0.14429,
+    0.34062
+   ],
+   "vbm_adj": 0.46254,
+   "vbm_ci": [
+    0.11891,
+    1.55919
+   ],
+   "texts": [
+    {
+     "title": "Photographing a Llama Salt Caravan",
+     "d": 10.5,
+     "share": 1.0,
+     "n": 7
+    }
+   ]
+  }
+ ]
+}

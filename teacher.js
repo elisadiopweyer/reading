@@ -23,17 +23,30 @@ const teacherTableHead = document.getElementById("teacherTableHead");
 const teacherTableBody = document.getElementById("teacherTableBody");
 const teacherBetaNote = document.getElementById("teacherBetaNote");
 
+let teacherScope = (() => {
+  const p = new URLSearchParams(location.search).get("scope");
+  return p || "all";
+})();
+
 async function initTeacherView() {
   try {
-    const response = await fetch("./data/teacher_view.json", { cache: "no-store" });
+    let response = await fetch(`./data/scopes/teacher_view__${teacherScope}.json`, { cache: "no-store" });
+    if (!response.ok && teacherScope === "all") {
+      response = await fetch("./data/teacher_view.json", { cache: "no-store" });
+    }
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     teacherState.data = await response.json();
   } catch (error) {
-    teacherSummary.textContent = "Could not load data/teacher_view.json — run scripts/build_teacher_view_export.py.";
+    teacherSummary.textContent = "Could not load teacher view data — run scripts/build_teacher_view_export.py.";
     return;
   }
   renderTeacherView();
 }
+
+window.reloadTeacherView = (scope) => {
+  teacherScope = scope;
+  initTeacherView();
+};
 
 function renderTeacherView() {
   const data = teacherState.data;
