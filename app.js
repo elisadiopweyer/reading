@@ -83,6 +83,37 @@ const SERIES = {
     width: 2.7,
     dash: "",
     group: "external"
+  },
+  lexile_adjusted: {
+    label: "Lexile (published)",
+    tooltip:
+      "Adjusted with published Lexile measures of the trade books. Partial coverage by design: " +
+      "only texts with a published measure (9 of 27); weeks with no covered texts are blank.",
+    stroke: "#0e7490",
+    width: 2.7,
+    dash: "",
+    group: "external"
+  },
+  atos_adjusted: {
+    label: "ATOS (published)",
+    tooltip:
+      "Adjusted with published ATOS book levels. Partial coverage by design: only texts with a " +
+      "published level (8 of 27); weeks with no covered texts are blank.",
+    stroke: "#65a30d",
+    width: 2.7,
+    dash: "",
+    group: "external"
+  },
+  clear_adjusted: {
+    label: "CLEAR",
+    tooltip:
+      "Adjusted with a CommonLit CLEAR-calibrated readability model: ridge regression of " +
+      "Bradley–Terry easiness on textstat features, trained on the open CLEAR corpus " +
+      "(n=4,724, 5-fold CV R²=0.38), applied to the raw passages. Not an official CommonLit score.",
+    stroke: "#b91c1c",
+    width: 2.7,
+    dash: "",
+    group: "external"
   }
 };
 
