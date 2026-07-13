@@ -68,18 +68,38 @@ const SERIES = {
     dash: "",
     group: "external"
   },
-  learning_commons_adjusted: {
-    label: "Learning Commons",
-    tooltip: "Adjusted by holding the Learning Commons evaluator score at its sample mean.",
+  czi_adjusted: {
+    label: "CZI via Claude",
+    tooltip:
+      "Adjusted by holding a Claude-generated Lexile-style complexity estimate at its sample " +
+      "mean. This is not a Learning Commons (CZI) instrument — for the real CZI evaluators see " +
+      "the Sentence Structure and Vocabulary lanes.",
+    stroke: "#4f46e5",
+    width: 2.7,
+    dash: "",
+    group: "external"
+  },
+  lc_sentstr_adjusted: {
+    label: "CZI Sentence Structure (Claude-run)",
+    tooltip:
+      "Adjusted with the Learning Commons (CZI) sentence-structure evaluator: two-stage " +
+      "clause/phrase analysis then a grades-5–12 rubric mapping to four bands (Slightly to " +
+      "Exceedingly Complex), encoded 1–4 and z-scored. Published prompts " +
+      "(github.com/learning-commons-org/evaluators, CC BY 4.0) executed with claude-sonnet-5 " +
+      "instead of the published GPT-4o judge.",
     stroke: "#be185d",
     width: 2.7,
     dash: "",
     group: "external"
   },
-  czi_adjusted: {
-    label: "CZI",
-    tooltip: "Adjusted by holding the CZI text complexity score at its sample mean.",
-    stroke: "#4f46e5",
+  lc_vocab_adjusted: {
+    label: "CZI Vocabulary (Claude-run)",
+    tooltip:
+      "Adjusted with the Learning Commons (CZI) vocabulary evaluator: background-knowledge " +
+      "generation plus tiered-word analysis mapping to four bands (Slightly to Exceedingly " +
+      "Complex), encoded 1–4 and z-scored. Published prompts (github.com/learning-commons-org/" +
+      "evaluators, CC BY 4.0) executed with claude-sonnet-5 instead of the published GPT-4.1 judge.",
+    stroke: "#b91c1c",
     width: 2.7,
     dash: "",
     group: "external"
@@ -103,17 +123,6 @@ const SERIES = {
     width: 2.7,
     dash: "",
     group: "external"
-  },
-  clear_adjusted: {
-    label: "CLEAR",
-    tooltip:
-      "Adjusted with a CommonLit CLEAR-calibrated readability model: ridge regression of " +
-      "Bradley–Terry easiness on textstat features, trained on the open CLEAR corpus " +
-      "(n=4,724, 5-fold CV R²=0.38), applied to the raw passages. Not an official CommonLit score.",
-    stroke: "#b91c1c",
-    width: 2.7,
-    dash: "",
-    group: "external"
   }
 };
 
@@ -123,13 +132,17 @@ const DEFAULT_SELECTED = [
   "pooled_adjusted",
   "three_leg_adjusted",
   "czi_adjusted",
-  "textstat_adjusted"
+  "textstat_adjusted",
+  "lc_sentstr_adjusted",
+  "lc_vocab_adjusted"
 ];
 
 const state = {
   period: "week",
   selected: new Set(DEFAULT_SELECTED),
-  showFit: true
+  showFit: true,
+  showSE: false,
+  fitOnly: false
 };
 
 let SCOPE = "all";
@@ -163,14 +176,33 @@ document.getElementById("fitToggle").addEventListener("change", (event) => {
   render();
 });
 
+document.getElementById("seToggle").addEventListener("change", (event) => {
+  state.showSE = event.target.checked;
+  render();
+});
+
+document.getElementById("fitOnlyToggle").addEventListener("change", (event) => {
+  state.fitOnly = event.target.checked;
+  render();
+});
+
 window.addEventListener("resize", render);
 
 async function init() {
   const picker = document.getElementById("scopePicker");
-  const urlScope = new URLSearchParams(location.search).get("scope");
+  const params = new URLSearchParams(location.search);
+  const urlScope = params.get("scope");
   if (urlScope && picker && [...picker.options].some((o) => o.value === urlScope)) {
     SCOPE = urlScope;
     picker.value = urlScope;
+  }
+  if (params.get("se") === "1") {
+    state.showSE = true;
+    document.getElementById("seToggle").checked = true;
+  }
+  if (params.get("fitonly") === "1") {
+    state.fitOnly = true;
+    document.getElementById("fitOnlyToggle").checked = true;
   }
   if (picker) {
     picker.addEventListener("change", async () => {
@@ -279,7 +311,7 @@ function render() {
   chartTitle.textContent = "Weekly Score Trajectory";
   summary.innerHTML = `${rows.length} periods<br>${totalObservations(rows)} student-period rows<br>${dataSource}`;
   modelEquation.innerHTML = equationMarkup(state.period, selected);
-  renderChart(rows, selected, state.showFit);
+  renderChart(rows, selected, state.showFit || state.fitOnly, state.showSE, state.fitOnly);
   renderTable(rows, selected);
 }
 
@@ -397,7 +429,7 @@ function betaTableMarkup(selected) {
     </div>`;
 }
 
-function renderChart(rows, selected, showFit) {
+function renderChart(rows, selected, showFit, showSE, fitOnly) {
   const width = Math.max(720, svg.clientWidth || 960);
   const height = svg.clientHeight || 560;
   const margin = { top: 70, right: 34, bottom: 54, left: 82 };
@@ -418,7 +450,18 @@ function renderChart(rows, selected, showFit) {
       .filter(([, fit]) => fit)
   ) : {};
   const fitValues = Object.values(fits).flatMap((fit) => [fit.startY, fit.endY]);
-  const values = rows.flatMap((row) => selected.map((key) => row[key]).filter(Number.isFinite)).concat(fitValues);
+  const seValues = (showSE && !fitOnly)
+    ? rows.flatMap((row) => selected.flatMap((key) => {
+        const se = row[`${key}_se`];
+        return Number.isFinite(row[key]) && Number.isFinite(se)
+          ? [row[key] - 1.96 * se, row[key] + 1.96 * se]
+          : [];
+      }))
+    : [];
+  const values = (fitOnly
+    ? fitValues
+    : rows.flatMap((row) => selected.map((key) => row[key]).filter(Number.isFinite)).concat(fitValues)
+  ).concat(seValues);
 
   if (!values.length) {
     appendText(svg, width / 2, height / 2, "No finite values for selected series", "middle", "axis");
@@ -456,24 +499,41 @@ function renderChart(rows, selected, showFit) {
     const points = rows.filter((row) => Number.isFinite(row[key]));
     if (!points.length) return;
 
-    const path = points.map((row, i) => `${i === 0 ? "M" : "L"} ${x(row.period)} ${y(row[key])}`).join(" ");
-    const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    line.setAttribute("d", path);
-    line.setAttribute("class", "data-line");
-    line.setAttribute("stroke", def.stroke);
-    line.setAttribute("stroke-width", def.width);
-    if (def.dash) line.setAttribute("stroke-dasharray", def.dash);
-    svg.appendChild(line);
+    if (showSE && !fitOnly) {
+      const bandPoints = points.filter((row) => Number.isFinite(row[`${key}_se`]));
+      if (bandPoints.length > 1) {
+        const upper = bandPoints.map((row, i) =>
+          `${i === 0 ? "M" : "L"} ${x(row.period)} ${y(row[key] + 1.96 * row[`${key}_se`])}`);
+        const lower = [...bandPoints].reverse().map((row) =>
+          `L ${x(row.period)} ${y(row[key] - 1.96 * row[`${key}_se`])}`);
+        const band = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        band.setAttribute("d", upper.join(" ") + " " + lower.join(" ") + " Z");
+        band.setAttribute("class", "se-band");
+        band.setAttribute("fill", def.stroke);
+        svg.appendChild(band);
+      }
+    }
 
-    points.forEach((row) => {
-      const point = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      point.setAttribute("cx", x(row.period));
-      point.setAttribute("cy", y(row[key]));
-      point.setAttribute("r", index === 0 ? 3.5 : 3);
-      point.setAttribute("class", "data-point");
-      point.setAttribute("stroke", def.stroke);
-      svg.appendChild(point);
-    });
+    if (!fitOnly) {
+      const path = points.map((row, i) => `${i === 0 ? "M" : "L"} ${x(row.period)} ${y(row[key])}`).join(" ");
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      line.setAttribute("d", path);
+      line.setAttribute("class", "data-line");
+      line.setAttribute("stroke", def.stroke);
+      line.setAttribute("stroke-width", def.width);
+      if (def.dash) line.setAttribute("stroke-dasharray", def.dash);
+      svg.appendChild(line);
+
+      points.forEach((row) => {
+        const point = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        point.setAttribute("cx", x(row.period));
+        point.setAttribute("cy", y(row[key]));
+        point.setAttribute("r", index === 0 ? 3.5 : 3);
+        point.setAttribute("class", "data-point");
+        point.setAttribute("stroke", def.stroke);
+        svg.appendChild(point);
+      });
+    }
 
     if (showFit && fits[key]) {
       const fit = fits[key];
@@ -484,8 +544,8 @@ function renderChart(rows, selected, showFit) {
       fitLine.setAttribute("y2", y(fit.endY));
       fitLine.setAttribute("class", "fit-line");
       fitLine.setAttribute("stroke", def.stroke);
-      fitLine.setAttribute("stroke-width", Math.max(1.1, def.width - 1.2));
-      fitLine.setAttribute("stroke-dasharray", "1 7");
+      fitLine.setAttribute("stroke-width", fitOnly ? def.width : Math.max(1.1, def.width - 1.2));
+      fitLine.setAttribute("stroke-dasharray", fitOnly ? "6 4" : "1 7");
       svg.appendChild(fitLine);
     }
   });
@@ -494,15 +554,22 @@ function renderChart(rows, selected, showFit) {
 }
 
 function renderLegend(selected, startX, startY, showFit) {
+  const maxX = Math.max(720, svg.clientWidth || 960) - 40;
   let xCursor = startX;
+  let yCursor = startY;
   selected.forEach((key) => {
     const def = SERIES[key];
-    appendLine(svg, xCursor, startY, xCursor + 28, startY, "data-line", def.stroke, def.width, def.dash);
-    if (showFit) {
-      appendLine(svg, xCursor, startY + 8, xCursor + 28, startY + 8, "fit-line", def.stroke, 1.4, "1 7");
+    const entryWidth = Math.max(96, def.label.length * 8 + 56);
+    if (xCursor > startX && xCursor + entryWidth > maxX) {
+      xCursor = startX;
+      yCursor += 20;
     }
-    appendText(svg, xCursor + 36, startY + 4, def.label, "start", "axis");
-    xCursor += Math.max(96, def.label.length * 8 + 56);
+    appendLine(svg, xCursor, yCursor, xCursor + 28, yCursor, "data-line", def.stroke, def.width, def.dash);
+    if (showFit) {
+      appendLine(svg, xCursor, yCursor + 8, xCursor + 28, yCursor + 8, "fit-line", def.stroke, 1.4, "1 7");
+    }
+    appendText(svg, xCursor + 36, yCursor + 4, def.label, "start", "axis");
+    xCursor += entryWidth;
   });
 }
 
@@ -583,6 +650,7 @@ function buildWideData(longRows) {
     };
     row[seriesId] = score;
     row[`${seriesId}_n`] = Number(record.n_students);
+    row[`${seriesId}_se`] = Number(record.score_se);
     row[`${seriesId}_mean_difficulty`] = Number(record.mean_difficulty);
     row.n = Math.max(row.n || 0, Number(record.n_students) || 0);
     map.set(period, row);

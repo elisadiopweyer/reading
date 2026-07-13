@@ -19,10 +19,6 @@
             >Adjusted</span>
             for Text Difficulty
           </h1>
-          <div class="segmented view-switch" role="tablist" aria-label="View">
-            <button class="segment active" type="button" data-view="research" aria-selected="true">Research</button>
-            <button class="segment" type="button" data-view="teacher" aria-selected="false">Teacher-facing</button>
-          </div>
           <select id="scopePicker" class="scope-picker" aria-label="Class">
             <option value="all" selected>All classes (pooled)</option>
             <option value="dziuma603">DZIUMA603</option>
@@ -54,6 +50,22 @@
                 tabindex="0"
                 data-tooltip="Adds an ordinary least squares line for each selected score series."
               >Best fit</span>
+            </label>
+            <label class="check-row control-row">
+              <input type="checkbox" id="seToggle" />
+              <span
+                class="hint"
+                tabindex="0"
+                data-tooltip="Shades a 95% confidence band around each weekly mean (±1.96 standard errors of the mean across student-week cells)."
+              >Std. errors (95% band)</span>
+            </label>
+            <label class="check-row control-row">
+              <input type="checkbox" id="fitOnlyToggle" />
+              <span
+                class="hint"
+                tabindex="0"
+                data-tooltip="Hides the weekly data lines and points, leaving only each series' best-fit trendline."
+              >Trendlines only</span>
             </label>
             <fieldset class="series-picker" id="seriesPicker">
               <legend>Scoring methods</legend>
@@ -99,74 +111,9 @@
         </section>
       </div>
 
-      <div id="teacherView" hidden>
-        <section class="explain" aria-label="How to read this view">
-          <p class="teacher-lede">
-            <strong>Is this class growing as readers?</strong> The gray line is the class's
-            actual weekly score. The blue line asks a fairer question: what would that score
-            have been if every week's reading had been at the year's average difficulty?
-            Shaded bands show the range we can't statistically rule out (95%). The amber strip
-            marks how hard each week's texts were — darker means harder. Hover any week for
-            the texts the class read.
-          </p>
-          <div class="teacher-legend" aria-label="Legend">
-            <span class="legend-item"><span class="legend-line" style="background:#6b7280"></span>Actual score</span>
-            <span class="legend-item"><span class="legend-line" style="background:#2563eb"></span>Adjusted for text difficulty</span>
-            <span class="legend-item"><span class="legend-band"></span>95% confidence band</span>
-            <span class="legend-item"><span class="legend-ramp"></span>Text difficulty (easier → harder)</span>
-          </div>
-          <p class="plot-copy" id="teacherBetaNote"></p>
-        </section>
-
-        <section class="chart-section" aria-label="Teacher trajectory chart">
-          <div class="chart-head">
-            <h2>Weekly Reading Scores, Actual vs Difficulty-Adjusted</h2>
-            <span class="chart-meta" id="teacherSummary"></span>
-          </div>
-          <div class="chart-wrap teacher-chart-wrap">
-            <svg id="teacherChart" role="img" aria-label="Weekly reading scores with confidence bands"></svg>
-            <div id="teacherTooltip" class="teacher-tooltip" hidden></div>
-          </div>
-          <p class="plot-copy">
-            Faded points are weeks when fewer students were active, so their estimates are
-            less reliable. Weeks with fewer than 5 active students are shown as unconnected
-            faded dots with a vertical uncertainty whisker. Gaps in the line are stretches
-            with no class activity.
-          </p>
-        </section>
-
-        <section class="table-section" aria-label="Teacher trajectory data">
-          <div class="table-wrap">
-            <table>
-              <thead id="teacherTableHead"></thead>
-              <tbody id="teacherTableBody"></tbody>
-            </table>
-          </div>
-        </section>
-      </div>
     </main>
 
     <script src="./app.js"></script>
-    <script src="./teacher.js"></script>
-    <script>
-      function setView(view) {
-        document.querySelectorAll("[data-view]").forEach((node) => {
-          const active = node.dataset.view === view;
-          node.classList.toggle("active", active);
-          node.setAttribute("aria-selected", String(active));
-        });
-        document.getElementById("researchView").hidden = view !== "research";
-        document.getElementById("teacherView").hidden = view !== "teacher";
-        document.getElementById("summary").hidden = view === "teacher";
-        if (view === "teacher") renderTeacherView();
-      }
-      document.querySelectorAll("[data-view]").forEach((button) => {
-        button.addEventListener("click", () => setView(button.dataset.view));
-      });
-      if (new URLSearchParams(location.search).get("view") === "teacher") {
-        setView("teacher");
-      }
-    </script>
 
     <script>
       // inline editor (same pattern as emdw's /edit), gated behind a code so

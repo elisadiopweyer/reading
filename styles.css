@@ -361,6 +361,11 @@ h2 {
   stroke-linecap: round;
 }
 
+.se-band {
+  fill-opacity: 0.12;
+  stroke: none;
+}
+
 .data-point {
   fill: #fff;
   stroke-width: 2;
