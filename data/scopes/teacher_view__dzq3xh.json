@@ -1,0 +1,215 @@
+{
+ "class": "DZQ3XH",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.12534,
+   "ci": [
+    0.11262,
+    0.13253
+   ]
+  },
+  "vocab": {
+   "est": 0.09583,
+   "ci": [
+    0.08584,
+    0.10129
+   ]
+  },
+  "background": {
+   "est": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "meaning": {
+   "est": 0.14374,
+   "ci": [
+    0.12877,
+    0.15193
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 14,
+   "n_responses": 91,
+   "median_date": "2025-10-08",
+   "raw": 0.61103,
+   "raw_ci": [
+    0.50348,
+    0.72572
+   ],
+   "pooled_adj": 0.61103,
+   "pooled_ci": [
+    0.50348,
+    0.72572
+   ],
+   "vbm_adj": 0.61103,
+   "vbm_ci": [
+    0.50348,
+    0.72572
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 91
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 20,
+   "n_responses": 163,
+   "median_date": "2025-10-21",
+   "raw": 0.53664,
+   "raw_ci": [
+    0.46237,
+    0.60825
+   ],
+   "pooled_adj": 0.53664,
+   "pooled_ci": [
+    0.46237,
+    0.60825
+   ],
+   "vbm_adj": 0.53664,
+   "vbm_ci": [
+    0.46237,
+    0.60825
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 163
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 14,
+   "n_responses": 134,
+   "median_date": "2025-10-23",
+   "raw": 0.72928,
+   "raw_ci": [
+    0.64873,
+    0.80684
+   ],
+   "pooled_adj": 0.72928,
+   "pooled_ci": [
+    0.64873,
+    0.80684
+   ],
+   "vbm_adj": 0.72928,
+   "vbm_ci": [
+    0.64873,
+    0.80684
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 134
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 4,
+   "n_responses": 26,
+   "median_date": "2025-11-06",
+   "raw": 0.57917,
+   "raw_ci": [
+    0.43063,
+    0.66667
+   ],
+   "pooled_adj": 0.57917,
+   "pooled_ci": [
+    0.43063,
+    0.66667
+   ],
+   "vbm_adj": 0.57917,
+   "vbm_ci": [
+    0.43063,
+    0.66667
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 26
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 1,
+   "n_responses": 13,
+   "median_date": "2025-11-12",
+   "raw": 0.88462,
+   "raw_ci": [
+    0.88462,
+    0.88462
+   ],
+   "pooled_adj": 0.88462,
+   "pooled_ci": [
+    0.88462,
+    0.88462
+   ],
+   "vbm_adj": 0.88462,
+   "vbm_ci": [
+    0.88462,
+    0.88462
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 13
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "n_students": 1,
+   "n_responses": 9,
+   "median_date": "2025-12-10",
+   "raw": 0.44444,
+   "raw_ci": [
+    0.44444,
+    0.44444
+   ],
+   "pooled_adj": 0.44444,
+   "pooled_ci": [
+    0.44444,
+    0.44444
+   ],
+   "vbm_adj": 0.44444,
+   "vbm_ci": [
+    0.44444,
+    0.44444
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 9
+    }
+   ]
+  }
+ ]
+}

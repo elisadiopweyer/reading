@@ -1,0 +1,37 @@
+period_type,period,period_label,n_students,series_id,series_label,series_group,score,score_se,mean_difficulty,terms
+week,1,Week 1,19,genre_adjusted,Genre-adjusted,controls,.6321750283241272,.0251633596562311,1,V+B+M+literary+fiction
+week,3,Week 3,19,genre_adjusted,Genre-adjusted,controls,.5886997580528259,.0344014083791067,1,V+B+M+literary+fiction
+week,4,Week 4,7,genre_adjusted,Genre-adjusted,controls,.575377881526947,.0653197364394898,1,V+B+M+literary+fiction
+week,1,Week 1,16,atos_adjusted,ATOS (published),external,.6079255156219006,.0285238290234457,-1.545767,atos_published_z
+week,3,Week 3,19,atos_adjusted,ATOS (published),external,.6106316949191847,.0344014087105891,-1.545767000000001,atos_published_z
+week,4,Week 4,7,atos_adjusted,ATOS (published),external,.5973098405769893,.0653197352788687,-1.545767,atos_published_z
+week,1,Week 1,19,lc_sentstr_adjusted,CZI Sentence Structure (Claude-run),external,.6021628411192643,.0258902026398198,.41702882811415,lc_sentstr_complexity_z
+week,3,Week 3,19,lc_sentstr_adjusted,CZI Sentence Structure (Claude-run),external,.6106316949191847,.0344014087105891,.41702882811415,lc_sentstr_complexity_z
+week,4,Week 4,7,lc_sentstr_adjusted,CZI Sentence Structure (Claude-run),external,.5973098405769893,.0653197352788687,.4170288281141503,lc_sentstr_complexity_z
+week,1,Week 1,19,lc_vocab_adjusted,CZI Vocabulary (Claude-run),external,.6321749874212291,.0251633586265446,.354865252449493,lc_vocab_complexity_z
+week,3,Week 3,19,lc_vocab_adjusted,CZI Vocabulary (Claude-run),external,.5886997418523642,.0344014087105891,-.4629100498862757,lc_vocab_complexity_z
+week,4,Week 4,7,lc_vocab_adjusted,CZI Vocabulary (Claude-run),external,.5753778875101689,.0653197352788687,-.4629100498862759,lc_vocab_complexity_z
+week,1,Week 1,16,lexile_adjusted,Lexile (published),external,.6079255156219006,.0285238290234457,-1.568061,lexile_published_z
+week,3,Week 3,19,lexile_adjusted,Lexile (published),external,.6106316949191847,.0344014087105891,-1.568061,lexile_published_z
+week,4,Week 4,7,lexile_adjusted,Lexile (published),external,.5973098405769893,.0653197352788687,-1.568061,lexile_published_z
+week,1,Week 1,19,textstat_adjusted,Textstat,external,.632174987421229,.0251633586265446,-.9358707148747398,textstat_complexity_z
+week,3,Week 3,19,textstat_adjusted,Textstat,external,.5886997418523642,.0344014087105891,-1.847538162520483,textstat_complexity_z
+week,4,Week 4,7,textstat_adjusted,Textstat,external,.5753778875101689,.0653197352788687,-1.847538162520484,textstat_complexity_z
+week,1,Week 1,19,unadjusted,Unadjusted,observed,.6021628379821777,.025890202095115,,observed
+week,3,Week 3,19,unadjusted,Unadjusted,observed,.6106317043304443,.0344014083791067,,observed
+week,4,Week 4,7,unadjusted,Unadjusted,observed,.5973098278045654,.0653197364394898,,observed
+week,1,Week 1,19,bk_adjusted,BK,vbm,.6321750283241272,.0251633596562311,.8832982806667018,B
+week,3,Week 3,19,bk_adjusted,BK,vbm,.5886997580528259,.0344014083791067,0,B
+week,4,Week 4,7,bk_adjusted,BK,vbm,.575377881526947,.0653197364394898,0,B
+week,1,Week 1,19,meaning_adjusted,Meaning,vbm,.6021628379821777,.025890202095115,3,M
+week,3,Week 3,19,meaning_adjusted,Meaning,vbm,.6106317043304443,.0344014083791067,3,M
+week,4,Week 4,7,meaning_adjusted,Meaning,vbm,.5973098278045654,.0653197364394898,3,M
+week,1,Week 1,19,pooled_adjusted,Pooled D,vbm,.6321750283241272,.0251633596562311,6.472163801111169,D
+week,3,Week 3,19,pooled_adjusted,Pooled D,vbm,.5886997580528259,.0344014083791067,5,D
+week,4,Week 4,7,pooled_adjusted,Pooled D,vbm,.575377881526947,.0653197364394898,5,D
+week,1,Week 1,19,three_leg_adjusted,V/BK/M,vbm,.6321750283241272,.0251633596562311,6.472163801111168,V+B+M
+week,3,Week 3,19,three_leg_adjusted,V/BK/M,vbm,.5886997580528259,.0344014083791067,5,V+B+M
+week,4,Week 4,7,three_leg_adjusted,V/BK/M,vbm,.575377881526947,.0653197364394898,5,V+B+M
+week,1,Week 1,19,vocab_adjusted,Vocab,vbm,.6321750283241272,.0251633596562311,2.588865520444468,V
+week,3,Week 3,19,vocab_adjusted,Vocab,vbm,.5886997580528259,.0344014083791067,2,V
+week,4,Week 4,7,vocab_adjusted,Vocab,vbm,.575377881526947,.0653197364394898,2,V

@@ -1,0 +1,134 @@
+{
+ "class": "3HJBB7",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.03528,
+   "ci": [
+    -0.1267,
+    0.03067
+   ]
+  },
+  "vocab": {
+   "est": 0.05008,
+   "ci": [
+    0.00318,
+    0.08543
+   ]
+  },
+  "background": {
+   "est": -0.09219,
+   "ci": [
+    -0.2125,
+    -0.00585
+   ]
+  },
+  "meaning": {
+   "est": 0.16731,
+   "ci": [
+    0.1288,
+    0.2152
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 19,
+   "n_responses": 213,
+   "median_date": "2025-10-06",
+   "raw": 0.60216,
+   "raw_ci": [
+    0.55234,
+    0.65246
+   ],
+   "pooled_adj": 0.63217,
+   "pooled_ci": [
+    0.56031,
+    0.73436
+   ],
+   "vbm_adj": 0.63217,
+   "vbm_ci": [
+    0.56031,
+    0.73436
+   ],
+   "texts": [
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.549,
+     "n": 117
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.451,
+     "n": 96
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 19,
+   "n_responses": 174,
+   "median_date": "2025-10-23",
+   "raw": 0.61063,
+   "raw_ci": [
+    0.5444,
+    0.67117
+   ],
+   "pooled_adj": 0.5887,
+   "pooled_ci": [
+    0.50758,
+    0.66386
+   ],
+   "vbm_adj": 0.5887,
+   "vbm_ci": [
+    0.50758,
+    0.66386
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 174
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 7,
+   "n_responses": 75,
+   "median_date": "2025-10-29",
+   "raw": 0.59731,
+   "raw_ci": [
+    0.46881,
+    0.7125
+   ],
+   "pooled_adj": 0.57538,
+   "pooled_ci": [
+    0.43727,
+    0.69171
+   ],
+   "vbm_adj": 0.57538,
+   "vbm_ci": [
+    0.43727,
+    0.69171
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 75
+    }
+   ]
+  }
+ ]
+}

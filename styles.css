@@ -761,3 +761,29 @@ th {
   background: #fff;
   margin-left: 10px;
 }
+
+/* v1/v2 version tabs (added 2026-07-15) */
+.version-tabs {
+  display: inline-flex;
+  gap: 4px;
+  margin: 0 0 8px 0;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.version-tabs .vtab {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.version-tabs .vtab[aria-selected="true"] {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+}

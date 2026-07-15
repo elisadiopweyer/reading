@@ -1,0 +1,134 @@
+{
+ "class": "MVHH2Y",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.09815,
+   "ci": [
+    -0.21111,
+    0.12946
+   ]
+  },
+  "vocab": {
+   "est": 0.66171,
+   "ci": [
+    0.20768,
+    0.91123
+   ]
+  },
+  "background": {
+   "est": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "meaning": {
+   "est": -0.35143,
+   "ci": [
+    -0.58381,
+    0.06332
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 20,
+   "n_responses": 109,
+   "median_date": "2025-09-17",
+   "raw": 0.57333,
+   "raw_ci": [
+    0.475,
+    0.66589
+   ],
+   "pooled_adj": 0.62731,
+   "pooled_ci": [
+    0.43802,
+    0.72717
+   ],
+   "vbm_adj": 0.62731,
+   "vbm_ci": [
+    0.45807,
+    0.72717
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.89,
+     "n": 97
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 3.0,
+     "share": 0.11,
+     "n": 12
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 7,
+   "n_responses": 42,
+   "median_date": "2025-09-24",
+   "raw": 0.46599,
+   "raw_ci": [
+    0.32734,
+    0.62043
+   ],
+   "pooled_adj": 0.5396,
+   "pooled_ci": [
+    0.31547,
+    0.70425
+   ],
+   "vbm_adj": 0.5396,
+   "vbm_ci": [
+    0.33357,
+    0.70425
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 42
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 13,
+   "n_responses": 75,
+   "median_date": "2026-01-21",
+   "raw": 0.76282,
+   "raw_ci": [
+    0.66942,
+    0.84723
+   ],
+   "pooled_adj": 0.64014,
+   "pooled_ci": [
+    0.45513,
+    0.96608
+   ],
+   "vbm_adj": 0.64014,
+   "vbm_ci": [
+    0.45513,
+    0.92421
+   ],
+   "texts": [
+    {
+     "title": "The Hippo Roller",
+     "d": 3.0,
+     "share": 1.0,
+     "n": 75
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+series_id,param,param_label,coef,se,pvalue,xbar
+pooled_adjusted,avg_d,Pooled difficulty D (V+BK+M),.017050855555951,.0256308033007366,.5125079171358764,5.375099456800018
+three_leg_adjusted,avg_v,V (vocabulary),-.1207730933971645,.1970566497812085,.5459653902908512,2.171873650348405
+three_leg_adjusted,avg_b,BK (background knowledge),.1231347097807977,.1359630215617634,.3745119508581886,.2032258064516129
+three_leg_adjusted,avg_m,M (meaning),0,0,,3
+vocab_adjusted,avg_v,V (vocabulary),.0124515443698401,.0810461735768553,.8792374294372676,2.171873650348405
+bk_adjusted,avg_b,BK (background knowledge),.0426193141826873,.0368171545474315,.2589103088574937,.2032258064516129
+meaning_adjusted,avg_m,M (meaning),0,0,,3
+genre_adjusted,avg_v,V (vocabulary),-.1207730933971645,.1970566497812085,.5459653902908512,2.171873650348405
+genre_adjusted,avg_b,BK (background knowledge),.1231347097807977,.1359630215617634,.3745119508581886,.2032258064516129
+genre_adjusted,avg_m,M (meaning),0,0,,3
+genre_adjusted,share_literary,Literary share,0,0,,1
+genre_adjusted,share_fiction,Fiction share,0,0,,1
+textstat_adjusted,avg_textstat,Textstat readability (z),.0045593668840614,.0530737307153132,.9322843864839097,-1.573425794583627
+lexile_adjusted,avg_lexile,Published Lexile (z),0,0,,-1.568061
+atos_adjusted,avg_atos,Published ATOS (z),0,0,,-1.545767
+lc_sentstr_adjusted,avg_lc_sentstr,LC Sentence Structure band (z),0,0,,.4170288281141502
+lc_vocab_adjusted,avg_lc_vocab,LC Vocabulary band (z),.0460341206603286,.0397670719791732,.2589103088573562,-.2747595134808864

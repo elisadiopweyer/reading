@@ -1,0 +1,18 @@
+series_id,param,param_label,coef,se,pvalue,xbar
+pooled_adjusted,avg_d,Pooled difficulty D (V+BK+M),-.0981481466442349,.0680180450528055,.1637797798272025,4.25
+three_leg_adjusted,avg_v,V (vocabulary),-.3925925865769398,.2720721802112063,.163779779827179,1.8125
+three_leg_adjusted,avg_b,BK (background knowledge),0,0,,0
+three_leg_adjusted,avg_m,M (meaning),0,0,,2.4375
+vocab_adjusted,avg_v,V (vocabulary),-.3925925865769398,.2720721802112063,.163779779827179,1.8125
+bk_adjusted,avg_b,BK (background knowledge),0,0,,0
+meaning_adjusted,avg_m,M (meaning),-.130864195525646,.0906907267370762,.1637797798272137,2.4375
+genre_adjusted,avg_v,V (vocabulary),-.3925925865769398,.2720721802112063,.163779779827179,1.8125
+genre_adjusted,avg_b,BK (background knowledge),0,0,,0
+genre_adjusted,avg_m,M (meaning),0,0,,2.4375
+genre_adjusted,share_literary,Literary share,0,0,,.625
+genre_adjusted,share_fiction,Fiction share,0,0,,.625
+textstat_adjusted,avg_textstat,Textstat readability (z),.095657033228072,.0662916684439196,.1637797798272091,-1.078006560932262
+lexile_adjusted,avg_lexile,Published Lexile (z),0,0,,-1.568061
+atos_adjusted,avg_atos,Published ATOS (z),0,0,,-1.545767
+lc_sentstr_adjusted,avg_lc_sentstr,LC Sentence Structure band (z),0,0,,.4170288281141502
+lc_vocab_adjusted,avg_lc_vocab,LC Vocabulary band (z),-.1413494863179095,.0979571806221924,.1637797798272134,-.9836838560083361

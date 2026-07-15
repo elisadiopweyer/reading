@@ -1,0 +1,349 @@
+{
+ "class": "8VALVC",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.01705,
+   "ci": [
+    -0.42079,
+    0.24682
+   ]
+  },
+  "vocab": {
+   "est": -0.12077,
+   "ci": [
+    -0.47783,
+    0.37184
+   ]
+  },
+  "background": {
+   "est": 0.12313,
+   "ci": [
+    -0.21054,
+    0.32767
+   ]
+  },
+  "meaning": {
+   "est": 0.25551,
+   "ci": [
+    -0.07178,
+    0.48712
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 21,
+   "n_responses": 168,
+   "median_date": "2025-09-16",
+   "raw": 0.53036,
+   "raw_ci": [
+    0.44721,
+    0.60947
+   ],
+   "pooled_adj": 0.53675,
+   "pooled_ci": [
+    0.3502,
+    0.64511
+   ],
+   "vbm_adj": 0.53462,
+   "vbm_ci": [
+    0.44144,
+    0.61173
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 168
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 18,
+   "n_responses": 154,
+   "median_date": "2025-09-25",
+   "raw": 0.3769,
+   "raw_ci": [
+    0.29054,
+    0.46488
+   ],
+   "pooled_adj": 0.38282,
+   "pooled_ci": [
+    0.19183,
+    0.49106
+   ],
+   "vbm_adj": 0.38458,
+   "vbm_ci": [
+    0.28739,
+    0.46747
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.948,
+     "n": 146
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.052,
+     "n": 8
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 15,
+   "n_responses": 119,
+   "median_date": "2025-09-30",
+   "raw": 0.3973,
+   "raw_ci": [
+    0.31939,
+    0.47548
+   ],
+   "pooled_adj": 0.39786,
+   "pooled_ci": [
+    0.31645,
+    0.47503
+   ],
+   "vbm_adj": 0.44289,
+   "vbm_ci": [
+    0.26517,
+    0.53732
+   ],
+   "texts": [
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.58,
+     "n": 69
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.42,
+     "n": 50
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 5,
+   "n_responses": 31,
+   "median_date": "2025-10-14",
+   "raw": 0.65,
+   "raw_ci": [
+    0.485,
+    0.80525
+   ],
+   "pooled_adj": 0.6564,
+   "pooled_ci": [
+    0.40836,
+    0.82541
+   ],
+   "vbm_adj": 0.65427,
+   "vbm_ci": [
+    0.46848,
+    0.81044
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 31
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 20,
+   "n_responses": 148,
+   "median_date": "2025-10-14",
+   "raw": 0.44723,
+   "raw_ci": [
+    0.3718,
+    0.52285
+   ],
+   "pooled_adj": 0.45363,
+   "pooled_ci": [
+    0.24782,
+    0.56056
+   ],
+   "vbm_adj": 0.4515,
+   "vbm_ci": [
+    0.35654,
+    0.53257
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 148
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 19,
+   "n_responses": 135,
+   "median_date": "2025-10-23",
+   "raw": 0.37694,
+   "raw_ci": [
+    0.28411,
+    0.48053
+   ],
+   "pooled_adj": 0.38109,
+   "pooled_ci": [
+    0.17691,
+    0.50138
+   ],
+   "vbm_adj": 0.37784,
+   "vbm_ci": [
+    0.27668,
+    0.4758
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.941,
+     "n": 127
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.059,
+     "n": 8
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 20,
+   "n_responses": 155,
+   "median_date": "2025-10-28",
+   "raw": 0.48661,
+   "raw_ci": [
+    0.40689,
+    0.56934
+   ],
+   "pooled_adj": 0.45038,
+   "pooled_ci": [
+    -0.06077,
+    1.42322
+   ],
+   "vbm_adj": 0.42694,
+   "vbm_ci": [
+    0.29801,
+    0.63072
+   ],
+   "texts": [
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 1.0,
+     "n": 155
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 2,
+   "n_responses": 23,
+   "median_date": "2025-11-13",
+   "raw": 0.93561,
+   "raw_ci": [
+    0.91667,
+    0.95455
+   ],
+   "pooled_adj": 0.942,
+   "pooled_ci": [
+    0.82684,
+    1.00983
+   ],
+   "vbm_adj": 0.93987,
+   "vbm_ci": [
+    0.90805,
+    0.96514
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 23
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "n_students": 20,
+   "n_responses": 226,
+   "median_date": "2025-11-13",
+   "raw": 0.72426,
+   "raw_ci": [
+    0.65751,
+    0.78396
+   ],
+   "pooled_adj": 0.73066,
+   "pooled_ci": [
+    0.55618,
+    0.846
+   ],
+   "vbm_adj": 0.72853,
+   "vbm_ci": [
+    0.6555,
+    0.79097
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 226
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "n_students": 15,
+   "n_responses": 100,
+   "median_date": "2025-11-20",
+   "raw": 0.43228,
+   "raw_ci": [
+    0.2846,
+    0.58222
+   ],
+   "pooled_adj": 0.43867,
+   "pooled_ci": [
+    0.21615,
+    0.60414
+   ],
+   "vbm_adj": 0.43654,
+   "vbm_ci": [
+    0.29029,
+    0.57457
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 100
+    }
+   ]
+  }
+ ]
+}

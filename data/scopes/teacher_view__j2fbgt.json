@@ -1,0 +1,571 @@
+{
+ "class": "J2FBGT",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.07968,
+   "ci": [
+    -0.03127,
+    0.24024
+   ]
+  },
+  "vocab": {
+   "est": 0.36586,
+   "ci": [
+    -0.05993,
+    6.11081
+   ]
+  },
+  "background": {
+   "est": 0.09228,
+   "ci": [
+    -4.00102,
+    0.4593
+   ]
+  },
+  "meaning": {
+   "est": -0.4307,
+   "ci": [
+    -3.03155,
+    0.04176
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 9,
+   "n_responses": 84,
+   "median_date": "2025-10-21",
+   "raw": 0.54074,
+   "raw_ci": [
+    0.37917,
+    0.69793
+   ],
+   "pooled_adj": 0.59924,
+   "pooled_ci": [
+    0.38448,
+    0.76403
+   ],
+   "vbm_adj": 0.62361,
+   "vbm_ci": [
+    0.1883,
+    0.75811
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.774,
+     "n": 65
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.167,
+     "n": 14
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.06,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 19,
+   "n_responses": 152,
+   "median_date": "2025-10-16",
+   "raw": 0.61298,
+   "raw_ci": [
+    0.52057,
+    0.69294
+   ],
+   "pooled_adj": 0.70307,
+   "pooled_ci": [
+    0.54706,
+    0.87466
+   ],
+   "vbm_adj": 0.74637,
+   "vbm_ci": [
+    0.31116,
+    0.8874
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 152
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 14,
+   "n_responses": 164,
+   "median_date": "2025-10-22",
+   "raw": 0.63706,
+   "raw_ci": [
+    0.59054,
+    0.68489
+   ],
+   "pooled_adj": 0.72715,
+   "pooled_ci": [
+    0.59734,
+    0.90314
+   ],
+   "vbm_adj": 0.77045,
+   "vbm_ci": [
+    0.35965,
+    0.87649
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 164
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 2,
+   "n_responses": 12,
+   "median_date": "2026-01-06",
+   "raw": 0.65714,
+   "raw_ci": [
+    0.6,
+    0.71429
+   ],
+   "pooled_adj": 0.65217,
+   "pooled_ci": [
+    0.36406,
+    0.76718
+   ],
+   "vbm_adj": 0.72413,
+   "vbm_ci": [
+    0.59925,
+    4.12644
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.5,
+     "n": 6
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.417,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.083,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2025-12-12",
+   "raw": 0.0,
+   "raw_ci": [
+    0.0,
+    0.0
+   ],
+   "pooled_adj": -0.05972,
+   "pooled_ci": [
+    -0.18343,
+    0.04869
+   ],
+   "vbm_adj": -0.17689,
+   "vbm_ci": [
+    -0.56044,
+    2.27801
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.6,
+     "n": 3
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.4,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 5,
+   "n_responses": 31,
+   "median_date": "2025-11-12",
+   "raw": 0.80417,
+   "raw_ci": [
+    0.63889,
+    0.92231
+   ],
+   "pooled_adj": 0.85122,
+   "pooled_ci": [
+    0.61314,
+    1.0746
+   ],
+   "vbm_adj": 0.88531,
+   "vbm_ci": [
+    0.46523,
+    1.05634
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.742,
+     "n": 23
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.258,
+     "n": 8
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2025-11-19",
+   "raw": 0.3,
+   "raw_ci": [
+    0.3,
+    0.3
+   ],
+   "pooled_adj": 0.39008,
+   "pooled_ci": [
+    0.26567,
+    0.55506
+   ],
+   "vbm_adj": 0.43339,
+   "vbm_ci": [
+    0.0313,
+    0.53633
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "n_students": 2,
+   "n_responses": 10,
+   "median_date": "2026-01-12",
+   "raw": 0.5,
+   "raw_ci": [
+    0.2,
+    0.8
+   ],
+   "pooled_adj": 0.4355,
+   "pooled_ci": [
+    0.0945,
+    0.75728
+   ],
+   "vbm_adj": 0.11843,
+   "vbm_ci": [
+    -1.68932,
+    0.64135
+   ],
+   "texts": [
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.5,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.3,
+     "n": 3
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.2,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-01-21",
+   "raw": 0.4,
+   "raw_ci": [
+    0.4,
+    0.4
+   ],
+   "pooled_adj": 0.27494,
+   "pooled_ci": [
+    0.04139,
+    0.50343
+   ],
+   "vbm_adj": 0.27214,
+   "vbm_ci": [
+    -0.11614,
+    0.4453
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 5,
+   "n_responses": 29,
+   "median_date": "2026-01-07",
+   "raw": 0.62222,
+   "raw_ci": [
+    0.43333,
+    0.75
+   ],
+   "pooled_adj": 0.51756,
+   "pooled_ci": [
+    0.18063,
+    0.71564
+   ],
+   "vbm_adj": 0.59604,
+   "vbm_ci": [
+    0.36899,
+    4.17313
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.586,
+     "n": 17
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.31,
+     "n": 9
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.103,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "n_students": 3,
+   "n_responses": 18,
+   "median_date": "2026-01-20",
+   "raw": 0.91667,
+   "raw_ci": [
+    0.91667,
+    0.91667
+   ],
+   "pooled_adj": 0.79161,
+   "pooled_ci": [
+    0.52296,
+    0.97616
+   ],
+   "vbm_adj": 0.78881,
+   "vbm_ci": [
+    0.42094,
+    0.954
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 1.0,
+     "n": 18
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 14,
+   "n_responses": 109,
+   "median_date": "2026-01-20",
+   "raw": 0.8013,
+   "raw_ci": [
+    0.73,
+    0.87637
+   ],
+   "pooled_adj": 0.67624,
+   "pooled_ci": [
+    0.39366,
+    0.8825
+   ],
+   "vbm_adj": 0.67344,
+   "vbm_ci": [
+    0.29742,
+    0.8424
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 1.0,
+     "n": 109
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-02-09",
+   "raw": 0.7,
+   "raw_ci": [
+    0.7,
+    0.7
+   ],
+   "pooled_adj": 0.63072,
+   "pooled_ci": [
+    0.43575,
+    0.73229
+   ],
+   "vbm_adj": 0.11376,
+   "vbm_ci": [
+    -1.81796,
+    0.63449
+   ],
+   "texts": [
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 3,
+   "n_responses": 25,
+   "median_date": "2026-02-19",
+   "raw": 0.8,
+   "raw_ci": [
+    0.6,
+    1.0
+   ],
+   "pooled_adj": 0.71212,
+   "pooled_ci": [
+    0.41399,
+    0.95744
+   ],
+   "vbm_adj": 0.36655,
+   "vbm_ci": [
+    -1.54204,
+    0.81538
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.6,
+     "n": 15
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.4,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 20,
+   "n_students": 2,
+   "n_responses": 15,
+   "median_date": "2026-03-02",
+   "raw": 0.775,
+   "raw_ci": [
+    0.65,
+    0.9
+   ],
+   "pooled_adj": 0.64994,
+   "pooled_ci": [
+    0.42801,
+    0.86405
+   ],
+   "vbm_adj": 0.64714,
+   "vbm_ci": [
+    0.39552,
+    0.88042
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 1.0,
+     "n": 15
+    }
+   ]
+  },
+  {
+   "week": 22,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2026-03-17",
+   "raw": 0.41667,
+   "raw_ci": [
+    0.41667,
+    0.41667
+   ],
+   "pooled_adj": 0.14818,
+   "pooled_ci": [
+    -0.08406,
+    0.50417
+   ],
+   "vbm_adj": 0.11061,
+   "vbm_ci": [
+    -0.22559,
+    0.61858
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  }
+ ]
+}

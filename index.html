@@ -19,19 +19,40 @@
             >Adjusted</span>
             for Text Difficulty
           </h1>
+          <div class="version-tabs" id="versionTabs" role="tablist">
+            <button type="button" class="vtab" data-tab="v1" role="tab">v1 · June pilot</button>
+            <button type="button" class="vtab" data-tab="v2" role="tab">v2 · New corpus (actual-text)</button>
+          </div>
           <select id="scopePicker" class="scope-picker" aria-label="Class">
-            <option value="all" selected>All classes (pooled)</option>
-            <option value="dziuma603">DZIUMA603</option>
-            <option value="dziuma602">DZIUMA602</option>
-            <option value="gallo603">Gallo603</option>
-            <option value="persaud601">persaud601</option>
-            <option value="henry">henry</option>
-            <option value="persaud602">Persaud602</option>
-            <option value="hughes604">Hughes604</option>
-            <option value="buon">buon</option>
-            <option value="gallo602">Gallo602</option>
-            <option value="hughes657">Hughes657</option>
-            <option value="hughes656">Hughes656</option>
+            <optgroup id="og-v1" label="June pilot (NY/TN) — metadata-scored">
+              <option value="all" selected>All classes (pooled)</option>
+              <option value="dziuma603">DZIUMA603</option>
+              <option value="dziuma602">DZIUMA602</option>
+              <option value="gallo603">Gallo603</option>
+              <option value="persaud601">persaud601</option>
+              <option value="henry">henry</option>
+              <option value="persaud602">Persaud602</option>
+              <option value="hughes604">Hughes604</option>
+              <option value="buon">buon</option>
+              <option value="gallo602">Gallo602</option>
+              <option value="hughes657">Hughes657</option>
+              <option value="hughes656">Hughes656</option>
+            </optgroup>
+            <optgroup id="og-v2" label="New corpus (actual-text re-score)">
+              <option value="newcorpus">New corpus (pooled)</option>
+              <option value="4gth3d">Insights · 4GTH3D</option>
+              <option value="b8srbn">Insights · B8SRBN</option>
+              <option value="kkmxmr">Insights · KKMXMR</option>
+              <option value="8valvc">Insights · 8VALVC</option>
+              <option value="j2fbgt">Insights · J2FBGT</option>
+              <option value="5wp9l4">Insights · 5WP9L4</option>
+              <option value="dzq3xh">Insights · DZQ3XH</option>
+              <option value="3hjbb7">Insights · 3HJBB7</option>
+              <option value="6am9sv">Insights · 6AM9SV</option>
+              <option value="wq73az">Insights · WQ73AZ</option>
+              <option value="jgveh2">Insights · JGVEH2</option>
+              <option value="mvhh2y">Churn · MVHH2Y</option>
+            </optgroup>
           </select>
         </div>
         <div class="summary" id="summary"></div>

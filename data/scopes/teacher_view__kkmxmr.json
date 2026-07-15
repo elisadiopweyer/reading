@@ -1,0 +1,678 @@
+{
+ "class": "KKMXMR",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.02466,
+   "ci": [
+    -0.01603,
+    0.05792
+   ]
+  },
+  "vocab": {
+   "est": 0.23923,
+   "ci": [
+    -0.1615,
+    0.78804
+   ]
+  },
+  "background": {
+   "est": -0.05234,
+   "ci": [
+    -0.44082,
+    0.29185
+   ]
+  },
+  "meaning": {
+   "est": -0.16657,
+   "ci": [
+    -0.46403,
+    0.02735
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 16,
+   "n_responses": 167,
+   "median_date": "2025-10-07",
+   "raw": 0.64961,
+   "raw_ci": [
+    0.58277,
+    0.72242
+   ],
+   "pooled_adj": 0.68103,
+   "pooled_ci": [
+    0.59174,
+    0.77251
+   ],
+   "vbm_adj": 0.68345,
+   "vbm_ci": [
+    0.55539,
+    0.78718
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 167
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 1,
+   "n_responses": 26,
+   "median_date": "2025-11-05",
+   "raw": 0.86538,
+   "raw_ci": [
+    0.86538,
+    0.86538
+   ],
+   "pooled_adj": 0.89728,
+   "pooled_ci": [
+    0.87339,
+    0.95132
+   ],
+   "vbm_adj": 0.89723,
+   "vbm_ci": [
+    0.84268,
+    0.95273
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.962,
+     "n": 25
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.038,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 2,
+   "n_responses": 34,
+   "median_date": "2025-10-29",
+   "raw": 0.55357,
+   "raw_ci": [
+    0.5,
+    0.60714
+   ],
+   "pooled_adj": 0.57721,
+   "pooled_ci": [
+    0.51881,
+    0.62301
+   ],
+   "vbm_adj": 0.56014,
+   "vbm_ci": [
+    0.47749,
+    0.61742
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.735,
+     "n": 25
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.235,
+     "n": 8
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.029,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 22,
+   "n_responses": 357,
+   "median_date": "2025-10-29",
+   "raw": 0.64484,
+   "raw_ci": [
+    0.57976,
+    0.7071
+   ],
+   "pooled_adj": 0.66263,
+   "pooled_ci": [
+    0.5857,
+    0.72312
+   ],
+   "vbm_adj": 0.63917,
+   "vbm_ci": [
+    0.53913,
+    0.71764
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.754,
+     "n": 269
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.154,
+     "n": 55
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.078,
+     "n": 28
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.008,
+     "n": 3
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.006,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 11,
+   "n_responses": 105,
+   "median_date": "2025-11-05",
+   "raw": 0.64507,
+   "raw_ci": [
+    0.50667,
+    0.78078
+   ],
+   "pooled_adj": 0.67753,
+   "pooled_ci": [
+    0.53056,
+    0.8146
+   ],
+   "vbm_adj": 0.67457,
+   "vbm_ci": [
+    0.51354,
+    0.81635
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.895,
+     "n": 94
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.105,
+     "n": 11
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 9,
+   "n_responses": 69,
+   "median_date": "2025-11-17",
+   "raw": 0.61647,
+   "raw_ci": [
+    0.48402,
+    0.72917
+   ],
+   "pooled_adj": 0.64789,
+   "pooled_ci": [
+    0.51032,
+    0.77202
+   ],
+   "vbm_adj": 0.65031,
+   "vbm_ci": [
+    0.5159,
+    0.77332
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 69
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 2,
+   "n_responses": 10,
+   "median_date": "2025-11-21",
+   "raw": 0.6,
+   "raw_ci": [
+    0.4,
+    0.8
+   ],
+   "pooled_adj": 0.49381,
+   "pooled_ci": [
+    0.18133,
+    0.82383
+   ],
+   "vbm_adj": 0.30098,
+   "vbm_ci": [
+    -0.06639,
+    0.69686
+   ],
+   "texts": [
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.6,
+     "n": 6
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.4,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-01-05",
+   "raw": 0.9,
+   "raw_ci": [
+    0.9,
+    0.9
+   ],
+   "pooled_adj": 0.8821,
+   "pooled_ci": [
+    0.85514,
+    0.89548
+   ],
+   "vbm_adj": 0.89273,
+   "vbm_ci": [
+    0.63552,
+    1.12586
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "n_students": 1,
+   "n_responses": 8,
+   "median_date": "2026-01-07",
+   "raw": 1.0,
+   "raw_ci": [
+    1.0,
+    1.0
+   ],
+   "pooled_adj": 0.86434,
+   "pooled_ci": [
+    0.66849,
+    0.96605
+   ],
+   "vbm_adj": 0.93232,
+   "vbm_ci": [
+    0.747,
+    1.18638
+   ],
+   "texts": [
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.875,
+     "n": 7
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.125,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-01-16",
+   "raw": 0.85714,
+   "raw_ci": [
+    0.85714,
+    0.85714
+   ],
+   "pooled_adj": 0.84664,
+   "pooled_ci": [
+    0.82867,
+    0.85482
+   ],
+   "vbm_adj": 0.83417,
+   "vbm_ci": [
+    0.68172,
+    0.95984
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 1.0,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "n_students": 2,
+   "n_responses": 19,
+   "median_date": "2026-01-06",
+   "raw": 0.74038,
+   "raw_ci": [
+    0.73077,
+    0.75
+   ],
+   "pooled_adj": 0.69147,
+   "pooled_ci": [
+    0.5613,
+    0.77111
+   ],
+   "vbm_adj": 0.7171,
+   "vbm_ci": [
+    0.50255,
+    0.95726
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.632,
+     "n": 12
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.316,
+     "n": 6
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.053,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 14,
+   "n_responses": 133,
+   "median_date": "2026-01-07",
+   "raw": 0.6529,
+   "raw_ci": [
+    0.60269,
+    0.70316
+   ],
+   "pooled_adj": 0.6233,
+   "pooled_ci": [
+    0.53528,
+    0.69691
+   ],
+   "vbm_adj": 0.63602,
+   "vbm_ci": [
+    0.42753,
+    0.85311
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.459,
+     "n": 61
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.316,
+     "n": 42
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.12,
+     "n": 16
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.045,
+     "n": 6
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.03,
+     "n": 4
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.023,
+     "n": 3
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.008,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "n_students": 2,
+   "n_responses": 14,
+   "median_date": "2026-01-16",
+   "raw": 0.75,
+   "raw_ci": [
+    0.71429,
+    0.78571
+   ],
+   "pooled_adj": 0.71202,
+   "pooled_ci": [
+    0.59051,
+    0.78382
+   ],
+   "vbm_adj": 0.75508,
+   "vbm_ci": [
+    0.56535,
+    0.99703
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.5,
+     "n": 7
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.357,
+     "n": 5
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.143,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-01-20",
+   "raw": 0.85714,
+   "raw_ci": [
+    0.85714,
+    0.85714
+   ],
+   "pooled_adj": 0.74236,
+   "pooled_ci": [
+    0.59146,
+    0.93713
+   ],
+   "vbm_adj": 0.80216,
+   "vbm_ci": [
+    0.64151,
+    1.06367
+   ],
+   "texts": [
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.714,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.286,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-02-18",
+   "raw": 1.0,
+   "raw_ci": [
+    1.0,
+    1.0
+   ],
+   "pooled_adj": 1.03142,
+   "pooled_ci": [
+    1.00787,
+    1.08469
+   ],
+   "vbm_adj": 1.03384,
+   "vbm_ci": [
+    0.96305,
+    1.10782
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2026-02-18",
+   "raw": 0.5,
+   "raw_ci": [
+    0.5,
+    0.5
+   ],
+   "pooled_adj": 0.50112,
+   "pooled_ci": [
+    0.494,
+    0.51127
+   ],
+   "vbm_adj": 0.50582,
+   "vbm_ci": [
+    0.45994,
+    0.55195
+   ],
+   "texts": [
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.857,
+     "n": 6
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration) with Carlisle Indian School photographs by Frances Benjamin Johnston",
+     "d": 13.6,
+     "share": 0.143,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 20,
+   "n_students": 8,
+   "n_responses": 56,
+   "median_date": "2026-02-18",
+   "raw": 0.69881,
+   "raw_ci": [
+    0.57616,
+    0.81013
+   ],
+   "pooled_adj": 0.62801,
+   "pooled_ci": [
+    0.45836,
+    0.81133
+   ],
+   "vbm_adj": 0.68547,
+   "vbm_ci": [
+    0.50643,
+    0.95381
+   ],
+   "texts": [
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.607,
+     "n": 34
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.321,
+     "n": 18
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.071,
+     "n": 4
+    }
+   ]
+  }
+ ]
+}

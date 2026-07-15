@@ -1,0 +1,367 @@
+{
+ "class": "6AM9SV",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.01747,
+   "ci": [
+    -0.0887,
+    0.11226
+   ]
+  },
+  "vocab": {
+   "est": -0.28272,
+   "ci": [
+    -0.86716,
+    0.12573
+   ]
+  },
+  "background": {
+   "est": 0.25314,
+   "ci": [
+    -0.04099,
+    0.88195
+   ]
+  },
+  "meaning": {
+   "est": 0.35808,
+   "ci": [
+    0.0647,
+    0.688
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 24,
+   "n_responses": 205,
+   "median_date": "2025-09-25",
+   "raw": 0.61121,
+   "raw_ci": [
+    0.55148,
+    0.67275
+   ],
+   "pooled_adj": 0.61077,
+   "pooled_ci": [
+    0.55187,
+    0.68186
+   ],
+   "vbm_adj": 0.65105,
+   "vbm_ci": [
+    0.55695,
+    0.7592
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.829,
+     "n": 170
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.068,
+     "n": 14
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.059,
+     "n": 12
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.044,
+     "n": 9
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 7,
+   "n_responses": 35,
+   "median_date": "2025-09-30",
+   "raw": 0.57143,
+   "raw_ci": [
+    0.45,
+    0.72
+   ],
+   "pooled_adj": 0.56213,
+   "pooled_ci": [
+    0.42406,
+    0.72402
+   ],
+   "vbm_adj": 0.61015,
+   "vbm_ci": [
+    0.43705,
+    0.77536
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 35
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 8,
+   "n_responses": 46,
+   "median_date": "2025-10-06",
+   "raw": 0.46786,
+   "raw_ci": [
+    0.3571,
+    0.57384
+   ],
+   "pooled_adj": 0.45856,
+   "pooled_ci": [
+    0.35737,
+    0.57291
+   ],
+   "vbm_adj": 0.50658,
+   "vbm_ci": [
+    0.33484,
+    0.64255
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 46
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2025-10-22",
+   "raw": 0.4,
+   "raw_ci": [
+    0.4,
+    0.4
+   ],
+   "pooled_adj": 0.3907,
+   "pooled_ci": [
+    0.35628,
+    0.45437
+   ],
+   "vbm_adj": 0.43872,
+   "vbm_ci": [
+    0.37369,
+    0.52994
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 1,
+   "n_responses": 7,
+   "median_date": "2025-11-07",
+   "raw": 0.85714,
+   "raw_ci": [
+    0.85714,
+    0.85714
+   ],
+   "pooled_adj": 0.84784,
+   "pooled_ci": [
+    0.81342,
+    0.91151
+   ],
+   "vbm_adj": 0.89586,
+   "vbm_ci": [
+    0.83083,
+    0.98708
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 11,
+   "n_responses": 72,
+   "median_date": "2025-11-07",
+   "raw": 0.58149,
+   "raw_ci": [
+    0.43651,
+    0.71531
+   ],
+   "pooled_adj": 0.57219,
+   "pooled_ci": [
+    0.41569,
+    0.73071
+   ],
+   "vbm_adj": 0.62021,
+   "vbm_ci": [
+    0.40524,
+    0.78194
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 72
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2025-12-05",
+   "raw": 0.58333,
+   "raw_ci": [
+    0.58333,
+    0.58333
+   ],
+   "pooled_adj": 0.58393,
+   "pooled_ci": [
+    0.56894,
+    0.59606
+   ],
+   "vbm_adj": 0.56792,
+   "vbm_ci": [
+    0.52124,
+    0.6346
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.667,
+     "n": 4
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.333,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 2,
+   "n_responses": 13,
+   "median_date": "2026-01-13",
+   "raw": 0.5625,
+   "raw_ci": [
+    0.5,
+    0.625
+   ],
+   "pooled_adj": 0.58749,
+   "pooled_ci": [
+    0.35994,
+    0.73549
+   ],
+   "vbm_adj": 0.37237,
+   "vbm_ci": [
+    -0.04321,
+    0.7043
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.846,
+     "n": 11
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.154,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 6,
+   "n_responses": 36,
+   "median_date": "2026-01-13",
+   "raw": 0.61349,
+   "raw_ci": [
+    0.37643,
+    0.86508
+   ],
+   "pooled_adj": 0.63914,
+   "pooled_ci": [
+    0.28748,
+    0.90266
+   ],
+   "vbm_adj": 0.41387,
+   "vbm_ci": [
+    -0.11074,
+    0.85469
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 1.0,
+     "n": 36
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 3,
+   "n_responses": 15,
+   "median_date": "2026-01-15",
+   "raw": 0.66667,
+   "raw_ci": [
+    0.5,
+    0.8
+   ],
+   "pooled_adj": 0.68882,
+   "pooled_ci": [
+    0.4656,
+    0.86992
+   ],
+   "vbm_adj": 0.51767,
+   "vbm_ci": [
+    0.13832,
+    0.81188
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.667,
+     "n": 10
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.333,
+     "n": 5
+    }
+   ]
+  }
+ ]
+}

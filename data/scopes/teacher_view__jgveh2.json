@@ -1,0 +1,192 @@
+{
+ "class": "JGVEH2",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.05106,
+   "ci": [
+    0.0164,
+    0.10816
+   ]
+  },
+  "vocab": {
+   "est": 0.08399,
+   "ci": [
+    0.05251,
+    0.11593
+   ]
+  },
+  "background": {
+   "est": 0.00715,
+   "ci": [
+    -0.03088,
+    0.0469
+   ]
+  },
+  "meaning": {
+   "est": 0.11168,
+   "ci": [
+    0.07902,
+    0.14411
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 33,
+   "n_responses": 385,
+   "median_date": "2025-09-19",
+   "raw": 0.56547,
+   "raw_ci": [
+    0.50173,
+    0.6292
+   ],
+   "pooled_adj": 0.56904,
+   "pooled_ci": [
+    0.50489,
+    0.63393
+   ],
+   "vbm_adj": 0.56904,
+   "vbm_ci": [
+    0.50489,
+    0.63393
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 385
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 5,
+   "n_responses": 37,
+   "median_date": "2025-09-26",
+   "raw": 0.51558,
+   "raw_ci": [
+    0.41818,
+    0.59524
+   ],
+   "pooled_adj": 0.51916,
+   "pooled_ci": [
+    0.41949,
+    0.60389
+   ],
+   "vbm_adj": 0.51916,
+   "vbm_ci": [
+    0.41949,
+    0.60389
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 37
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 9,
+   "n_responses": 94,
+   "median_date": "2025-10-05",
+   "raw": 0.54114,
+   "raw_ci": [
+    0.40703,
+    0.67046
+   ],
+   "pooled_adj": 0.52486,
+   "pooled_ci": [
+    0.38244,
+    0.66734
+   ],
+   "vbm_adj": 0.52486,
+   "vbm_ci": [
+    0.38244,
+    0.66734
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.947,
+     "n": 89
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.053,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2025-10-08",
+   "raw": 0.5,
+   "raw_ci": [
+    0.5,
+    0.5
+   ],
+   "pooled_adj": 0.50357,
+   "pooled_ci": [
+    0.5,
+    0.51287
+   ],
+   "vbm_adj": 0.50357,
+   "vbm_ci": [
+    0.5,
+    0.51287
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 2,
+   "n_responses": 11,
+   "median_date": "2025-11-05",
+   "raw": 0.45,
+   "raw_ci": [
+    0.4,
+    0.5
+   ],
+   "pooled_adj": 0.45357,
+   "pooled_ci": [
+    0.4,
+    0.50847
+   ],
+   "vbm_adj": 0.45357,
+   "vbm_ci": [
+    0.4,
+    0.50847
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 11
+    }
+   ]
+  }
+ ]
+}

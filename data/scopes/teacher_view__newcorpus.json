@@ -1,0 +1,1318 @@
+{
+ "class": "newcorpus",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.01299,
+   "ci": [
+    -0.02621,
+    -0.00124
+   ]
+  },
+  "vocab": {
+   "est": -0.03895,
+   "ci": [
+    -0.1091,
+    0.03351
+   ]
+  },
+  "background": {
+   "est": 0.03051,
+   "ci": [
+    -0.03119,
+    0.08962
+   ]
+  },
+  "meaning": {
+   "est": -0.05329,
+   "ci": [
+    -0.10371,
+    -0.00289
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 391,
+   "n_responses": 3404,
+   "median_date": "2025-09-23",
+   "raw": 0.63151,
+   "raw_ci": [
+    0.61352,
+    0.64933
+   ],
+   "pooled_adj": 0.6242,
+   "pooled_ci": [
+    0.60481,
+    0.64267
+   ],
+   "vbm_adj": 0.62823,
+   "vbm_ci": [
+    0.60814,
+    0.64724
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.899,
+     "n": 3059
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.036,
+     "n": 124
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.034,
+     "n": 117
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.009,
+     "n": 31
+    },
+    {
+     "title": "The Hippo Roller",
+     "d": 3.0,
+     "share": 0.007,
+     "n": 23
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.006,
+     "n": 20
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.004,
+     "n": 14
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.002,
+     "n": 6
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.001,
+     "n": 5
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.001,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 167,
+   "n_responses": 1514,
+   "median_date": "2025-10-06",
+   "raw": 0.53076,
+   "raw_ci": [
+    0.50012,
+    0.5598
+   ],
+   "pooled_adj": 0.52143,
+   "pooled_ci": [
+    0.48926,
+    0.55033
+   ],
+   "vbm_adj": 0.52817,
+   "vbm_ci": [
+    0.49527,
+    0.55708
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.986,
+     "n": 1493
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.005,
+     "n": 8
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.005,
+     "n": 8
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.003,
+     "n": 4
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.001,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 148,
+   "n_responses": 1519,
+   "median_date": "2025-10-22",
+   "raw": 0.59505,
+   "raw_ci": [
+    0.56408,
+    0.62579
+   ],
+   "pooled_adj": 0.5866,
+   "pooled_ci": [
+    0.55545,
+    0.6167
+   ],
+   "vbm_adj": 0.59343,
+   "vbm_ci": [
+    0.56106,
+    0.6239
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.937,
+     "n": 1423
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.045,
+     "n": 69
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.006,
+     "n": 9
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.005,
+     "n": 8
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.004,
+     "n": 6
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.003,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 76,
+   "n_responses": 743,
+   "median_date": "2025-10-29",
+   "raw": 0.62331,
+   "raw_ci": [
+    0.58587,
+    0.66046
+   ],
+   "pooled_adj": 0.61616,
+   "pooled_ci": [
+    0.57574,
+    0.65526
+   ],
+   "vbm_adj": 0.62081,
+   "vbm_ci": [
+    0.58039,
+    0.65898
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.872,
+     "n": 648
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.074,
+     "n": 55
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.038,
+     "n": 28
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.008,
+     "n": 6
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.004,
+     "n": 3
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.003,
+     "n": 2
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.001,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 92,
+   "n_responses": 752,
+   "median_date": "2025-10-22",
+   "raw": 0.56555,
+   "raw_ci": [
+    0.52338,
+    0.60551
+   ],
+   "pooled_adj": 0.55611,
+   "pooled_ci": [
+    0.51533,
+    0.59618
+   ],
+   "vbm_adj": 0.56095,
+   "vbm_ci": [
+    0.5194,
+    0.60215
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.979,
+     "n": 736
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.015,
+     "n": 11
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.004,
+     "n": 3
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.003,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "n_students": 74,
+   "n_responses": 558,
+   "median_date": "2025-11-10",
+   "raw": 0.56699,
+   "raw_ci": [
+    0.51027,
+    0.62044
+   ],
+   "pooled_adj": 0.55825,
+   "pooled_ci": [
+    0.50115,
+    0.61129
+   ],
+   "vbm_adj": 0.56404,
+   "vbm_ci": [
+    0.50714,
+    0.61703
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.968,
+     "n": 540
+    },
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.014,
+     "n": 8
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.014,
+     "n": 8
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.004,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 51,
+   "n_responses": 357,
+   "median_date": "2025-10-29",
+   "raw": 0.54662,
+   "raw_ci": [
+    0.49055,
+    0.60326
+   ],
+   "pooled_adj": 0.55435,
+   "pooled_ci": [
+    0.5005,
+    0.61074
+   ],
+   "vbm_adj": 0.5455,
+   "vbm_ci": [
+    0.49015,
+    0.6029
+   ],
+   "texts": [
+    {
+     "title": "Medusa",
+     "d": 7.5,
+     "share": 0.434,
+     "n": 155
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.378,
+     "n": 135
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.143,
+     "n": 51
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.025,
+     "n": 9
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.017,
+     "n": 6
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.003,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 62,
+   "n_responses": 593,
+   "median_date": "2025-11-07",
+   "raw": 0.59705,
+   "raw_ci": [
+    0.54247,
+    0.64716
+   ],
+   "pooled_adj": 0.58749,
+   "pooled_ci": [
+    0.53124,
+    0.63714
+   ],
+   "vbm_adj": 0.59438,
+   "vbm_ci": [
+    0.53801,
+    0.64492
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.988,
+     "n": 586
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.012,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "n_students": 24,
+   "n_responses": 249,
+   "median_date": "2025-11-13",
+   "raw": 0.67349,
+   "raw_ci": [
+    0.59587,
+    0.75001
+   ],
+   "pooled_adj": 0.667,
+   "pooled_ci": [
+    0.58879,
+    0.74271
+   ],
+   "vbm_adj": 0.66616,
+   "vbm_ci": [
+    0.58489,
+    0.745
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.928,
+     "n": 231
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.04,
+     "n": 10
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.02,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.008,
+     "n": 2
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.004,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "n_students": 45,
+   "n_responses": 263,
+   "median_date": "2025-11-20",
+   "raw": 0.61587,
+   "raw_ci": [
+    0.5296,
+    0.69972
+   ],
+   "pooled_adj": 0.63979,
+   "pooled_ci": [
+    0.55153,
+    0.73388
+   ],
+   "vbm_adj": 0.61724,
+   "vbm_ci": [
+    0.52905,
+    0.71459
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.433,
+     "n": 114
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.186,
+     "n": 49
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.133,
+     "n": 35
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.129,
+     "n": 34
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.099,
+     "n": 26
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.019,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "n_students": 2,
+   "n_responses": 13,
+   "median_date": "2026-01-07",
+   "raw": 0.7,
+   "raw_ci": [
+    0.4,
+    1.0
+   ],
+   "pooled_adj": 0.75193,
+   "pooled_ci": [
+    0.41592,
+    1.1244
+   ],
+   "vbm_adj": 0.75972,
+   "vbm_ci": [
+    0.41573,
+    1.1421
+   ],
+   "texts": [
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.538,
+     "n": 7
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.385,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.077,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "n_students": 3,
+   "n_responses": 18,
+   "median_date": "2026-01-15",
+   "raw": 0.61349,
+   "raw_ci": [
+    0.4,
+    0.85714
+   ],
+   "pooled_adj": 0.62537,
+   "pooled_ci": [
+    0.42446,
+    0.87026
+   ],
+   "vbm_adj": 0.61265,
+   "vbm_ci": [
+    0.42277,
+    0.85285
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.5,
+     "n": 9
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.278,
+     "n": 5
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.222,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "n_students": 14,
+   "n_responses": 98,
+   "median_date": "2026-01-06",
+   "raw": 0.74795,
+   "raw_ci": [
+    0.68246,
+    0.80586
+   ],
+   "pooled_adj": 0.77049,
+   "pooled_ci": [
+    0.70261,
+    0.83465
+   ],
+   "vbm_adj": 0.74374,
+   "vbm_ci": [
+    0.66195,
+    0.82691
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.612,
+     "n": 60
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.184,
+     "n": 18
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.122,
+     "n": 12
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.061,
+     "n": 6
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.02,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "n_students": 21,
+   "n_responses": 177,
+   "median_date": "2026-01-07",
+   "raw": 0.65909,
+   "raw_ci": [
+    0.60223,
+    0.7138
+   ],
+   "pooled_adj": 0.6818,
+   "pooled_ci": [
+    0.62106,
+    0.7404
+   ],
+   "vbm_adj": 0.65442,
+   "vbm_ci": [
+    0.58244,
+    0.72196
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.345,
+     "n": 61
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.254,
+     "n": 45
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.136,
+     "n": 24
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.13,
+     "n": 23
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.09,
+     "n": 16
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.023,
+     "n": 4
+    },
+    {
+     "title": "Team Moon: How 400,000 People Landed Apollo 11 on the Moon",
+     "d": 8.6,
+     "share": 0.017,
+     "n": 3
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.006,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "n_students": 26,
+   "n_responses": 169,
+   "median_date": "2026-01-20",
+   "raw": 0.74414,
+   "raw_ci": [
+    0.69502,
+    0.79345
+   ],
+   "pooled_adj": 0.76935,
+   "pooled_ci": [
+    0.71578,
+    0.82834
+   ],
+   "vbm_adj": 0.76735,
+   "vbm_ci": [
+    0.71218,
+    0.82506
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.834,
+     "n": 141
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.124,
+     "n": 21
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.03,
+     "n": 5
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.012,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 44,
+   "n_responses": 331,
+   "median_date": "2026-01-21",
+   "raw": 0.70572,
+   "raw_ci": [
+    0.64527,
+    0.75914
+   ],
+   "pooled_adj": 0.73064,
+   "pooled_ci": [
+    0.66604,
+    0.79083
+   ],
+   "vbm_adj": 0.72393,
+   "vbm_ci": [
+    0.65693,
+    0.78708
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.846,
+     "n": 280
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.115,
+     "n": 38
+    },
+    {
+     "title": "Moon Dust and Black Disgust",
+     "d": 12.5,
+     "share": 0.015,
+     "n": 5
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.015,
+     "n": 5
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.009,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 32,
+   "n_responses": 237,
+   "median_date": "2026-01-13",
+   "raw": 0.60572,
+   "raw_ci": [
+    0.5272,
+    0.68327
+   ],
+   "pooled_adj": 0.62248,
+   "pooled_ci": [
+    0.54532,
+    0.69728
+   ],
+   "vbm_adj": 0.58493,
+   "vbm_ci": [
+    0.49716,
+    0.6753
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.709,
+     "n": 168
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.173,
+     "n": 41
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.042,
+     "n": 10
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.034,
+     "n": 8
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.021,
+     "n": 5
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.021,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 29,
+   "n_responses": 150,
+   "median_date": "2026-02-09",
+   "raw": 0.75296,
+   "raw_ci": [
+    0.68919,
+    0.81237
+   ],
+   "pooled_adj": 0.77668,
+   "pooled_ci": [
+    0.71197,
+    0.84296
+   ],
+   "vbm_adj": 0.73744,
+   "vbm_ci": [
+    0.66905,
+    0.81095
+   ],
+   "texts": [
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.6,
+     "n": 90
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.16,
+     "n": 24
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.107,
+     "n": 16
+    },
+    {
+     "title": "The Space Shuttle Decision",
+     "d": 12.5,
+     "share": 0.1,
+     "n": 15
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.033,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 35,
+   "n_responses": 211,
+   "median_date": "2026-01-21",
+   "raw": 0.68918,
+   "raw_ci": [
+    0.62599,
+    0.7486
+   ],
+   "pooled_adj": 0.67239,
+   "pooled_ci": [
+    0.60793,
+    0.73391
+   ],
+   "vbm_adj": 0.62024,
+   "vbm_ci": [
+    0.54434,
+    0.69948
+   ],
+   "texts": [
+    {
+     "title": "The Hippo Roller",
+     "d": 3.0,
+     "share": 0.649,
+     "n": 137
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.118,
+     "n": 25
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.09,
+     "n": 19
+    },
+    {
+     "title": "William Kamkwamba's Electric Wind",
+     "d": 7.0,
+     "share": 0.047,
+     "n": 10
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.033,
+     "n": 7
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.028,
+     "n": 6
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.028,
+     "n": 6
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration) with Carlisle Indian School photographs by Frances Benjamin Johnston",
+     "d": 13.6,
+     "share": 0.005,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 20,
+   "n_students": 26,
+   "n_responses": 202,
+   "median_date": "2026-02-23",
+   "raw": 0.73071,
+   "raw_ci": [
+    0.66708,
+    0.78254
+   ],
+   "pooled_adj": 0.76284,
+   "pooled_ci": [
+    0.69088,
+    0.8283
+   ],
+   "vbm_adj": 0.77576,
+   "vbm_ci": [
+    0.7036,
+    0.84311
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.698,
+     "n": 141
+    },
+    {
+     "title": "The Land of Red Apples (from The School Days of an Indian Girl)",
+     "d": 11.0,
+     "share": 0.168,
+     "n": 34
+    },
+    {
+     "title": "Two Roads",
+     "d": 5.0,
+     "share": 0.089,
+     "n": 18
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.025,
+     "n": 5
+    },
+    {
+     "title": "The Meriam Report (The Problem of Indian Administration)",
+     "d": 11.4,
+     "share": 0.02,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 21,
+   "n_students": 24,
+   "n_responses": 173,
+   "median_date": "2026-02-10",
+   "raw": 0.66552,
+   "raw_ci": [
+    0.55942,
+    0.76227
+   ],
+   "pooled_adj": 0.6909,
+   "pooled_ci": [
+    0.58414,
+    0.78615
+   ],
+   "vbm_adj": 0.69123,
+   "vbm_ci": [
+    0.58371,
+    0.78883
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.994,
+     "n": 172
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.006,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 22,
+   "n_students": 10,
+   "n_responses": 62,
+   "median_date": "2026-03-06",
+   "raw": 0.59625,
+   "raw_ci": [
+    0.5159,
+    0.67263
+   ],
+   "pooled_adj": 0.63644,
+   "pooled_ci": [
+    0.55089,
+    0.72183
+   ],
+   "vbm_adj": 0.6579,
+   "vbm_ci": [
+    0.56827,
+    0.74379
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.581,
+     "n": 36
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.419,
+     "n": 26
+    }
+   ]
+  },
+  {
+   "week": 23,
+   "n_students": 27,
+   "n_responses": 150,
+   "median_date": "2026-03-17",
+   "raw": 0.78786,
+   "raw_ci": [
+    0.70978,
+    0.84936
+   ],
+   "pooled_adj": 0.82443,
+   "pooled_ci": [
+    0.73747,
+    0.90083
+   ],
+   "vbm_adj": 0.84239,
+   "vbm_ci": [
+    0.74926,
+    0.92428
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 0.54,
+     "n": 81
+    },
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.413,
+     "n": 62
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.047,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 24,
+   "n_students": 1,
+   "n_responses": 5,
+   "median_date": "2026-02-25",
+   "raw": 1.0,
+   "raw_ci": [
+    1.0,
+    1.0
+   ],
+   "pooled_adj": 1.02025,
+   "pooled_ci": [
+    1.0019,
+    1.03984
+   ],
+   "vbm_adj": 1.00765,
+   "vbm_ci": [
+    0.9832,
+    1.03404
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind (Young Readers Edition)",
+     "d": 7.7,
+     "share": 0.6,
+     "n": 3
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.4,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 26,
+   "n_students": 17,
+   "n_responses": 180,
+   "median_date": "2026-03-17",
+   "raw": 0.79102,
+   "raw_ci": [
+    0.7337,
+    0.84543
+   ],
+   "pooled_adj": 0.83986,
+   "pooled_ci": [
+    0.76359,
+    0.91281
+   ],
+   "vbm_adj": 0.87356,
+   "vbm_ci": [
+    0.79074,
+    0.95454
+   ],
+   "texts": [
+    {
+     "title": "The Boy Who Harnessed the Wind",
+     "d": 9.5,
+     "share": 1.0,
+     "n": 180
+    }
+   ]
+  }
+ ]
+}

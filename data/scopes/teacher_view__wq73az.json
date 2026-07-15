@@ -1,0 +1,303 @@
+{
+ "class": "WQ73AZ",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": 0.01116,
+   "ci": [
+    -0.10464,
+    0.08739
+   ]
+  },
+  "vocab": {
+   "est": 2.37476,
+   "ci": [
+    -0.2637,
+    5.36948
+   ]
+  },
+  "background": {
+   "est": -3.1746,
+   "ci": [
+    -7.22364,
+    0.51343
+   ]
+  },
+  "meaning": {
+   "est": -4.20048,
+   "ci": [
+    -8.68809,
+    0.30752
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 20,
+   "n_responses": 186,
+   "median_date": "2025-09-26",
+   "raw": 0.63831,
+   "raw_ci": [
+    0.58002,
+    0.69154
+   ],
+   "pooled_adj": 0.64336,
+   "pooled_ci": [
+    0.56804,
+    0.70959
+   ],
+   "vbm_adj": -0.12854,
+   "vbm_ci": [
+    -1.19539,
+    0.77553
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.968,
+     "n": 180
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.032,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 13,
+   "n_responses": 155,
+   "median_date": "2025-10-06",
+   "raw": 0.62385,
+   "raw_ci": [
+    0.51906,
+    0.72107
+   ],
+   "pooled_adj": 0.62943,
+   "pooled_ci": [
+    0.5245,
+    0.74353
+   ],
+   "vbm_adj": -0.14318,
+   "vbm_ci": [
+    -1.19916,
+    0.77519
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.974,
+     "n": 151
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.026,
+     "n": 4
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 8,
+   "n_responses": 101,
+   "median_date": "2025-10-03",
+   "raw": 0.69446,
+   "raw_ci": [
+    0.64925,
+    0.73127
+   ],
+   "pooled_adj": 0.69993,
+   "pooled_ci": [
+    0.63115,
+    0.75579
+   ],
+   "vbm_adj": -0.07253,
+   "vbm_ci": [
+    -1.13877,
+    0.83019
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.98,
+     "n": 99
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.02,
+     "n": 2
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "n_students": 8,
+   "n_responses": 45,
+   "median_date": "2025-10-08",
+   "raw": 0.60833,
+   "raw_ci": [
+    0.49044,
+    0.73333
+   ],
+   "pooled_adj": 0.61455,
+   "pooled_ci": [
+    0.49176,
+    0.72988
+   ],
+   "vbm_adj": -0.15889,
+   "vbm_ci": [
+    -1.2134,
+    0.78014
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 45
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 2,
+   "n_responses": 10,
+   "median_date": "2025-10-28",
+   "raw": 0.6,
+   "raw_ci": [
+    0.3,
+    0.9
+   ],
+   "pooled_adj": 0.60622,
+   "pooled_ci": [
+    0.27628,
+    0.93343
+   ],
+   "vbm_adj": -0.16722,
+   "vbm_ci": [
+    -1.5243,
+    1.01914
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 10
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 3,
+   "n_responses": 18,
+   "median_date": "2026-01-21",
+   "raw": 0.49524,
+   "raw_ci": [
+    0.28571,
+    0.7
+   ],
+   "pooled_adj": 0.47914,
+   "pooled_ci": [
+    0.24335,
+    0.7348
+   ],
+   "vbm_adj": 3.30254,
+   "vbm_ci": [
+    -0.02802,
+    6.90748
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 1.0,
+     "n": 18
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 7,
+   "n_responses": 46,
+   "median_date": "2026-01-21",
+   "raw": 0.52296,
+   "raw_ci": [
+    0.375,
+    0.63294
+   ],
+   "pooled_adj": 0.50693,
+   "pooled_ci": [
+    0.35904,
+    0.69252
+   ],
+   "vbm_adj": 3.31325,
+   "vbm_ci": [
+    0.05055,
+    6.76729
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.978,
+     "n": 45
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.022,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 4,
+   "n_responses": 26,
+   "median_date": "2026-01-21",
+   "raw": 0.59286,
+   "raw_ci": [
+    0.3,
+    0.71429
+   ],
+   "pooled_adj": 0.5631,
+   "pooled_ci": [
+    0.22425,
+    0.88725
+   ],
+   "vbm_adj": 3.38349,
+   "vbm_ci": [
+    0.03724,
+    6.91505
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.731,
+     "n": 19
+    },
+    {
+     "title": "Special Message to the Congress on Urgent National Needs",
+     "d": 11.9,
+     "share": 0.269,
+     "n": 7
+    }
+   ]
+  }
+ ]
+}

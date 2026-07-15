@@ -176,6 +176,39 @@ document.getElementById("fitOnlyToggle").addEventListener("change", (event) => {
 
 window.addEventListener("resize", render);
 
+const V2_SCOPES = new Set([
+  "newcorpus", "4gth3d", "b8srbn", "kkmxmr", "8valvc", "j2fbgt",
+  "5wp9l4", "dzq3xh", "3hjbb7", "6am9sv", "wq73az", "jgveh2", "mvhh2y",
+]);
+const TAB_DEFAULT = { v1: "all", v2: "newcorpus" };
+const scopeTab = (scope) => (V2_SCOPES.has(scope) ? "v2" : "v1");
+
+// Show only the active version's scopes in the picker and highlight its tab.
+function applyTab(tab) {
+  const ogs = { v1: document.getElementById("og-v1"), v2: document.getElementById("og-v2") };
+  for (const [key, og] of Object.entries(ogs)) {
+    if (!og) continue;
+    const inactive = key !== tab;
+    og.hidden = inactive;
+    [...og.children].forEach((o) => (o.disabled = inactive));
+  }
+  document.querySelectorAll("#versionTabs .vtab").forEach((b) =>
+    b.setAttribute("aria-selected", b.dataset.tab === tab ? "true" : "false")
+  );
+}
+
+async function reloadScope(scope) {
+  const picker = document.getElementById("scopePicker");
+  SCOPE = scope;
+  if (picker) picker.value = scope;
+  DATA = EMPTY_DATA;
+  BETAS = {};
+  await loadStataExport();
+  renderSeriesPicker();
+  render();
+  if (typeof window.reloadTeacherView === "function") window.reloadTeacherView(SCOPE);
+}
+
 async function init() {
   const picker = document.getElementById("scopePicker");
   const params = new URLSearchParams(location.search);
@@ -184,6 +217,21 @@ async function init() {
     SCOPE = urlScope;
     picker.value = urlScope;
   }
+  // Version tabs: default to the tab that owns the initial scope, or ?tab=.
+  const urlTab = params.get("tab");
+  let activeTab = urlTab === "v1" || urlTab === "v2" ? urlTab : scopeTab(SCOPE);
+  if (urlTab && !urlScope) {
+    SCOPE = TAB_DEFAULT[activeTab];
+    if (picker) picker.value = SCOPE;
+  }
+  applyTab(activeTab);
+  document.querySelectorAll("#versionTabs .vtab").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const tab = btn.dataset.tab;
+      applyTab(tab);
+      if (scopeTab(SCOPE) !== tab) await reloadScope(TAB_DEFAULT[tab]);
+    });
+  });
   if (params.get("se") === "1") {
     state.showSE = true;
     document.getElementById("seToggle").checked = true;

@@ -1,0 +1,402 @@
+{
+ "class": "B8SRBN",
+ "outcome": "First-attempt score: correct = 1, partial = 0.5, incorrect = 0",
+ "spec": {
+  "panel": "student x relative week, first attempts, >= 5 responses per cell",
+  "adjustment": "score_adj = score - beta * (difficulty - sample mean difficulty); beta from OLS of student-week score on week dummies + difficulty",
+  "ci": "95% cluster bootstrap (students resampled, B = 2000, beta re-estimated per replicate), percentile intervals"
+ },
+ "betas": {
+  "pooled_d": {
+   "est": -0.23038,
+   "ci": [
+    -0.42705,
+    -0.0868
+   ]
+  },
+  "vocab": {
+   "est": -0.39298,
+   "ci": [
+    -0.87218,
+    0.6238
+   ]
+  },
+  "background": {
+   "est": -0.03988,
+   "ci": [
+    -1.36021,
+    0.75154
+   ]
+  },
+  "meaning": {
+   "est": -0.25587,
+   "ci": [
+    -0.95615,
+    0.62104
+   ]
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "n_students": 22,
+   "n_responses": 469,
+   "median_date": "2025-09-19",
+   "raw": 0.61177,
+   "raw_ci": [
+    0.56475,
+    0.65881
+   ],
+   "pooled_adj": 0.63554,
+   "pooled_ci": [
+    0.58554,
+    0.69404
+   ],
+   "vbm_adj": 0.66444,
+   "vbm_ci": [
+    0.49305,
+    0.76299
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.844,
+     "n": 396
+    },
+    {
+     "title": "Why Ancient Greek Mythology Is Still Relevant Today",
+     "d": 8.5,
+     "share": 0.156,
+     "n": 73
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "n_students": 16,
+   "n_responses": 197,
+   "median_date": "2025-09-30",
+   "raw": 0.53811,
+   "raw_ci": [
+    0.47708,
+    0.59899
+   ],
+   "pooled_adj": 0.43137,
+   "pooled_ci": [
+    0.33398,
+    0.50712
+   ],
+   "vbm_adj": 0.45388,
+   "vbm_ci": [
+    0.25954,
+    0.58923
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 197
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "n_students": 16,
+   "n_responses": 124,
+   "median_date": "2025-10-06",
+   "raw": 0.575,
+   "raw_ci": [
+    0.46097,
+    0.69793
+   ],
+   "pooled_adj": 0.46825,
+   "pooled_ci": [
+    0.32305,
+    0.608
+   ],
+   "vbm_adj": 0.49077,
+   "vbm_ci": [
+    0.25783,
+    0.67566
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 124
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "n_students": 16,
+   "n_responses": 84,
+   "median_date": "2025-10-22",
+   "raw": 0.62604,
+   "raw_ci": [
+    0.54688,
+    0.70836
+   ],
+   "pooled_adj": 0.5193,
+   "pooled_ci": [
+    0.41324,
+    0.60777
+   ],
+   "vbm_adj": 0.54181,
+   "vbm_ci": [
+    0.34341,
+    0.69145
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 1.0,
+     "n": 84
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "n_students": 10,
+   "n_responses": 58,
+   "median_date": "2025-11-05",
+   "raw": 0.4,
+   "raw_ci": [
+    0.34167,
+    0.46667
+   ],
+   "pooled_adj": 0.40172,
+   "pooled_ci": [
+    0.34765,
+    0.46624
+   ],
+   "vbm_adj": 0.5008,
+   "vbm_ci": [
+    -0.16136,
+    0.83299
+   ],
+   "texts": [
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.879,
+     "n": 51
+    },
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.121,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "n_students": 21,
+   "n_responses": 276,
+   "median_date": "2025-11-10",
+   "raw": 0.62815,
+   "raw_ci": [
+    0.55719,
+    0.69952
+   ],
+   "pooled_adj": 0.5252,
+   "pooled_ci": [
+    0.44103,
+    0.60147
+   ],
+   "vbm_adj": 0.55039,
+   "vbm_ci": [
+    0.33514,
+    0.71676
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.975,
+     "n": 269
+    },
+    {
+     "title": "Theseus and the Minotaur",
+     "d": 5.5,
+     "share": 0.025,
+     "n": 7
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2025-11-17",
+   "raw": 0.25,
+   "raw_ci": [
+    0.25,
+    0.25
+   ],
+   "pooled_adj": 0.12406,
+   "pooled_ci": [
+    0.01385,
+    0.20022
+   ],
+   "vbm_adj": 0.07902,
+   "vbm_ci": [
+    -0.20727,
+    0.43109
+   ],
+   "texts": [
+    {
+     "title": "The Lightning Thief",
+     "d": 5.0,
+     "share": 0.833,
+     "n": 5
+    },
+    {
+     "title": "Hestia",
+     "d": 4.5,
+     "share": 0.167,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "n_students": 1,
+   "n_responses": 8,
+   "median_date": "2026-01-12",
+   "raw": 0.875,
+   "raw_ci": [
+    0.875,
+    0.875
+   ],
+   "pooled_adj": 1.22038,
+   "pooled_ci": [
+    1.04905,
+    1.45826
+   ],
+   "vbm_adj": 1.04558,
+   "vbm_ci": [
+    0.24,
+    1.82049
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.875,
+     "n": 7
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.125,
+     "n": 1
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "n_students": 13,
+   "n_responses": 114,
+   "median_date": "2026-01-13",
+   "raw": 0.59437,
+   "raw_ci": [
+    0.49609,
+    0.69132
+   ],
+   "pooled_adj": 0.93619,
+   "pooled_ci": [
+    0.69876,
+    1.27476
+   ],
+   "vbm_adj": 0.76434,
+   "vbm_ci": [
+    -0.0581,
+    2.02593
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition); \"From Moton to NASA\"",
+     "d": 7.0,
+     "share": 0.711,
+     "n": 81
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.289,
+     "n": 33
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "n_students": 4,
+   "n_responses": 24,
+   "median_date": "2026-01-21",
+   "raw": 0.72976,
+   "raw_ci": [
+    0.58333,
+    0.8
+   ],
+   "pooled_adj": 1.13314,
+   "pooled_ci": [
+    0.91543,
+    1.48634
+   ],
+   "vbm_adj": 0.97981,
+   "vbm_ci": [
+    0.22503,
+    2.00107
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 0.667,
+     "n": 16
+    },
+    {
+     "title": "Hidden Figures (Young Readers' Edition)",
+     "d": 6.7,
+     "share": 0.333,
+     "n": 8
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "n_students": 1,
+   "n_responses": 6,
+   "median_date": "2026-01-23",
+   "raw": 0.58333,
+   "raw_ci": [
+    0.58333,
+    0.58333
+   ],
+   "pooled_adj": 1.05254,
+   "pooled_ci": [
+    0.78142,
+    1.47801
+   ],
+   "vbm_adj": 0.88335,
+   "vbm_ci": [
+    0.28086,
+    2.03608
+   ],
+   "texts": [
+    {
+     "title": "Hidden Figures (Young Readers' Edition) \u2014 Chapter 11; paired with biographical profile 'Mary Winston Jackson'",
+     "d": 7.5,
+     "share": 1.0,
+     "n": 6
+    }
+   ]
+  }
+ ]
+}
