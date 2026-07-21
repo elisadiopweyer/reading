@@ -112,6 +112,40 @@ const SERIES = {
     width: 2.7,
     dash: "",
     group: "external"
+  },
+  raw_strict: {
+    label: "Raw weekly average",
+    tooltip:
+      "Observed share of first attempts scored fully correct (strict coding: correct = 1, " +
+      "partial or incorrect = 0), averaged across the class's student-week cells.",
+    stroke: "#111827",
+    width: 2.5,
+    dash: "",
+    group: "observed"
+  },
+  adj_textstat_fe: {
+    label: "Adjusted — textstat (mechanical)",
+    tooltip:
+      "Each first attempt adjusted to average text difficulty using the fixed coefficient " +
+      "β = −0.0207 per +1 SD of textstat median-grade readability, estimated once on the pooled " +
+      "corpus with student and month fixed effects (strict-correct outcome). Weeks with " +
+      "harder-than-average texts are adjusted upward.",
+    stroke: "#0891b2",
+    width: 2.7,
+    dash: "",
+    group: "external"
+  },
+  adj_czi_fe: {
+    label: "Adjusted — CZI Lexile-like (LLM)",
+    tooltip:
+      "Each first attempt adjusted to average text difficulty using the fixed coefficient " +
+      "β = −0.0235 per +1 SD of the CZI Lexile-like LLM difficulty estimate, estimated once on " +
+      "the pooled corpus with student and month fixed effects (strict-correct outcome). Weeks " +
+      "with harder-than-average texts are adjusted upward.",
+    stroke: "#ea580c",
+    width: 2.7,
+    dash: "",
+    group: "external"
   }
 };
 
@@ -180,12 +214,19 @@ const V2_SCOPES = new Set([
   "newcorpus", "4gth3d", "b8srbn", "kkmxmr", "8valvc", "j2fbgt",
   "5wp9l4", "dzq3xh", "3hjbb7", "6am9sv", "wq73az", "jgveh2", "mvhh2y",
 ]);
-const TAB_DEFAULT = { v1: "all", v2: "newcorpus" };
-const scopeTab = (scope) => (V2_SCOPES.has(scope) ? "v2" : "v1");
+const V3_SCOPES = new Set(["tv-henry", "tv-b8srbn", "tv-gallo603"]);
+const TAB_DEFAULT = { v1: "all", v2: "newcorpus", v3: "tv-henry" };
+const scopeTab = (scope) =>
+  V3_SCOPES.has(scope) ? "v3" : V2_SCOPES.has(scope) ? "v2" : "v1";
+const isTeacherTab = () => scopeTab(SCOPE) === "v3";
 
 // Show only the active version's scopes in the picker and highlight its tab.
 function applyTab(tab) {
-  const ogs = { v1: document.getElementById("og-v1"), v2: document.getElementById("og-v2") };
+  const ogs = {
+    v1: document.getElementById("og-v1"),
+    v2: document.getElementById("og-v2"),
+    v3: document.getElementById("og-v3"),
+  };
   for (const [key, og] of Object.entries(ogs)) {
     if (!og) continue;
     const inactive = key !== tab;
@@ -219,7 +260,7 @@ async function init() {
   }
   // Version tabs: default to the tab that owns the initial scope, or ?tab=.
   const urlTab = params.get("tab");
-  let activeTab = urlTab === "v1" || urlTab === "v2" ? urlTab : scopeTab(SCOPE);
+  let activeTab = ["v1", "v2", "v3"].includes(urlTab) ? urlTab : scopeTab(SCOPE);
   if (urlTab && !urlScope) {
     SCOPE = TAB_DEFAULT[activeTab];
     if (picker) picker.value = SCOPE;
@@ -270,7 +311,7 @@ async function loadStataExport() {
       DATA = nextData;
       const picker = document.getElementById("scopePicker");
       const scopeLabel = picker ? picker.selectedOptions[0].textContent : SCOPE;
-      dataSource = `Stata export · ${scopeLabel}`;
+      dataSource = `${isTeacherTab() ? "Fixed-β export" : "Stata export"} · ${scopeLabel}`;
       constrainSelected();
     }
   } catch (error) {
@@ -344,7 +385,9 @@ function renderSeriesPicker() {
 function render() {
   const rows = DATA[state.period] || [];
   const selected = [...state.selected].filter((key) => hasFiniteValue(rows, key));
-  chartTitle.textContent = "Weekly Score Trajectory";
+  chartTitle.textContent = isTeacherTab()
+    ? "Weekly First-Attempt Correct Rate — Raw vs Difficulty-Adjusted"
+    : "Weekly Score Trajectory";
   summary.innerHTML = `${rows.length} periods<br>${totalObservations(rows)} student-period rows<br>${dataSource}`;
   modelEquation.innerHTML = equationMarkup(state.period, selected);
   renderChart(rows, selected, state.showFit || state.fitOnly, state.showSE, state.fitOnly);
@@ -352,6 +395,7 @@ function render() {
 }
 
 function equationMarkup(period, selected) {
+  if (isTeacherTab()) return teacherEquationMarkup(selected);
   const suffix = period === "week" ? "iw" : "im";
   const periodIndex = period === "week" ? "w" : "m";
   const periodName = period === "week" ? "relative week" : "relative month";
@@ -401,6 +445,48 @@ function equationMarkup(period, selected) {
       is the period term.
       ${externalSelected ? "External-score lines use the same adjustment formula as V/B/M, with their own scalar score." : ""}
       ${controlsSelected ? "Genre-adjusted holds V/BK/M difficulty, literary share, and fiction share at their sample means." : ""}
+    </div>
+    ${betaTableMarkup(selected)}
+  `;
+}
+
+function teacherEquationMarkup(selected) {
+  return `
+    <div class="equation-line">
+      <span class="equation-name">Adjustment</span>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sup>adj</sup><sub>it</sub>
+        =
+        <span class="math-var">Score</span><sub>it</sub>
+        -
+        <span class="math-hat">β</span><sub>X</sub>&thinsp;<span class="math-var">X</span><sup>z</sup><sub>it</sub>
+      </div>
+    </div>
+    <div class="equation-line">
+      <span class="equation-name">Where β̂ comes from</span>
+      <div class="math-equation">
+        <span class="math-var">Score</span><sub>it</sub>
+        =
+        <span class="math-var">α</span><sub>i</sub>
+        +
+        <span class="math-var">γ</span><sub>m(t)</sub>
+        +
+        <span class="math-var">β</span><sub>X</sub><span class="math-var">X</span><sup>z</sup><sub>it</sub>
+        +
+        <span class="math-var">ε</span><sub>it</sub>
+      </div>
+    </div>
+    <div class="equation-note">
+      Score is the <strong>strict first-attempt outcome</strong> (fully correct = 1; partial or incorrect = 0).
+      Each adjusted line subtracts a <strong>fixed, universal coefficient</strong> times the text's difficulty
+      (z-scored against the pooled corpus), so every week is shown as if the class had read texts of average
+      difficulty. β̂ was estimated once on the pooled two-corpus sample (52,660 first attempts) with
+      <span class="hint" tabindex="0" data-tooltip="Student fixed effects: each student is compared only to themselves, removing stable ability differences.">student</span>
+      and
+      <span class="hint" tabindex="0" data-tooltip="School-year-month fixed effects: removes shared calendar drift, e.g. the June drop.">month</span>
+      fixed effects — it is <em>not</em> re-estimated per class. A negative β̂ means harder-than-average weeks
+      are adjusted upward. Exploratory view; see the coefficient grid for how this β̂ compares across
+      specifications (raw pooled associations are positive-to-null).
     </div>
     ${betaTableMarkup(selected)}
   `;
@@ -457,10 +543,15 @@ function betaTableMarkup(selected) {
         <tbody>${bodyRows}</tbody>
       </table>
       <div class="beta-note">
-        Each adjusted line subtracts β̂·(X<sub>iw</sub> − X̄) for every term shown, where β̂ comes from the
-        weekly regression of student-week scores on week indicators plus that series' difficulty term(s)
-        (standard errors clustered by student). A negative β̂ means harder texts predict lower scores, so
-        weeks with harder-than-average texts are adjusted upward.
+        ${isTeacherTab()
+          ? "β̂ is held fixed from the pooled first-attempt model with student and month fixed effects " +
+            "(strict-correct outcome; SEs clustered by student, normal-approximation p; X̄ = 0 because " +
+            "difficulty is z-scored on the pooled corpus). The same two coefficients are applied to every " +
+            "class — nothing is re-fit per class."
+          : "Each adjusted line subtracts β̂·(X<sub>iw</sub> − X̄) for every term shown, where β̂ comes from the " +
+            "weekly regression of student-week scores on week indicators plus that series' difficulty term(s) " +
+            "(standard errors clustered by student). A negative β̂ means harder texts predict lower scores, so " +
+            "weeks with harder-than-average texts are adjusted upward."}
       </div>
     </div>`;
 }
@@ -528,7 +619,7 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
     appendText(svg, x(row.period), height - margin.bottom + 24, String(row.period), "middle", "axis");
   });
   appendText(svg, margin.left + innerWidth / 2, height - 12, state.period === "week" ? "Relative week" : "Relative month", "middle", "axis");
-  appendText(svg, 16, margin.top + innerHeight / 2, "Average score", "middle", "axis", -90);
+  appendText(svg, 16, margin.top + innerHeight / 2, isTeacherTab() ? "Share fully correct" : "Average score", "middle", "axis", -90);
 
   selected.forEach((key, index) => {
     const def = SERIES[key];
@@ -731,7 +822,8 @@ function constrainSelected() {
   });
   if (!state.selected.size && available.size) {
     DEFAULT_SELECTED.filter((key) => available.has(key)).forEach((key) => state.selected.add(key));
-    if (!state.selected.size) state.selected.add([...available][0]);
+    // No defaults present (e.g. the teacher tab's own series): show everything available.
+    if (!state.selected.size) available.forEach((key) => state.selected.add(key));
   }
 }
 

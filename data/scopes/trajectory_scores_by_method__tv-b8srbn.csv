@@ -1,0 +1,37 @@
+period_type,period,period_label,n_students,series_id,series_label,series_group,score,score_se,mean_difficulty,terms
+week,1,Week 1,23,raw_strict,Raw weekly average,observed,0.50351,0.040785,,
+week,2,Week 2,23,raw_strict,Raw weekly average,observed,0.411299,0.039822,,
+week,3,Week 3,19,raw_strict,Raw weekly average,observed,0.254065,0.039317,,
+week,4,Week 4,20,raw_strict,Raw weekly average,observed,0.274521,0.053213,,
+week,6,Week 6,23,raw_strict,Raw weekly average,observed,0.422878,0.042054,,
+week,8,Week 8,23,raw_strict,Raw weekly average,observed,0.443124,0.025424,,
+week,9,Week 9,25,raw_strict,Raw weekly average,observed,0.3301,0.0513,,
+week,10,Week 10,24,raw_strict,Raw weekly average,observed,0.382507,0.040381,,
+week,14,Week 14,7,raw_strict,Raw weekly average,observed,0.163265,0.1409,,
+week,17,Week 17,21,raw_strict,Raw weekly average,observed,0.376077,0.061903,,
+week,18,Week 18,23,raw_strict,Raw weekly average,observed,0.390288,0.050077,,
+week,19,Week 19,13,raw_strict,Raw weekly average,observed,0.496703,0.100028,,
+week,1,Week 1,23,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.501555,0.041254,-0.0947,"fixed beta (student+month FE, strict correct)"
+week,2,Week 2,23,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.393657,0.039861,-0.8541,"fixed beta (student+month FE, strict correct)"
+week,3,Week 3,19,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.237773,0.039258,-0.7888,"fixed beta (student+month FE, strict correct)"
+week,4,Week 4,20,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.256952,0.053218,-0.8506,"fixed beta (student+month FE, strict correct)"
+week,6,Week 6,23,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.399668,0.042054,-1.1237,"fixed beta (student+month FE, strict correct)"
+week,8,Week 8,23,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.431787,0.024856,-0.5488,"fixed beta (student+month FE, strict correct)"
+week,9,Week 9,25,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.310105,0.051302,-0.968,"fixed beta (student+month FE, strict correct)"
+week,10,Week 10,24,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.390198,0.040544,0.3724,"fixed beta (student+month FE, strict correct)"
+week,14,Week 14,7,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.194317,0.1409,1.5034,"fixed beta (student+month FE, strict correct)"
+week,17,Week 17,21,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.401696,0.061903,1.2403,"fixed beta (student+month FE, strict correct)"
+week,18,Week 18,23,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.410545,0.050262,0.9807,"fixed beta (student+month FE, strict correct)"
+week,19,Week 19,13,adj_textstat_fe,Adjusted — textstat (mechanical),external,0.517745,0.100121,1.0187,"fixed beta (student+month FE, strict correct)"
+week,1,Week 1,23,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.49659,0.041247,-0.2947,"fixed beta (student+month FE, strict correct)"
+week,2,Week 2,23,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.391377,0.039905,-0.8484,"fixed beta (student+month FE, strict correct)"
+week,3,Week 3,19,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.234347,0.039278,-0.8397,"fixed beta (student+month FE, strict correct)"
+week,4,Week 4,20,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.254997,0.053212,-0.8314,"fixed beta (student+month FE, strict correct)"
+week,6,Week 6,23,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.400708,0.042054,-0.9441,"fixed beta (student+month FE, strict correct)"
+week,8,Week 8,23,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.437266,0.024647,-0.2495,"fixed beta (student+month FE, strict correct)"
+week,9,Week 9,25,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.310812,0.051275,-0.8214,"fixed beta (student+month FE, strict correct)"
+week,10,Week 10,24,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.381537,0.040484,-0.0413,"fixed beta (student+month FE, strict correct)"
+week,14,Week 14,7,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.193621,0.1409,1.2927,"fixed beta (student+month FE, strict correct)"
+week,17,Week 17,21,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.407779,0.061903,1.3501,"fixed beta (student+month FE, strict correct)"
+week,18,Week 18,23,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.415335,0.05018,1.0667,"fixed beta (student+month FE, strict correct)"
+week,19,Week 19,13,adj_czi_fe,Adjusted — CZI Lexile-like (LLM),external,0.524676,0.100055,1.1912,"fixed beta (student+month FE, strict correct)"
