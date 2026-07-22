@@ -7,16 +7,20 @@ Static web app for the trajectory outputs. Views:
 - **Teacher-facing** (`?view=teacher` deep link) — actual vs difficulty-adjusted
   weekly scores with 95% cluster-bootstrap confidence bands, a per-week text
   difficulty strip, and hover annotations listing the texts the class read.
-- **v3 · Teacher view (fixed β)** — for three seeded-random classes (henry,
-  B8SRBN, Gallo603), weekly first-attempt strict-correct rate under three
-  switchable views (`?adjview=unadjusted|universal|class`): raw only; adjusted
-  with two *fixed universal* coefficients (textstat β = −0.0207, CZI Lexile-like
-  β = −0.0235 per +1 SD, from the pooled student+month-FE model in
+- **v3 · Teacher view (fixed β)** — every class in the pooled dataset (31
+  classes; ones with <2 plottable weeks are skipped by the builder), weekly
+  first-attempt strict-correct rate under three switchable views
+  (`?adjview=unadjusted|universal|class`): raw only; adjusted with two *fixed
+  universal* coefficients (textstat β = −0.0207, CZI Lexile-like β = −0.0235
+  per +1 SD, from the pooled student+month-FE model in
   `analysis/exploratory/coefficients_grid.py`, never re-fit per class); and
-  adjusted with *class-specific* coefficients (same student+month-FE spec re-fit
-  within the class, dashed lines — larger and noisier: e.g. B8SRBN textstat
-  −0.082, CZI −0.116). Exploratory: the coefficient grid shows these betas are
-  spec-sensitive (raw pooled associations run positive-to-null).
+  adjusted with *class-specific* coefficients (same student+month-FE spec
+  re-fit within the class, dashed lines — noisier and wildly heterogeneous:
+  DZIUMA classes ≈ −0.03, B8SRBN −0.08/−0.12, but e.g. Hughes604 +0.26). The
+  class list + betas live in `data/scopes/teacher_scopes.json` (written by
+  `scripts/build_fixed_beta_teacher_tab.py`), which the app reads at startup.
+  Exploratory: the coefficient grid shows these betas are spec-sensitive (raw
+  pooled associations run positive-to-null).
 
 Open locally:
 

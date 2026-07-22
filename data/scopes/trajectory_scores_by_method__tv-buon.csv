@@ -1,0 +1,71 @@
+period_type,period,period_label,n_students,series_id,series_label,series_group,score,score_se,mean_difficulty,terms
+week,1,Week 1,19,raw_strict,Raw weekly average,observed,0.473684,0.081234,,
+week,3,Week 3,5,raw_strict,Raw weekly average,observed,0.45,0.104083,,
+week,4,Week 4,17,raw_strict,Raw weekly average,observed,0.344363,0.048943,,
+week,5,Week 5,7,raw_strict,Raw weekly average,observed,0.157967,0.070154,,
+week,6,Week 6,3,raw_strict,Raw weekly average,observed,0.190476,0.095238,,
+week,9,Week 9,13,raw_strict,Raw weekly average,observed,0.483502,0.074455,,
+week,10,Week 10,8,raw_strict,Raw weekly average,observed,0.441071,0.077846,,
+week,11,Week 11,8,raw_strict,Raw weekly average,observed,0.022727,0.022727,,
+week,19,Week 19,10,raw_strict,Raw weekly average,observed,0.216154,0.06756,,
+week,20,Week 20,4,raw_strict,Raw weekly average,observed,0.683333,0.183333,,
+week,23,Week 23,3,raw_strict,Raw weekly average,observed,0.0,0.0,,
+week,24,Week 24,15,raw_strict,Raw weekly average,observed,0.344979,0.079242,,
+week,25,Week 25,3,raw_strict,Raw weekly average,observed,0.531746,0.246032,,
+week,30,Week 30,19,raw_strict,Raw weekly average,observed,0.251462,0.033702,,
+week,1,Week 1,19,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.463128,0.08116,-0.5111,"universal beta (pooled student+month FE, strict correct)"
+week,3,Week 3,5,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.445832,0.104083,-0.2018,"universal beta (pooled student+month FE, strict correct)"
+week,4,Week 4,17,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.337935,0.048101,-0.3112,"universal beta (pooled student+month FE, strict correct)"
+week,5,Week 5,7,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.144502,0.070085,-0.6519,"universal beta (pooled student+month FE, strict correct)"
+week,6,Week 6,3,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.183527,0.095238,-0.3364,"universal beta (pooled student+month FE, strict correct)"
+week,9,Week 9,13,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.463688,0.074374,-0.9593,"universal beta (pooled student+month FE, strict correct)"
+week,10,Week 10,8,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.434902,0.077846,-0.2987,"universal beta (pooled student+month FE, strict correct)"
+week,11,Week 11,8,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.000789,0.022727,-1.0621,"universal beta (pooled student+month FE, strict correct)"
+week,19,Week 19,10,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.209922,0.066495,-0.3017,"universal beta (pooled student+month FE, strict correct)"
+week,20,Week 20,4,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.659356,0.182376,-1.1609,"universal beta (pooled student+month FE, strict correct)"
+week,23,Week 23,3,adj_textstat_fe,"Adjusted — textstat, universal β",external,-0.008919,0.001677,-0.4318,"universal beta (pooled student+month FE, strict correct)"
+week,24,Week 24,15,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.382251,0.076022,1.8045,"universal beta (pooled student+month FE, strict correct)"
+week,25,Week 25,3,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.587514,0.242164,2.7,"universal beta (pooled student+month FE, strict correct)"
+week,30,Week 30,19,adj_textstat_fe,"Adjusted — textstat, universal β",external,0.261294,0.033702,0.476,"universal beta (pooled student+month FE, strict correct)"
+week,1,Week 1,19,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.455201,0.080918,-0.7871,"universal beta (pooled student+month FE, strict correct)"
+week,3,Week 3,5,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.446686,0.104083,-0.1411,"universal beta (pooled student+month FE, strict correct)"
+week,4,Week 4,17,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.336142,0.04807,-0.3501,"universal beta (pooled student+month FE, strict correct)"
+week,5,Week 5,7,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.149045,0.069995,-0.3799,"universal beta (pooled student+month FE, strict correct)"
+week,6,Week 6,3,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.184468,0.095238,-0.2559,"universal beta (pooled student+month FE, strict correct)"
+week,9,Week 9,13,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.467253,0.07425,-0.692,"universal beta (pooled student+month FE, strict correct)"
+week,10,Week 10,8,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.439104,0.077846,-0.0838,"universal beta (pooled student+month FE, strict correct)"
+week,11,Week 11,8,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.004495,0.022727,-0.7765,"universal beta (pooled student+month FE, strict correct)"
+week,19,Week 19,10,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.208393,0.066168,-0.3305,"universal beta (pooled student+month FE, strict correct)"
+week,20,Week 20,4,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.656349,0.182447,-1.1492,"universal beta (pooled student+month FE, strict correct)"
+week,23,Week 23,3,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,-0.021272,0.002376,-0.9059,"universal beta (pooled student+month FE, strict correct)"
+week,24,Week 24,15,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.384105,0.075496,1.6662,"universal beta (pooled student+month FE, strict correct)"
+week,25,Week 25,3,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.591282,0.237929,2.5354,"universal beta (pooled student+month FE, strict correct)"
+week,30,Week 30,19,adj_czi_fe,"Adjusted — CZI Lexile-like, universal β",external,0.260269,0.033702,0.375,"universal beta (pooled student+month FE, strict correct)"
+week,1,Week 1,19,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.448292,0.081057,-0.5111,"class-specific beta (within-class student+month FE, strict correct)"
+week,3,Week 3,5,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.439976,0.104083,-0.2018,"class-specific beta (within-class student+month FE, strict correct)"
+week,4,Week 4,17,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.328902,0.04698,-0.3112,"class-specific beta (within-class student+month FE, strict correct)"
+week,5,Week 5,7,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.125578,0.070008,-0.6519,"class-specific beta (within-class student+month FE, strict correct)"
+week,6,Week 6,3,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.173761,0.095238,-0.3364,"class-specific beta (within-class student+month FE, strict correct)"
+week,9,Week 9,13,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.435844,0.074289,-0.9593,"class-specific beta (within-class student+month FE, strict correct)"
+week,10,Week 10,8,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.426233,0.077846,-0.2987,"class-specific beta (within-class student+month FE, strict correct)"
+week,11,Week 11,8,adj_textstat_class,"Adjusted — textstat, class-specific β",external,-0.03004,0.022727,-1.0621,"class-specific beta (within-class student+month FE, strict correct)"
+week,19,Week 19,10,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.201165,0.065607,-0.3017,"class-specific beta (within-class student+month FE, strict correct)"
+week,20,Week 20,4,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.625659,0.181038,-1.1609,"class-specific beta (within-class student+month FE, strict correct)"
+week,23,Week 23,3,adj_textstat_class,"Adjusted — textstat, class-specific β",external,-0.021454,0.004034,-0.4318,"class-specific beta (within-class student+month FE, strict correct)"
+week,24,Week 24,15,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.43463,0.072154,1.8045,"class-specific beta (within-class student+month FE, strict correct)"
+week,25,Week 25,3,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.665886,0.236739,2.7,"class-specific beta (within-class student+month FE, strict correct)"
+week,30,Week 30,19,adj_textstat_class,"Adjusted — textstat, class-specific β",external,0.275112,0.033702,0.476,"class-specific beta (within-class student+month FE, strict correct)"
+week,1,Week 1,19,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.429443,0.080496,-0.7871,"class-specific beta (within-class student+month FE, strict correct)"
+week,3,Week 3,5,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.442067,0.104083,-0.1411,"class-specific beta (within-class student+month FE, strict correct)"
+week,4,Week 4,17,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.324687,0.046937,-0.3501,"class-specific beta (within-class student+month FE, strict correct)"
+week,5,Week 5,7,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.136612,0.069795,-0.3799,"class-specific beta (within-class student+month FE, strict correct)"
+week,6,Week 6,3,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.176096,0.095238,-0.2559,"class-specific beta (within-class student+month FE, strict correct)"
+week,9,Week 9,13,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.44461,0.073988,-0.692,"class-specific beta (within-class student+month FE, strict correct)"
+week,10,Week 10,8,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.436362,0.077846,-0.0838,"class-specific beta (within-class student+month FE, strict correct)"
+week,11,Week 11,8,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,-0.020914,0.022727,-0.7765,"class-specific beta (within-class student+month FE, strict correct)"
+week,19,Week 19,10,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.197578,0.065652,-0.3305,"class-specific beta (within-class student+month FE, strict correct)"
+week,20,Week 20,4,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.618745,0.181214,-1.1492,"class-specific beta (within-class student+month FE, strict correct)"
+week,23,Week 23,3,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,-0.050915,0.005686,-0.9059,"class-specific beta (within-class student+month FE, strict correct)"
+week,24,Week 24,15,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.43863,0.071124,1.6662,"class-specific beta (within-class student+month FE, strict correct)"
+week,25,Week 25,3,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.674249,0.22669,2.5354,"class-specific beta (within-class student+month FE, strict correct)"
+week,30,Week 30,19,adj_czi_class,"Adjusted — CZI Lexile-like, class-specific β",external,0.272541,0.033702,0.375,"class-specific beta (within-class student+month FE, strict correct)"

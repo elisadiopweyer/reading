@@ -1,0 +1,5 @@
+series_id,param,param_label,coef,se,pvalue,xbar
+adj_textstat_fe,textstat_z,"Textstat median-grade (z, +1 SD)",-0.020655,0.003407,0.0,0.0
+adj_czi_fe,czi_z,"CZI Lexile-like estimate (z, +1 SD)",-0.023482,0.003537,0.0,0.0
+adj_textstat_class,ts_z_class,"Textstat median-grade (z, +1 SD) — class-specific",0.25707686553541126,0.0435019519284305,3.4304806810151872e-09,0.0
+adj_czi_class,czi_z_class,"CZI Lexile-like estimate (z, +1 SD) — class-specific",0.2557891764854277,0.03917368908684496,6.593819531667252e-11,0.0

@@ -238,8 +238,31 @@ const V2_SCOPES = new Set([
   "newcorpus", "4gth3d", "b8srbn", "kkmxmr", "8valvc", "j2fbgt",
   "5wp9l4", "dzq3xh", "3hjbb7", "6am9sv", "wq73az", "jgveh2", "mvhh2y",
 ]);
-const V3_SCOPES = new Set(["tv-henry", "tv-b8srbn", "tv-gallo603"]);
-const TAB_DEFAULT = { v1: "all", v2: "newcorpus", v3: "tv-henry" };
+// Filled from data/scopes/teacher_scopes.json at init (one scope per class).
+const V3_SCOPES = new Set();
+const TAB_DEFAULT = { v1: "all", v2: "newcorpus", v3: "tv-dziuma603" };
+
+async function loadTeacherScopes() {
+  try {
+    const res = await fetch("./data/scopes/teacher_scopes.json", { cache: "no-store" });
+    if (!res.ok) return;
+    const list = await res.json();
+    const og = document.getElementById("og-v3");
+    if (!og || !Array.isArray(list) || !list.length) return;
+    og.innerHTML = "";
+    list.forEach((entry) => {
+      if (!entry || !entry.scope) return;
+      V3_SCOPES.add(entry.scope);
+      const opt = document.createElement("option");
+      opt.value = entry.scope;
+      opt.textContent = entry.label || entry.scope;
+      og.appendChild(opt);
+    });
+    if (V3_SCOPES.size) TAB_DEFAULT.v3 = list[0].scope;
+  } catch (error) {
+    /* manifest is optional: without it the v3 optgroup stays empty */
+  }
+}
 const scopeTab = (scope) =>
   V3_SCOPES.has(scope) ? "v3" : V2_SCOPES.has(scope) ? "v2" : "v1";
 const isTeacherTab = () => scopeTab(SCOPE) === "v3";
@@ -294,6 +317,7 @@ async function reloadScope(scope) {
 }
 
 async function init() {
+  await loadTeacherScopes();
   const picker = document.getElementById("scopePicker");
   const params = new URLSearchParams(location.search);
   const urlScope = params.get("scope");
