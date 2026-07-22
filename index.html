@@ -66,7 +66,14 @@
 
       <div id="researchView">
         <section class="controls" aria-label="Chart controls">
-          <div class="chart-meta">Weekly view · full year of class activity</div>
+          <div>
+            <div class="chart-meta">Weekly view · full year of class activity</div>
+            <div class="version-tabs" id="teacherViewSwitch" role="tablist" aria-label="Adjustment view" hidden>
+              <button type="button" class="vtab" data-view="unadjusted" role="tab">Unadjusted</button>
+              <button type="button" class="vtab" data-view="universal" role="tab" aria-selected="true">Universal β</button>
+              <button type="button" class="vtab" data-view="class" role="tab">Class-specific β</button>
+            </div>
+          </div>
 
           <div class="toggle-stack">
             <label class="check-row control-row">

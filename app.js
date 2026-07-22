@@ -146,6 +146,30 @@ const SERIES = {
     width: 2.7,
     dash: "",
     group: "external"
+  },
+  adj_textstat_class: {
+    label: "Adjusted — textstat, class-specific β",
+    tooltip:
+      "Same textstat adjustment, but the coefficient is re-estimated within this class only " +
+      "(same student + month fixed-effects spec, same pooled difficulty z-scale). Dashed to " +
+      "distinguish it from the universal-β line. Class betas are noisier — see the SE in the " +
+      "coefficient table.",
+    stroke: "#0891b2",
+    width: 2.7,
+    dash: "7 4",
+    group: "external"
+  },
+  adj_czi_class: {
+    label: "Adjusted — CZI Lexile-like, class-specific β",
+    tooltip:
+      "Same CZI Lexile-like adjustment, but the coefficient is re-estimated within this class " +
+      "only (same student + month fixed-effects spec, same pooled difficulty z-scale). Dashed " +
+      "to distinguish it from the universal-β line. Class betas are noisier — see the SE in " +
+      "the coefficient table.",
+    stroke: "#ea580c",
+    width: 2.7,
+    dash: "7 4",
+    group: "external"
   }
 };
 
@@ -220,6 +244,22 @@ const scopeTab = (scope) =>
   V3_SCOPES.has(scope) ? "v3" : V2_SCOPES.has(scope) ? "v2" : "v1";
 const isTeacherTab = () => scopeTab(SCOPE) === "v3";
 
+// Teacher-tab adjustment views: which series each one shows.
+const TEACHER_VIEWS = {
+  unadjusted: ["raw_strict"],
+  universal: ["raw_strict", "adj_textstat_fe", "adj_czi_fe"],
+  class: ["raw_strict", "adj_textstat_class", "adj_czi_class"],
+};
+let TEACHER_VIEW = "universal";
+
+function syncTeacherView() {
+  if (!isTeacherTab()) return;
+  state.selected = new Set(TEACHER_VIEWS[TEACHER_VIEW]);
+  document.querySelectorAll("#teacherViewSwitch .vtab").forEach((b) =>
+    b.setAttribute("aria-selected", b.dataset.view === TEACHER_VIEW ? "true" : "false")
+  );
+}
+
 // Show only the active version's scopes in the picker and highlight its tab.
 function applyTab(tab) {
   const ogs = {
@@ -236,6 +276,8 @@ function applyTab(tab) {
   document.querySelectorAll("#versionTabs .vtab").forEach((b) =>
     b.setAttribute("aria-selected", b.dataset.tab === tab ? "true" : "false")
   );
+  const teacherSwitch = document.getElementById("teacherViewSwitch");
+  if (teacherSwitch) teacherSwitch.hidden = tab !== "v3";
 }
 
 async function reloadScope(scope) {
@@ -245,6 +287,7 @@ async function reloadScope(scope) {
   DATA = EMPTY_DATA;
   BETAS = {};
   await loadStataExport();
+  syncTeacherView();
   renderSeriesPicker();
   render();
   if (typeof window.reloadTeacherView === "function") window.reloadTeacherView(SCOPE);
@@ -273,6 +316,9 @@ async function init() {
       if (scopeTab(SCOPE) !== tab) await reloadScope(TAB_DEFAULT[tab]);
     });
   });
+  if (TEACHER_VIEWS[params.get("adjview")]) {
+    TEACHER_VIEW = params.get("adjview");
+  }
   if (params.get("se") === "1") {
     state.showSE = true;
     document.getElementById("seToggle").checked = true;
@@ -287,12 +333,22 @@ async function init() {
       DATA = EMPTY_DATA;
       BETAS = {};
       await loadStataExport();
+      syncTeacherView();
       renderSeriesPicker();
       render();
       if (typeof window.reloadTeacherView === "function") window.reloadTeacherView(SCOPE);
     });
   }
+  document.querySelectorAll("#teacherViewSwitch .vtab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      TEACHER_VIEW = btn.dataset.view;
+      syncTeacherView();
+      renderSeriesPicker();
+      render();
+    });
+  });
   await loadStataExport();
+  syncTeacherView();
   renderSeriesPicker();
   render();
 }
@@ -478,15 +534,18 @@ function teacherEquationMarkup(selected) {
     </div>
     <div class="equation-note">
       Score is the <strong>strict first-attempt outcome</strong> (fully correct = 1; partial or incorrect = 0).
-      Each adjusted line subtracts a <strong>fixed, universal coefficient</strong> times the text's difficulty
-      (z-scored against the pooled corpus), so every week is shown as if the class had read texts of average
-      difficulty. β̂ was estimated once on the pooled two-corpus sample (52,660 first attempts) with
+      Each adjusted line subtracts a fixed coefficient times the text's difficulty (z-scored against the
+      pooled corpus), so every week is shown as if the class had read texts of average difficulty.
+      <strong>Universal β̂</strong> (solid) was estimated once on the pooled two-corpus sample
+      (52,660 first attempts) with
       <span class="hint" tabindex="0" data-tooltip="Student fixed effects: each student is compared only to themselves, removing stable ability differences.">student</span>
       and
       <span class="hint" tabindex="0" data-tooltip="School-year-month fixed effects: removes shared calendar drift, e.g. the June drop.">month</span>
-      fixed effects — it is <em>not</em> re-estimated per class. A negative β̂ means harder-than-average weeks
-      are adjusted upward. Exploratory view; see the coefficient grid for how this β̂ compares across
-      specifications (raw pooled associations are positive-to-null).
+      fixed effects and is applied identically to every class. <strong>Class-specific β̂</strong> (dashed)
+      re-fits the same spec within this class only — same difficulty z-scale, so the two coefficients are
+      directly comparable, but the class estimate is noisier (fewer students, fewer months). A negative β̂
+      means harder-than-average weeks are adjusted upward. Exploratory view; see the coefficient grid for
+      how these β̂s move across specifications (raw pooled associations are positive-to-null).
     </div>
     ${betaTableMarkup(selected)}
   `;
@@ -544,10 +603,11 @@ function betaTableMarkup(selected) {
       </table>
       <div class="beta-note">
         ${isTeacherTab()
-          ? "β̂ is held fixed from the pooled first-attempt model with student and month fixed effects " +
-            "(strict-correct outcome; SEs clustered by student, normal-approximation p; X̄ = 0 because " +
-            "difficulty is z-scored on the pooled corpus). The same two coefficients are applied to every " +
-            "class — nothing is re-fit per class."
+          ? "All β̂s come from the same student + month fixed-effects spec on strict-correct first attempts " +
+            "(SEs clustered by student, normal-approximation p; X̄ = 0 because difficulty is z-scored on the " +
+            "pooled corpus). <em>Universal</em> rows are estimated once on the pooled two-corpus sample and " +
+            "applied identically to every class; <em>class-specific</em> rows re-fit the spec within this " +
+            "class only, so they are noisier but tailored."
           : "Each adjusted line subtracts β̂·(X<sub>iw</sub> − X̄) for every term shown, where β̂ comes from the " +
             "weekly regression of student-week scores on week indicators plus that series' difficulty term(s) " +
             "(standard errors clustered by student). A negative β̂ means harder texts predict lower scores, so " +
@@ -595,11 +655,13 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
     return;
   }
 
+  // Tight y-domain: fit the plotted values with a thin pad instead of stretching
+  // toward 0/1, so level differences and trendline slopes stay legible.
   const rawMin = Math.min(...values);
   const rawMax = Math.max(...values);
-  const spread = Math.max(0.08, rawMax - rawMin);
-  const yMin = Math.max(0, rawMin - spread * 0.25);
-  const yMax = Math.min(1, rawMax + spread * 0.25);
+  const spread = Math.max(0.05, rawMax - rawMin);
+  const yMin = Math.max(0, rawMin - spread * 0.1);
+  const yMax = Math.min(1, rawMax + spread * 0.1);
   const xMin = rows[0].period;
   const xMax = rows[rows.length - 1].period;
 

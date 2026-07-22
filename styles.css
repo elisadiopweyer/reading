@@ -787,3 +787,15 @@ th {
   color: var(--bg);
   font-weight: 600;
 }
+
+#teacherViewSwitch {
+  margin-top: 8px;
+}
+
+#teacherViewSwitch .vtab {
+  white-space: nowrap;
+}
+
+#teacherViewSwitch[hidden] {
+  display: none;
+}
