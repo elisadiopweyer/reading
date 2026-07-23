@@ -135,13 +135,14 @@ const SERIES = {
     dash: "",
     group: "external"
   },
-  adj_czi_fe: {
-    label: "Adjusted — CZI Lexile-like (LLM)",
+  adj_lcvocab_fe: {
+    label: "Adjusted — LC vocabulary (CZI evaluator)",
     tooltip:
       "Each first attempt adjusted to average text difficulty using the fixed coefficient " +
-      "β = −0.0235 per +1 SD of the CZI Lexile-like LLM difficulty estimate, estimated once on " +
-      "the pooled corpus with student and month fixed effects (strict-correct outcome). Weeks " +
-      "with harder-than-average texts are adjusted upward.",
+      "β = −0.0245 per +1 SD of the Learning Commons (CZI) vocabulary-band score — the official " +
+      "evaluator prompts (github.com/learning-commons-org/evaluators) run with Claude, bands 1–4 " +
+      "z-scored — estimated once on the pooled corpus with student and month fixed effects " +
+      "(strict-correct outcome). Weeks with harder-than-average texts are adjusted upward.",
     stroke: "#ea580c",
     width: 2.7,
     dash: "",
@@ -159,10 +160,10 @@ const SERIES = {
     dash: "7 4",
     group: "external"
   },
-  adj_czi_class: {
-    label: "Adjusted — CZI Lexile-like, class-specific β",
+  adj_lcvocab_class: {
+    label: "Adjusted — LC vocabulary, class-specific β",
     tooltip:
-      "Same CZI Lexile-like adjustment, but the coefficient is re-estimated within this class " +
+      "Same LC vocabulary-band adjustment, but the coefficient is re-estimated within this class " +
       "only (same student + month fixed-effects spec, same pooled difficulty z-scale). Dashed " +
       "to distinguish it from the universal-β line. Class betas are noisier — see the SE in " +
       "the coefficient table.",
@@ -270,8 +271,8 @@ const isTeacherTab = () => scopeTab(SCOPE) === "v3";
 // Teacher-tab adjustment views: which series each one shows.
 const TEACHER_VIEWS = {
   unadjusted: ["raw_strict"],
-  universal: ["raw_strict", "adj_textstat_fe", "adj_czi_fe"],
-  class: ["raw_strict", "adj_textstat_class", "adj_czi_class"],
+  universal: ["raw_strict", "adj_textstat_fe", "adj_lcvocab_fe"],
+  class: ["raw_strict", "adj_textstat_class", "adj_lcvocab_class"],
 };
 let TEACHER_VIEW = "universal";
 
@@ -684,13 +685,29 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
   const rawMin = Math.min(...values);
   const rawMax = Math.max(...values);
   const spread = Math.max(0.05, rawMax - rawMin);
-  const yMin = Math.max(0, rawMin - spread * 0.1);
-  const yMax = Math.min(1, rawMax + spread * 0.1);
+  // Domain always covers every plotted value (lines/bands must stay inside the
+  // axes); only clamp the pad to the natural 0/1 bounds when the data itself
+  // sits inside them.
+  const yMin = rawMin < 0 ? rawMin - spread * 0.1 : Math.max(0, rawMin - spread * 0.1);
+  const yMax = rawMax > 1 ? rawMax + spread * 0.1 : Math.min(1, rawMax + spread * 0.1);
   const xMin = rows[0].period;
   const xMax = rows[rows.length - 1].period;
 
   const x = (period) => margin.left + ((period - xMin) / (xMax - xMin || 1)) * innerWidth;
   const y = (value) => margin.top + (1 - (value - yMin) / (yMax - yMin || 1)) * innerHeight;
+
+  // Hard guarantee: clip all marks to the plot rectangle.
+  const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+  const clip = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+  clip.setAttribute("id", "plot-clip");
+  const clipRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+  clipRect.setAttribute("x", margin.left);
+  clipRect.setAttribute("y", margin.top);
+  clipRect.setAttribute("width", innerWidth);
+  clipRect.setAttribute("height", innerHeight);
+  clip.appendChild(clipRect);
+  defs.appendChild(clip);
+  svg.appendChild(defs);
 
   const yTicks = makeTicks(yMin, yMax, 5);
   yTicks.forEach((tick) => {
@@ -723,6 +740,7 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
         band.setAttribute("d", upper.join(" ") + " " + lower.join(" ") + " Z");
         band.setAttribute("class", "se-band");
         band.setAttribute("fill", def.stroke);
+        band.setAttribute("clip-path", "url(#plot-clip)");
         svg.appendChild(band);
       }
     }
@@ -735,6 +753,7 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
       line.setAttribute("stroke", def.stroke);
       line.setAttribute("stroke-width", def.width);
       if (def.dash) line.setAttribute("stroke-dasharray", def.dash);
+      line.setAttribute("clip-path", "url(#plot-clip)");
       svg.appendChild(line);
 
       points.forEach((row) => {
@@ -744,6 +763,7 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
         point.setAttribute("r", index === 0 ? 3.5 : 3);
         point.setAttribute("class", "data-point");
         point.setAttribute("stroke", def.stroke);
+        point.setAttribute("clip-path", "url(#plot-clip)");
         svg.appendChild(point);
       });
     }
@@ -759,6 +779,7 @@ function renderChart(rows, selected, showFit, showSE, fitOnly) {
       fitLine.setAttribute("stroke", def.stroke);
       fitLine.setAttribute("stroke-width", fitOnly ? def.width : Math.max(1.1, def.width - 1.2));
       fitLine.setAttribute("stroke-dasharray", fitOnly ? "6 4" : "1 7");
+      fitLine.setAttribute("clip-path", "url(#plot-clip)");
       svg.appendChild(fitLine);
     }
   });

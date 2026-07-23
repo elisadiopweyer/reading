@@ -1,5 +1,5 @@
 series_id,param,param_label,coef,se,pvalue,xbar
 adj_textstat_fe,textstat_z,"Textstat median-grade (z, +1 SD)",-0.020655,0.003407,0.0,0.0
-adj_czi_fe,czi_z,"CZI Lexile-like estimate (z, +1 SD)",-0.023482,0.003537,0.0,0.0
+adj_lcvocab_fe,lcvocab_z,"LC vocabulary band, CZI evaluator (z, +1 SD)",-0.024538,0.002943,0.0,0.0
 adj_textstat_class,ts_z_class,"Textstat median-grade (z, +1 SD) — class-specific",0.15157549785245972,0.03189894023928271,2.0167273203779263e-06,0.0
-adj_czi_class,czi_z_class,"CZI Lexile-like estimate (z, +1 SD) — class-specific",0.20933047599699195,0.04225553036154085,7.273348184517856e-07,0.0
+adj_lcvocab_class,lcv_z_class,"LC vocabulary band, CZI evaluator (z, +1 SD) — class-specific",0.027225738832207212,0.05112151171534926,0.5943318785572372,0.0

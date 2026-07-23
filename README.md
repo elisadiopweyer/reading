@@ -11,12 +11,14 @@ Static web app for the trajectory outputs. Views:
   classes; ones with <2 plottable weeks are skipped by the builder), weekly
   first-attempt strict-correct rate under three switchable views
   (`?adjview=unadjusted|universal|class`): raw only; adjusted with two *fixed
-  universal* coefficients (textstat β = −0.0207, CZI Lexile-like β = −0.0235
-  per +1 SD, from the pooled student+month-FE model in
-  `analysis/exploratory/coefficients_grid.py`, never re-fit per class); and
+  universal* coefficients (textstat β = −0.0207, Learning Commons vocabulary
+  band — the real CZI evaluator lane — β = −0.0245 per +1 SD, from the pooled
+  student+month-FE model in `analysis/exploratory/coefficients_grid.py`, read
+  from its details CSV and asserted, never re-fit per class; the retired Claude
+  "CZI Lexile-like" guess lane was replaced by LC vocab on 2026-07-23); and
   adjusted with *class-specific* coefficients (same student+month-FE spec
   re-fit within the class, dashed lines — noisier and wildly heterogeneous:
-  DZIUMA classes ≈ −0.03, B8SRBN −0.08/−0.12, but e.g. Hughes604 +0.26). The
+  DZIUMA classes ≈ −0.02/−0.03, but e.g. Hughes604 +0.26). The
   class list + betas live in `data/scopes/teacher_scopes.json` (written by
   `scripts/build_fixed_beta_teacher_tab.py`), which the app reads at startup.
   Exploratory: the coefficient grid shows these betas are spec-sensitive (raw
